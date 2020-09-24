@@ -179,7 +179,7 @@ export const state = () => ({
       },
       {
         Image_src: "https://src.sandervanast.com/images/SVG/filezilla.svg",
-        cat: 'FTP Software',
+        cat: 'File Transfer Software',
         Image_alt: 'filezilla_logo',
         name: 'FileZilla'
       }
