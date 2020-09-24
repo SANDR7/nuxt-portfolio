@@ -13,7 +13,7 @@
           appreciëren als u een mail sturen via mijn <a href="mailto:84231@glr.nl" title="84231@glr.nl">schoolmail</a>. 
           <br>
           <br>
-          Bedank voor uw aandacht en voor het lezen
+          Bedank voor uw aandacht en voor het lezen.
         </p>
       </div>
       <div class="thankU">

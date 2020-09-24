@@ -112,6 +112,10 @@ export default {
                 text-transform: uppercase;
                 font-size: $fs-paragraph-1;
                 // letter-spacing: 0.7px;
+                &::after {
+                  content: '.';
+                  color: $OrangeColor1;
+                }
               }
             }
             img {

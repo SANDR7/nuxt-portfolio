@@ -74,7 +74,8 @@
           </a>
         </div>
         <div class="share">
-          <button ref="Sharing" @click="Sharewidget">{{shareBtn}}</button>
+          <button ref="Sharing" @click="Sharewidget">
+            {{shareBtn}}</button>
         </div>
       </div>
       <div class="TextMark">
@@ -114,7 +115,7 @@ export default {
       const Url = window.document.location.href;
       const shareData = {
         title: 'SMA Website',
-        text: 'Portfolio Website - Sander van Ast | SMA ',
+        text: 'Portfolio Website from Sander van Ast | SMA ',
         url: `${Url}`,
       }
       if(navigator.share) {
@@ -124,7 +125,7 @@ export default {
         }).catch(console.error)
       } else {
         console.log('Not Supported')
-        this.shareBtn = 'Button not supported'
+        this.shareBtn = 'Only works on Mobile'
       }
         // try {
         //   await navigator.share(shareData)
@@ -199,6 +200,7 @@ export default {
           width: 85%;
           outline: none;
           @include ButtonStyle;
+          text-transform: initial !important;
         }
       }
     }
