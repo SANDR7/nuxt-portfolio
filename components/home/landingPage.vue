@@ -21,7 +21,7 @@
             href="https://src.sandervanast.com/docs/PDF/Sander%20van%20Ast.pdf"
             target="blank"
             class="Download"
-          >Donwload my Resume</a></span>
+          >Donwload my CV</a></span>
           
         </div>
       </div>

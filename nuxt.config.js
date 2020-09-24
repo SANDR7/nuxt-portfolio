@@ -81,8 +81,6 @@ export default {
   ** Nuxt.js dev-modules
   */
  serverMiddleware: [
-  //  '@/api/nodemailer.js'
-  { path: '/nodemailer', handler: '@/api/nodemailer.js' },
  ],
   buildModules: [
   ],

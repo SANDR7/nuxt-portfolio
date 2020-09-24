@@ -136,6 +136,12 @@ export const state = () => ({
         name: 'Visual Studio Code'
       },
       {
+        Image_src: 'https://src.sandervanast.com/images/SVG/github.svg',
+        Image_alt: 'Github_logo',
+        cat: 'Software Repository Platform',
+        name: 'GitHub'
+      },
+      {
         Image_src: 'https://src.sandervanast.com/images/SVG/googlesearchconsole.svg',
         Image_alt: 'google-searchconsole_logo',
         cat: 'Page Analytics Site',
@@ -208,6 +214,12 @@ export const state = () => ({
         Image_alt: 'vmware_logo',
         cat: 'Virtualization Software',
         name: 'VMware Workstation'
+      },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/git.svg',
+        Image_alt: 'git_logo',
+        cat: 'Free Version Control System',
+        name: 'Git'
       },
       {
         Image_src: 'https://src.sandervanast.com/images/SVG/figma.svg',

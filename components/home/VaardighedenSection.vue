@@ -292,7 +292,7 @@ export default {
 
             &:nth-child(2) {
               .NaamPrograms {
-                // Visual studio code
+                // Office
                 @include ProgressBar(100%, $RedColor1);
 
                 &::before,
@@ -334,8 +334,8 @@ export default {
 
             &:nth-child(4) {
               .NaamPrograms {
-                // google search console
-                @include ProgressBar(80%, $RedColor1);
+                // GitHub
+                @include ProgressBar(40%, $RedColor1);
 
                 &::before,
                 &::after {
@@ -354,8 +354,8 @@ export default {
             }
             &:nth-child(5) {
               .NaamPrograms {
-                // shopify
-                @include ProgressBar(51%, $RedColor1);
+                // google search console
+                @include ProgressBar(80%, $RedColor1);
 
                 &::before,
                 &::after {
@@ -373,6 +373,26 @@ export default {
               }
             }
             &:nth-child(6) {
+              .NaamPrograms {
+                // shopify
+                @include ProgressBar(51%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
+              .NaamOs {
+                // Git
+                @include ProgressBar(67%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
+            }
+            &:nth-child(7) {
               .NaamPrograms {
                 // wordpress
                 @include ProgressBar(30%, $RedColor1);
@@ -392,7 +412,7 @@ export default {
                 }
               }
             }
-            &:nth-child(7) {
+            &:nth-child(8) {
               .NaamPrograms {
                 // trello
                 @include ProgressBar(87%, $RedColor1);
@@ -403,7 +423,7 @@ export default {
                 }
               }
               .NaamOs {
-                // unity
+                // Unity
                 @include ProgressBar(43%, $RedColor1);
 
                 &::before,
@@ -412,7 +432,7 @@ export default {
                 }
               }
             }
-            &:nth-child(8) {
+            &:nth-child(9) {
               .NaamPrograms {
                 // mircosoft teams
                 @include ProgressBar(100%, $RedColor1);
@@ -432,7 +452,7 @@ export default {
                 }
               }
             }
-            &:nth-child(9) {
+             &:nth-child(10) {
               .NaamPrograms {
                 // google my business
                 @include ProgressBar(92%, $RedColor1);
@@ -443,7 +463,7 @@ export default {
                 }
               }
             }
-             &:nth-child(10) {
+            &:nth-child(11) {
               .NaamPrograms {
                 // filezilla
                 @include ProgressBar(98%, $RedColor1);
