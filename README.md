@@ -1,5 +1,5 @@
 # Portfolio - 2020 
-## Sander van Ast
+## Nuxt.js PWA site
 
 ![Markdown][Logo]
 
