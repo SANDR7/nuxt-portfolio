@@ -65,7 +65,7 @@
       Other&#95;Skills &#38;&#38; Interests &#123;
       <div class="Card">
         <div class="scroll">
-          <div class="subCard">Testing everything</div>
+          <div class="subCard">Testing Push Pull change</div>
           <div class="subCard">frontend development</div>
           <div class="subCard">User Interface design</div>
           <div class="subCard">User Experience design</div>
