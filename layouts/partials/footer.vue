@@ -125,7 +125,7 @@ export default {
         }).catch(console.error)
       } else {
         console.log('Not Supported')
-        this.shareBtn = 'Only works on Mobile'
+        this.shareBtn = 'Only works on Mobile Devices'
       }
         // try {
         //   await navigator.share(shareData)

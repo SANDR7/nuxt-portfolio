@@ -70,14 +70,15 @@
           <div class="subCard">User Experience design</div>
           <div class="subCard">graphic design</div>
           <div class="subCard">Logo design</div>
+          <div class="subCard">progressive web app</div>
           <div class="subCard">AJAX</div>
           <div class="subCard">SEO</div>
-          <div class="subCard">Stamina</div>
           <div class="subCard">Adobe Xd</div>
           <div class="subCard">Illustrator</div>
           <div class="subCard">Photoshop</div>
           <div class="subCard">reliable</div>
           <div class="subCard">Sporty</div>
+          <div class="subCard">My Stamina</div>
           <div class="subCard">Racing cyclist</div>
           <div class="subCard">Speedcubing</div>
           <div class="subCard">Lego technic Builder</div>

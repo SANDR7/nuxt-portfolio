@@ -10,33 +10,9 @@
         Developing...
       </div>
       <!-- <article class="Background">
-        <div class="topics t1">
-          <div class="Objective topic">
-            <header>Objective</header>
-            <p>{{project.Objective}}</p>
-          </div>
-          <div class="Requirements topic">
-            <div class="card">
-            <header>Requirements</header>
-            <ul v-html="project.Requirements"></ul>
-            </div>
-          </div>
-        </div>
-        <div class="topics t1">
-          <div class="Research topic">
-            <header>Research & Approach</header>
-            <div class="card">
-              <p>{{project.Research}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="topics">
-          <div class="Process topic">
-            <header>Process</header>
-            <div>
-              <p>{{project.Process}}</p>
-            </div>
-          </div>
+        <div>
+          <img style="width:100%" :src="project.Img_src" alt="">
+          <header>Objective</header>
         </div>
       </article> -->
     </div>
@@ -93,6 +69,7 @@ export default {
           -webkit-text-fill-color: transparent;
         }
       }
+      // project datum en dienst
       .Pinfo {
         padding: 0 4rem;
         margin: 1rem 0 1.5rem;
@@ -108,62 +85,7 @@ export default {
         box-shadow: $innerShadow;
         margin: 0 2rem;
         padding: 2rem 2.5rem !important;
-        .topics {
-          .topic {
-            margin: 1rem 0;
-            header {
-              font-size: $fs-header / 2;
-              font-weight: 700;
-              margin-bottom: .6rem;
-              &::after {
-                content: ':';
-                color: $OrangeColor1;
-              }
-            }
-            p {
-              font-size: $fs-paragraph-2;
-              line-height: 34px;
-            }
-            .card {
-              @include CardBackground;
-               background-color: var(--BackGroundCardLevel1);
-               padding: 1.5rem;
-            }
-          }
-
-          .Research {
-            width: 60%;
-          }
-          .Objective {
-            flex: 1;
-            p {
-              width: 97%;
-            }
-          }
-          .Requirements {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            flex: 1;
-            .card {
-              width: 50%;
-              padding: 1.5rem 2rem;
-              ul {
-                li {
-                  margin: 1rem 0;
-                  &::before {
-                    content: '⋇ ';
-                    color: $GreenColor1;
-                  }
-                }
-              }
-            }
-          }
-
-        }
-        .t1 {
-          display: flex;
-        }
+        z-index: 10;
       }
     }
 }

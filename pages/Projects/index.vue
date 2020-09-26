@@ -30,7 +30,6 @@
 
           <div class="links" @click="ScrolltoTop">
             <nuxt-link
-              
               title="Open Case Study"
               :to="`/Projects/${project.id}`"
             >
@@ -113,11 +112,12 @@ export default {
                 font-size: $fs-paragraph-1;
                 // letter-spacing: 0.7px;
                 &::after {
+                   @include ColorTransition;
                   content: '.';
-                  color: $OrangeColor1;
                 }
               }
             }
+
             img {
               display: inline-block;
               width: 100%;
@@ -191,6 +191,17 @@ export default {
               }
             }
           }
+        .Card:hover > .CardHeader .ProjectNaam {
+              @include ColorTransition;
+              -webkit-text-stroke: transparent;
+              -webkit-text-fill-color: var(--TxtColor);
+              opacity: $WmarkOpacity * 5.8;
+              &::after {
+                @include ColorTransition;
+                content: ".";
+                -webkit-text-fill-color: $OrangeColor1;
+              }
+            }
      @media only screen and (min-width: $TabletSize1) and (orientation : portrait) {
       grid-template-columns: repeat(1, 1fr);
      }
