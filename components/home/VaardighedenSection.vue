@@ -65,7 +65,6 @@
       Other&#95;Skills &#38;&#38; Interests &#123;
       <div class="Card">
         <div class="scroll">
-          <div class="subCard">Testing Push Pull change</div>
           <div class="subCard">frontend development</div>
           <div class="subCard">User Interface design</div>
           <div class="subCard">User Experience design</div>
@@ -337,7 +336,7 @@ export default {
             &:nth-child(4) {
               .NaamPrograms {
                 // GitHub
-                @include ProgressBar(40%, $RedColor1);
+                @include ProgressBar(55%, $RedColor1);
 
                 &::before,
                 &::after {
@@ -386,7 +385,7 @@ export default {
               }
               .NaamOs {
                 // Git
-                @include ProgressBar(67%, $RedColor1);
+                @include ProgressBar(64%, $RedColor1);
 
                 &::before,
                 &::after {
