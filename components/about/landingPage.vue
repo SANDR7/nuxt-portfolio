@@ -87,7 +87,7 @@
         <div class="Socials">
           <h2 class="SubHeader">Follow me everywhere you like</h2>
           <div class="medias">
-            <a href="https://www.linkedin.com/in/sander-van-ast-b57bb81a1/" target="blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/sander-van-ast/" target="blank">LinkedIn</a>
             <a href="https://github.com/SANDR7" target="blank">GitHub</a>
             <a
               href="https://www.facebook.com/profile.php?id=100009821328030"

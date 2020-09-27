@@ -57,7 +57,7 @@
       <div class="Socials">
         <div class="SocialList">
           <a
-            href="https://www.linkedin.com/in/sander-van-ast-b57bb81a1/"
+            href="https://www.linkedin.com/in/sander-van-ast/"
             target="blank"
             title="Linkedin"
           >
