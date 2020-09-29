@@ -43,6 +43,48 @@
         <br>
       </div>
     </div>
+
+    <div class="Section AllProjects">
+        <h4>Some Exercises</h4>
+      <div class="Background ProjectenGrid">
+        <div
+          class="Card"
+          v-for="SomeExcercieses in SomeExcercieses.slice().reverse()"
+          :key="SomeExcercieses.id"
+        >
+          <div class="CardHeader">
+            <div class="sort">{{ SomeExcercieses.soort }} / {{SomeExcercieses.Datum}}</div>
+            <div class="ProjectNaam">{{SomeExcercieses.Projectnaam}}</div>
+          </div>
+
+          <img :src=SomeExcercieses.Img_src alt="ProjectImg">
+
+          <div class="UsedLang">
+            <div class="title">Used Techniques</div>
+            <div class="ProgrammeerTalen" v-html="SomeExcercieses.UsedTech.Langs">
+            </div>
+            <div class="ProgrammeerTalen" v-html="SomeExcercieses.UsedTech.Programs">
+            </div>
+          </div>
+
+          <div class="Description">
+            <div class="title">Description</div>
+            <p>{{SomeExcercieses.FullDesc}}</p>
+          </div>
+
+          <div class="links" @click="ScrolltoTop">
+            <a :href="`https://github.com/SANDR7/${SomeExcercieses.Git_url}`" target="blank">
+              <i class="far fa-code-branch"></i><span>Source Code</span>
+              </a>
+            <a :href="SomeExcercieses.Url_src" target="blank" title="View Website">
+              <i class="far fa-link"></i><span>Visit Site</span>
+            </a>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+
     <div class="Section">
         <h4>we can work together</h4>
       <div class="Background">
@@ -54,6 +96,7 @@
 
 <script>
 import projects from '~~/projects';
+import SomeExcercieses from '~~/SomeExcercieses';
 import ContactSection from "~/components/home/ContactSection";
 export default {
   head() {
@@ -63,7 +106,8 @@ export default {
   },
   data() {
     return {
-      projects
+      projects,
+      SomeExcercieses
     }
   },
   methods: {
