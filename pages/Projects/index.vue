@@ -5,7 +5,7 @@
       <div class="Background ProjectenGrid">
         <div
           class="Card"
-          v-for="project in projects.slice().reverse()"
+          v-for="project in projects.slice(compress).reverse()"
           :key="project.id"
         >
           <div class="CardHeader">
@@ -42,6 +42,9 @@
         </div>
         <br>
       </div>
+      <div class="padding">
+        <button class="showMore" @click="showMore">{{showMoreTxt}}</button>
+      </div>
     </div>
 
     <div class="Section AllProjects">
@@ -71,7 +74,7 @@
             <div class="title">Description</div>
             <p>{{SomeExcercieses.FullDesc}}</p>
           </div>
-
+          
           <div class="links" @click="ScrolltoTop">
             <a :href="`https://github.com/SANDR7/${SomeExcercieses.Git_url}`" target="blank">
               <i class="far fa-code-branch"></i><span>Source Code</span>
@@ -107,13 +110,25 @@ export default {
   data() {
     return {
       projects,
-      SomeExcercieses
+      SomeExcercieses,
+      showMoreTxt: 'Show more',
+      compress: Math.max(projects.length - 3)
     }
   },
   methods: {
     ScrolltoTop() {
       scrollTo({scrollTop:1200},'0');
     },
+    showMore() {
+      const maxCards = 3;
+      if (this.compress == Math.max(projects.length - maxCards)) {
+        this.compress = Math.max();
+        this.showMoreTxt = 'show Less';
+      } else {
+        this.compress = Math.max(projects.length - maxCards);
+        this.showMoreTxt = 'show more';
+      }
+    }
   },
   components: {
     ContactSection
@@ -127,10 +142,18 @@ export default {
     @include BackgroundImage("https://src.sandervanast.com/images/PNG/BackgroundImage4.png");
     &::after {
     background-repeat: repeat-y;
-    }
+  }
+
   }
   .Section {
-    
+
+    .padding {
+      padding: 0rem 7rem;
+      .showMore {
+        @include ButtonStyle();
+      }
+    }
+      
     .ProjectenGrid {
           display: grid;
           grid-template-columns: repeat(1, 1fr);

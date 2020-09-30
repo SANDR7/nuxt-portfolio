@@ -76,12 +76,13 @@
         <div class="share">
           <button ref="Sharing" @click="Sharewidget">
             {{shareBtn}}</button>
+            
         </div>
       </div>
       <div class="TextMark">
         Developing the web by Creating with
-        <a href="https://vuejs.org/" target="blank" title="Vue.js">
-          <i class="fab fa-vuejs"></i>
+        <a href="https://nuxtjs.org/" target="blank" title="Nuxt.js website">
+        Nuxt.js    
         </a> and lots of
         <i class="fas fa-coffee-pot" title="Coffee" style="color: #6C4C35"></i>.
         <br />Made by
@@ -215,7 +216,7 @@ export default {
         @include HoverFx(2px, #41b883, 0);
         color: #41b883;
       }
-      .fa-vuejs {
+      .nuxtjs {
         transform: translateY(15%);
         font-size: $fs-paragraph-1 * 1.5;
       }
@@ -464,7 +465,7 @@ export default {
           @include HoverFx(2px, #41b883, 0);
           color: #41b883;
         }
-        .fa-vuejs {
+        .nuxtjs {
           transform: translateY(15%);
           font-size: $fs-paragraph-1 * 1.5;
         }
