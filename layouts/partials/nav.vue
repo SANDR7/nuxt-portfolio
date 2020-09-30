@@ -135,14 +135,14 @@ export default {
 @media only screen and (min-width: $Laptop1) {
   #nav {
     margin: 0rem 1rem 1.5rem;
-    padding: 1rem 1rem;
+    padding: .8rem 1rem;
   }
 }
 /* Desktop ----------- */
 @media only screen and (min-width: $LargeScreen1) {
   #nav {
     margin: 0rem 1rem 1.5rem ;
-    padding: 1rem 3rem;
+    padding: .8rem 3rem;
   }
 }
 </style>
