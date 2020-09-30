@@ -5,7 +5,7 @@
       <div class="Background ProjectenGrid">
         <div
           class="Card"
-          v-for="project in projects.slice(compress).reverse()"
+          v-for="project in projects.slice(compressP).reverse()"
           :key="project.id"
         >
           <div class="CardHeader">
@@ -43,7 +43,7 @@
         <br>
       </div>
       <div class="padding">
-        <button class="showMore" @click="showMore">{{showMoreTxt}}</button>
+        <button class="showMore" @click="showMoreProjects">{{showMoreTxt}}</button>
       </div>
     </div>
 
@@ -52,7 +52,7 @@
       <div class="Background ProjectenGrid">
         <div
           class="Card"
-          v-for="SomeExcercieses in SomeExcercieses.slice().reverse()"
+          v-for="SomeExcercieses in SomeExcercieses.slice(compressE).reverse()"
           :key="SomeExcercieses.id"
         >
           <div class="CardHeader">
@@ -86,6 +86,9 @@
         </div>
         <br>
       </div>
+      <div class="padding">
+        <button class="showMore" @click="showMoreExecercises">{{showMoreTxt}}</button>
+      </div>
     </div>
 
     <div class="Section">
@@ -112,20 +115,31 @@ export default {
       projects,
       SomeExcercieses,
       showMoreTxt: 'Show more',
-      compress: Math.max(projects.length - 3)
+      compressP: Math.max(projects.length - 3),
+      compressE: Math.max(SomeExcercieses.length - 2)
     }
   },
   methods: {
     ScrolltoTop() {
       scrollTo({scrollTop:1200},'0');
     },
-    showMore() {
+    showMoreProjects() {
       const maxCards = 3;
-      if (this.compress == Math.max(projects.length - maxCards)) {
-        this.compress = Math.max();
+      if (this.compressP == Math.max(projects.length - maxCards)) {
+        this.compressP = Math.max();
         this.showMoreTxt = 'show Less';
       } else {
-        this.compress = Math.max(projects.length - maxCards);
+        this.compressP = Math.max(projects.length - maxCards);
+        this.showMoreTxt = 'show more';
+      }
+    },
+    showMoreExecercises() {
+      const maxCards = 3;
+      if (this.compressE == Math.max(SomeExcercieses.length - maxCards)) {
+        this.compressE = Math.max();
+        this.showMoreTxt = 'show Less';
+      } else {
+        this.compressE = Math.max(SomeExcercieses.length - maxCards);
         this.showMoreTxt = 'show more';
       }
     }
