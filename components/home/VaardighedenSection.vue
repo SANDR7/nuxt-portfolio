@@ -404,8 +404,8 @@ export default {
                 }
               }
               .NaamOs {
-                // figma
-                @include ProgressBar(97%, $RedColor1);
+                // Yarn
+                @include ProgressBar(87%, $RedColor1);
 
                 &::before,
                 &::after {
@@ -424,8 +424,8 @@ export default {
                 }
               }
               .NaamOs {
-                // Unity
-                @include ProgressBar(43%, $RedColor1);
+                // figma
+                @include ProgressBar(97%, $RedColor1);
 
                 &::before,
                 &::after {
@@ -444,8 +444,8 @@ export default {
                 }
               }
               .NaamOs {
-                // xampp
-                @include ProgressBar(94%, $RedColor1);
+                // Unity
+                @include ProgressBar(43%, $RedColor1);
 
                 &::before,
                 &::after {
@@ -457,6 +457,15 @@ export default {
               .NaamPrograms {
                 // google my business
                 @include ProgressBar(92%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
+              .NaamOs {
+                // xampp
+                @include ProgressBar(94%, $RedColor1);
 
                 &::before,
                 &::after {
