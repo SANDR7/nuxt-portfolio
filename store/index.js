@@ -218,8 +218,14 @@ export const state = () => ({
       {
         Image_src: 'https://src.sandervanast.com/images/SVG/git.svg',
         Image_alt: 'git_logo',
-        cat: 'Free Version Control System',
+        cat: 'Version Control System',
         name: 'Git'
+      },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/yarn.svg',
+        Image_alt: 'yarn_logo',
+        cat: 'Software Package Manager',
+        name: 'Yarn'
       },
       {
         Image_src: 'https://src.sandervanast.com/images/SVG/figma.svg',
