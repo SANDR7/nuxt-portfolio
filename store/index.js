@@ -58,6 +58,13 @@ export const state = () => ({
         name: 'BootStrap',
         BeginDate: 2020
       },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/tailwindcss.svg',
+        Url_src: 'https://tailwindcss.com/',
+        Image_alt: 'Tailwind_logo',
+        name: 'Tailwindcss',
+        BeginDate: 2020
+      },
     ],
     // programmeertalen inclusief databes  
     ProgrammeerTalen: [
