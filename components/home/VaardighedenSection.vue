@@ -181,6 +181,12 @@ export default {
                 @include ProgressBar(40%, $GreenColor1);
               }
             }
+            &:nth-child(9) {
+              .Frameworks {
+                // Tailwindcss
+                @include ProgressBar(62%, $GreenColor1);
+              }
+            }
           }
         }
       }
