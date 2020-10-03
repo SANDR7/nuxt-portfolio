@@ -70,6 +70,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '~plugins/ga.js', mode: 'client' },
     { src: '~~/plugins/nodemailer.js', mode: 'server' },
   ],
   /*

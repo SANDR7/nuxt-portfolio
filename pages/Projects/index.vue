@@ -54,50 +54,50 @@
       <div class="Background ProjectenGrid">
         <div
           class="Card"
-          v-for="(SomeExcerciese, index) in SomeExcercieses.slice(isVisible_Excer).reverse()"
+          v-for="(SomeExercise, index) in SomeExercises.slice(isVisible_Excer).reverse()"
           :key="index.id"
         >
           <div class="CardHeader">
             <div class="sort">
-              {{ SomeExcerciese.soort }} / {{ SomeExcerciese.Datum }}
+              {{ SomeExercise.soort }} / {{ SomeExercise.Datum }}
             </div>
-            <div class="ProjectNaam">{{ SomeExcerciese.Projectnaam }}</div>
+            <div class="ProjectNaam">{{ SomeExercise.Projectnaam }}</div>
           </div>
 
-          <img :src="SomeExcerciese.Img_src" alt="ProjectImg" />
+          <img :src="SomeExercise.Img_src" alt="ProjectImg" />
 
           <div class="UsedLang">
             <div class="title">Used Techniques</div>
             <div
               class="ProgrammeerTalen"
-              v-html="SomeExcerciese.UsedTech.Langs"
+              v-html="SomeExercise.UsedTech.Langs"
             ></div>
             <div
               class="ProgrammeerTalen"
-              v-html="SomeExcerciese.UsedTech.Programs"
+              v-html="SomeExercise.UsedTech.Programs"
             ></div>
           </div>
 
           <div class="Description">
             <div class="title">Description</div>
-            <p>{{ SomeExcerciese.FullDesc }}</p>
+            <p>{{ SomeExercise.FullDesc }}</p>
           </div>
 
           <div class="links">
             <a
               :class="hasRepo"
               v-if="
-                SomeExcerciese.gitRepo === true
+                SomeExercise.gitRepo === true
                   ? (hasRepo = 'showRepo')
                   : (hasRepo = 'noRepo')
               "
-              :href="`${SomeExcerciese.Git_url}`"
+              :href="`${SomeExercise.Git_url}`"
               target="blank"
             >
               <i class="far fa-code-branch"></i><span>Source Code</span>
             </a>
             <a
-              :href="SomeExcerciese.Url_src"
+              :href="SomeExercise.Url_src"
               target="blank"
               title="View Website"
             >
@@ -125,7 +125,7 @@
 
 <script>
 import projects from "~~/projects";
-import SomeExcercieses from "~~/SomeExcercieses";
+import SomeExercises from "~~/SomeExercises";
 import ContactSection from "~/components/home/ContactSection";
 export default {
   head() {
@@ -136,7 +136,7 @@ export default {
   data() {
     return {
       projects,
-      SomeExcercieses,
+      SomeExercises,
       showMoreTxt: "Show All",
       isVisible_Proj: 2,
       isVisible_Excer: 1,
