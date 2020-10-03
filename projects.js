@@ -3,7 +3,7 @@ export default [
     // nummer 1 is het eerste project en het grootste nummer is het laatste project
     {
         Projectnaam: 'Demonstration Card',
-        id: 'Demonstration-Card',
+        id: 'Demonstration-Card1',
         soort: 'Website',
         QuickDesc: "This project has no content so it's empty.",
         UsedTech: {
@@ -61,7 +61,7 @@ export default [
 
     {
         Projectnaam: 'Demonstration Card',
-        id: 'Demonstration-Card',
+        id: 'Demonstration-Card2',
         soort: 'Website',
         QuickDesc: "This project has no content so it's empty.",
         UsedTech: {
