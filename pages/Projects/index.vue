@@ -5,7 +5,7 @@
       <div class="Background ProjectenGrid">
         <div
           class="Card"
-          v-for="project in projects.slice(compressP).reverse()"
+          v-for="project in projects.slice(isVisible_Proj).reverse()"
           :key="project.id"
         >
           <div class="CardHeader">
@@ -41,7 +41,9 @@
         <br />
       </div>
       <div class="padding">
-        <button class="showMore" @click="showMoreProjects">
+        <button class="showMore"
+         @click="showProjects"
+         >
           {{ showMoreTxt }}
         </button>
       </div>
@@ -52,50 +54,50 @@
       <div class="Background ProjectenGrid">
         <div
           class="Card"
-          v-for="SomeExcercieses in SomeExcercieses.slice(compressE).reverse()"
-          :key="SomeExcercieses.id"
+          v-for="(SomeExcerciese, index) in SomeExcercieses.slice(isVisible_Excer).reverse()"
+          :key="index.id"
         >
           <div class="CardHeader">
             <div class="sort">
-              {{ SomeExcercieses.soort }} / {{ SomeExcercieses.Datum }}
+              {{ SomeExcerciese.soort }} / {{ SomeExcerciese.Datum }}
             </div>
-            <div class="ProjectNaam">{{ SomeExcercieses.Projectnaam }}</div>
+            <div class="ProjectNaam">{{ SomeExcerciese.Projectnaam }}</div>
           </div>
 
-          <img :src="SomeExcercieses.Img_src" alt="ProjectImg" />
+          <img :src="SomeExcerciese.Img_src" alt="ProjectImg" />
 
           <div class="UsedLang">
             <div class="title">Used Techniques</div>
             <div
               class="ProgrammeerTalen"
-              v-html="SomeExcercieses.UsedTech.Langs"
+              v-html="SomeExcerciese.UsedTech.Langs"
             ></div>
             <div
               class="ProgrammeerTalen"
-              v-html="SomeExcercieses.UsedTech.Programs"
+              v-html="SomeExcerciese.UsedTech.Programs"
             ></div>
           </div>
 
           <div class="Description">
             <div class="title">Description</div>
-            <p>{{ SomeExcercieses.FullDesc }}</p>
+            <p>{{ SomeExcerciese.FullDesc }}</p>
           </div>
 
           <div class="links">
             <a
               :class="hasRepo"
               v-if="
-                SomeExcercieses.gitRepo == true
+                SomeExcerciese.gitRepo === true
                   ? (hasRepo = 'showRepo')
                   : (hasRepo = 'noRepo')
               "
-              :href="`${SomeExcercieses.Git_url}`"
+              :href="`${SomeExcerciese.Git_url}`"
               target="blank"
             >
               <i class="far fa-code-branch"></i><span>Source Code</span>
             </a>
             <a
-              :href="SomeExcercieses.Url_src"
+              :href="SomeExcerciese.Url_src"
               target="blank"
               title="View Website"
             >
@@ -106,7 +108,7 @@
         <br />
       </div>
       <div class="padding">
-        <button class="showMore" @click="showMoreExecercises">
+        <button class="showMore" @click="showExcercies">
           {{ showMoreTxt }}
         </button>
       </div>
@@ -134,37 +136,34 @@ export default {
   data() {
     return {
       projects,
-      hasRepo: "showRepo",
       SomeExcercieses,
       showMoreTxt: "Show All",
-      compressP: Math.max(projects.length - 3),
-      compressE: Math.max(SomeExcercieses.length - 2)
+      isVisible_Proj: 2,
+      isVisible_Excer: 1,
     };
   },
   methods: {
     ScrolltoTop() {
       scrollTo({ scrollTop: 1200 }, "0");
     },
-    showMoreProjects() {
-      const maxCards = 3;
-      if (this.compressP == Math.max(projects.length - maxCards)) {
-        this.compressP = Math.max();
-        this.showMoreTxt = "show Less";
+    showProjects() {
+      if(this.isVisible_Proj = this.isVisible_Proj) {
+        this.isVisible_Proj = 0;
+        this.showMoreTxt = 'show less';
       } else {
-        this.compressP = Math.max(projects.length - maxCards);
-        this.showMoreTxt = "show all";
+        this.isVisible_Proj = 2;
+        this.showMoreTxt = 'show all';
       }
     },
-    showMoreExecercises() {
-      const maxCards = 2;
-      if (this.compressE == Math.max(SomeExcercieses.length - maxCards)) {
-        this.compressE = Math.max();
-        this.showMoreTxt = "show Less";
+    showExcercies() {
+      if(this.isVisible_Excer = this.isVisible_Excer) {
+        this.isVisible_Excer = 0;
+        this.showMoreTxt = 'show less';
       } else {
-        this.compressE = Math.max(SomeExcercieses.length - maxCards);
-        this.showMoreTxt = "show all";
+        this.isVisible_Excer = 1;
+        this.showMoreTxt = 'show all';
       }
-    }
+    },
   },
   components: {
     ContactSection

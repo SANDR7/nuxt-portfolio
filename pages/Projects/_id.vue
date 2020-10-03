@@ -6,10 +6,10 @@
         <div>{{project.UsedTech.Skills}}</div>
         <div>{{project.Datum}}</div>
       </div>
-      <!-- <div class="Background">
+      <div class="Background">
         Developing...
-      </div> -->
-      <article class="Background">
+      </div>
+      <!-- <article class="Background">
         <div class="firstSect">
           <img class="Image" :src="project.Img_src" alt="">
           <div class="objective">
@@ -19,7 +19,7 @@
             </p>
           </div>
         </div>
-      </article>
+      </article> -->
     </div>
   </div>
 </template>
