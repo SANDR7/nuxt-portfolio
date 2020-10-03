@@ -62,6 +62,7 @@ $colors: (
     &:focus {
         color: Color(GeneralLight);
         background-color: $GreenColor1;
+        outline: none;
         filter: brightness(1.2);
         a {
             color: Color(GeneralLight);
