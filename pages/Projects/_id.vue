@@ -1,20 +1,25 @@
 <template>
-  <div class="Sections">
+  <div class="Sections ProjSec">
     <div class="Section Aproject">
-      <h5>{{project.Projectnaam}}</h5>
+      <h1>{{project.Projectnaam}}</h1>
       <div class="Pinfo">
         <div>{{project.UsedTech.Skills}}</div>
         <div>{{project.Datum}}</div>
       </div>
-      <div class="Background">
+      <!-- <div class="Background">
         Developing...
-      </div>
-      <!-- <article class="Background">
-        <div>
-          <img style="width:100%" :src="project.Img_src" alt="">
-          <header>Objective</header>
+      </div> -->
+      <article class="Background">
+        <div class="firstSect">
+          <img class="Image" :src="project.Img_src" alt="">
+          <div class="objective">
+          <h3 class="header">The Objective</h3>
+            <p>
+              {{project.Objective}}
+            </p>
+          </div>
         </div>
-      </article> -->
+      </article>
     </div>
   </div>
 </template>
@@ -48,10 +53,11 @@ export default {
 };
 </script>
 <style lang="scss">
-.Sections {
+.ProjSec {
+  margin: -4rem 0 4rem !important;
     .Aproject {
         // height: 80vh;
-      h5 {
+      h1 {
         @include ColorTransition;
         font-size: $fs-header * 1.3;
         letter-spacing: 2px;
@@ -86,10 +92,44 @@ export default {
         margin: 0 2rem;
         padding: 2rem 2.5rem !important;
         z-index: 10;
+
+        .header {
+          font-size: $fs-paragraph-2 * 1.5;
+          text-transform: capitalize;
+          &::after {
+            content: ':';
+            color: $OrangeColor1;
+          }
+        }
+
+        .firstSect {
+          display: flex;
+          width: 100%;
+          .Image {
+            width: 45%;
+            border-radius: $borderRadius12;
+            filter: brightness(var(--ImageFilter));
+          }
+          .objective {
+            margin: 0 4rem;
+            width: 50%;
+            p {
+              font-size: $fs-paragraph-2;
+              line-height: 36px;
+            }
+          }
+        }
+
+
+
+
+
+
+
       }
     }
 }
-.Section:hover > h5 {
+.Section:hover > h1 {
   @include ColorTransition;
   -webkit-text-stroke: transparent;
   -webkit-text-fill-color: var(--TxtColor);
