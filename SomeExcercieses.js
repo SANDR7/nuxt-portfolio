@@ -26,6 +26,7 @@ export default [
         // name of repo
         Git_url: 'empty',
         Datum: 'Jan. 2002',
+        gitRepo: true,
     },
         // URL_src wordt gebruikt voor de thumbnails op de home page
     // nummer 1 is het eerste project en het grootste nummer is het laatste project
@@ -53,6 +54,7 @@ export default [
         // name of repo
         Git_url: 'empty',
         Datum: 'Jan. 2002',
+        gitRepo: false,
     },
     {
         Projectnaam: 'Demonstration Card',
@@ -78,10 +80,11 @@ export default [
         // name of repo
         Git_url: 'empty',
         Datum: 'Jan. 2002',
+        gitRepo: false,
     },
 
     {
-        Projectnaam: 'Demonstration Card',
+        Projectnaam: 'Demonstration Cardfdsfsdf',
         id: 'Demonstration-Card',
         soort: 'Website',
         QuickDesc: "This project has no content so it's empty.",
@@ -104,5 +107,6 @@ export default [
         // name of repo
         Git_url: 'empty',
         Datum: 'Jan. 2002',
+        gitRepo: true,
     },
 ]
