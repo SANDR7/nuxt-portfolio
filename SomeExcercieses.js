@@ -24,7 +24,7 @@ export default [
         Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Project_Placeholder.png',
         Url_src: "https://example.com/",
         // name of repo
-        Git_url: 'empty',
+        Git_url: 'noRepo',
         Datum: 'Jan. 2002',
         gitRepo: true,
     },
@@ -52,7 +52,7 @@ export default [
         Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Project_Placeholder.png',
         Url_src: "https://example.com/",
         // name of repo
-        Git_url: 'empty',
+        Git_url: 'noRepo',
         Datum: 'Jan. 2002',
         gitRepo: false,
     },
@@ -78,13 +78,13 @@ export default [
         Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Project_Placeholder.png',
         Url_src: "https://example.com/",
         // name of repo
-        Git_url: 'empty',
+        Git_url: 'noRepo',
         Datum: 'Jan. 2002',
         gitRepo: false,
     },
 
     {
-        Projectnaam: 'Demonstration Cardfdsfsdf',
+        Projectnaam: 'Demonstration Card',
         id: 'Demonstration-Card',
         soort: 'Website',
         QuickDesc: "This project has no content so it's empty.",
@@ -105,8 +105,8 @@ export default [
         Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Project_Placeholder.png',
         Url_src: "https://example.com/",
         // name of repo
-        Git_url: 'empty',
+        Git_url: 'noRepo',
         Datum: 'Jan. 2002',
-        gitRepo: true,
+        gitRepo: false,
     },
 ]
