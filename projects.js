@@ -236,6 +236,7 @@ export default [
         Programs: `
             <div class="ProgrammeerTaal RED">trello</div>
             <div class="ProgrammeerTaal RED">Adobe XD</div>
+            <div class="ProgrammeerTaal RED">Google my Business</div>
         `,
         Skills: 'Web Development / Logo Design / SEO Optimization',
         },

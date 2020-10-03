@@ -1,4 +1,7 @@
+const prefix = 'https://github.com/SANDR7';
+const noRepoLink = 'http://chillestmonkey.com/';
 export default [
+    
     // URL_src wordt gebruikt voor de thumbnails op de home page
     // nummer 1 is het eerste project en het grootste nummer is het laatste project
     {
@@ -8,25 +11,29 @@ export default [
         QuickDesc: "This project has no content so it's empty.",
         UsedTech: {
         Langs: `
-            <div class="ProgrammeerTaal ORANGE">a programminglanguage</div>
-            <div class="ProgrammeerTaal GREEN">a framework</div>
-
+            <div class="ProgrammeerTaal ORANGE">Javascript</div>
+            <div class="ProgrammeerTaal ORANGE">css</div>
+            <div class="ProgrammeerTaal GREEN">Vue</div>
+            <div class="ProgrammeerTaal GREEN">Nuxt</div>
+            <div class="ProgrammeerTaal GREEN">Sass</div>
+            <div class="ProgrammeerTaal GREEN">Node.js</div>
         `,
         Programs: `
-            <div class="ProgrammeerTaal RED">design program</div>
-            <div class="ProgrammeerTaal RED">software</div>
+            <div class="ProgrammeerTaal RED">Adobe XD</div>
+            <div class="ProgrammeerTaal RED">Git</div>
+            <div class="ProgrammeerTaal RED">Google Search Console</div>
         `,
         Skills: 'Web Development / Logo Design / Wireframe Design / UI & UX Design',
         },
         FullDesc:  `
         This card is meant to be a placeholder. It will show that everyone can take part of it!
         `,
-        Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Project_Placeholder.png',
-        Url_src: "https://example.com/",
+        Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Excercise_nuxt-portfolio.png',
+        Url_src: "/",
         // name of repo
-        Git_url: 'noRepo',
+        Git_url: `${prefix}/nuxt-portfolio`,
         Datum: 'Jan. 2002',
-        gitRepo: true,
+        gitRepo: false,
     },
         // URL_src wordt gebruikt voor de thumbnails op de home page
     // nummer 1 is het eerste project en het grootste nummer is het laatste project
@@ -52,9 +59,9 @@ export default [
         Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Project_Placeholder.png',
         Url_src: "https://example.com/",
         // name of repo
-        Git_url: 'noRepo',
+        Git_url: noRepoLink,
         Datum: 'Jan. 2002',
-        gitRepo: false,
+        gitRepo: true,
     },
     {
         Projectnaam: 'Demonstration Card',
@@ -78,35 +85,8 @@ export default [
         Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Project_Placeholder.png',
         Url_src: "https://example.com/",
         // name of repo
-        Git_url: 'noRepo',
+        Git_url: noRepoLink,
         Datum: 'Jan. 2002',
-        gitRepo: false,
-    },
-
-    {
-        Projectnaam: 'Demonstration Card',
-        id: 'Demonstration-Card',
-        soort: 'Website',
-        QuickDesc: "This project has no content so it's empty.",
-        UsedTech: {
-        Langs: `
-            <div class="ProgrammeerTaal ORANGE">a programminglanguage</div>
-            <div class="ProgrammeerTaal GREEN">a framework</div>
-        `,
-        Programs: `
-            <div class="ProgrammeerTaal RED">design program</div>
-            <div class="ProgrammeerTaal RED">software</div>
-        `,
-        Skills: 'Web Development / Logo Design / Wireframe Design / UI & UX Design',
-        },
-        FullDesc:  `
-        This card is meant to be a placeholder. It will show that everyone can take part of it!
-        `,
-        Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Project_Placeholder.png',
-        Url_src: "https://example.com/",
-        // name of repo
-        Git_url: 'noRepo',
-        Datum: 'Jan. 2002',
-        gitRepo: false,
+        gitRepo: true,
     },
 ]
