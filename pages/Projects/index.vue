@@ -48,7 +48,7 @@
     </div>
 
     <div class="Section AllExercises">
-      <h4>Some Exercises</h4>
+      <h4>Other Exercises</h4>
       <div class="Background ProjectenGrid">
         <div
           class="Card"
@@ -89,7 +89,7 @@
                   ? (hasRepo = 'showRepo')
                   : (hasRepo = 'noRepo')
               "
-              :href="`https://github.com/SANDR7/${SomeExcercieses.Git_url}`"
+              :href="`${SomeExcercieses.Git_url}`"
               target="blank"
             >
               <i class="far fa-code-branch"></i><span>Source Code</span>
@@ -136,7 +136,7 @@ export default {
       projects,
       hasRepo: "showRepo",
       SomeExcercieses,
-      showMoreTxt: "Show more",
+      showMoreTxt: "Show All",
       compressP: Math.max(projects.length - 3),
       compressE: Math.max(SomeExcercieses.length - 2)
     };
@@ -152,17 +152,17 @@ export default {
         this.showMoreTxt = "show Less";
       } else {
         this.compressP = Math.max(projects.length - maxCards);
-        this.showMoreTxt = "show more";
+        this.showMoreTxt = "show all";
       }
     },
     showMoreExecercises() {
-      const maxCards = 3;
+      const maxCards = 2;
       if (this.compressE == Math.max(SomeExcercieses.length - maxCards)) {
         this.compressE = Math.max();
         this.showMoreTxt = "show Less";
       } else {
         this.compressE = Math.max(SomeExcercieses.length - maxCards);
-        this.showMoreTxt = "show more";
+        this.showMoreTxt = "show all";
       }
     }
   },
@@ -237,7 +237,7 @@ export default {
         .UsedLang {
           .ProgrammeerTalen {
             display: block;
-            margin: 0.5rem 0;
+            margin: .2rem 0;
             // width: 100%;
             .ProgrammeerTaal {
               display: inline-block;
@@ -245,7 +245,7 @@ export default {
               font-weight: bolder;
               font-size: 14px;
               letter-spacing: 0.7px;
-              margin: 0.6rem 1rem;
+              margin: .3rem .5rem;
               margin-left: 0;
               @include CardBackground;
               background-color: var(--BackGroundCardLevel2);
