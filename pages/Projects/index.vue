@@ -1,6 +1,6 @@
 <template>
   <div class="Sections" style="margin-top: 0">
-    <div class="Section AllProjects">
+    <div class="Section AllProjects" ref="projHeader">
       <h4>All my Projects</h4>
       <div class="Background ProjectenGrid">
         <div
@@ -49,7 +49,7 @@
       </div>
     </div>
 
-    <div class="Section AllExercises">
+    <div class="Section AllExercises" ref="exerHeader">
       <h4>Other Exercises</h4>
       <div class="Background ProjectenGrid">
         <div
@@ -148,20 +148,32 @@ export default {
     },
     showProjects() {
       if(this.isVisible_Proj = this.isVisible_Proj) {
+        // shows all projects
         this.isVisible_Proj = 0;
         this.showMoreTxt = 'show less';
+        // scroll to the beginning
+        this.$refs['projHeader'].scrollIntoView(true);
       } else {
+        // shows only 3 projects
         this.isVisible_Proj = 2;
         this.showMoreTxt = 'show all';
+        // scroll to the beginning
+        this.$refs['projHeader'].scrollIntoView(true);
       }
     },
     showExcercies() {
       if(this.isVisible_Excer = this.isVisible_Excer) {
+        // shows all projects
         this.isVisible_Excer = 0;
         this.showMoreTxt = 'show less';
+        // scroll to the beginning
+        this.$refs['exerHeader'].scrollIntoView(true);
       } else {
+        // shows only 2 projects
         this.isVisible_Excer = 1;
         this.showMoreTxt = 'show all';
+        // scroll to the beginning
+        this.$refs['exerHeader'].scrollIntoView(true);
       }
     },
   },
