@@ -10,6 +10,13 @@ export default [
         soort: 'Website',
         QuickDesc: "Current portfolio mainly to get employed and/or for an internship.",
         UsedTech: {
+        tags: `
+        <div class="TAG">Design</div>
+        <div class="TAG">frontend development</div>
+        <div class="TAG">progressive web app</div>
+        <div class="TAG">SEO</div>
+        <div class="TAG">User Interface design</div>
+        `,
         Langs: `
             <div class="ProgrammeerTaal ORANGE">Javascript</div>
             <div class="ProgrammeerTaal ORANGE">css</div>
@@ -26,7 +33,7 @@ export default [
         Skills: 'Web Development / Logo Design / Wireframe Design / UI & UX Design',
         },
         FullDesc:  `
-        My personal portfolio to archieve all the skills and project that I've learned over the years. 
+        My personal portfolio to archieve all the skills and project that I've learned over the years. It's also an easy and fun way to let people know what I'm all about!
         `,
         Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Excercise_nuxt-portfolio.png',
         Url_src: "/",
@@ -39,7 +46,7 @@ export default [
     // nummer 1 is het eerste project en het grootste nummer is het laatste project
     {
         Projectnaam: 'Demonstration Card',
-        id: 'Demonstration-Card1',
+        id: 'Demonstration-Card',
         soort: 'Website',
         QuickDesc: "This project has no content so it's empty.",
         UsedTech: {
@@ -65,7 +72,7 @@ export default [
     },
     {
         Projectnaam: 'Demonstration Card',
-        id: 'Demonstration-Card2',
+        id: 'Demonstration-Card',
         soort: 'Website',
         QuickDesc: "This project has no content so it's empty.",
         UsedTech: {
