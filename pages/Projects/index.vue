@@ -5,8 +5,8 @@
       <div class="Background ProjectenGrid">
         <div
           class="Card"
-          v-for="project in projects.slice(isVisible_Proj).reverse()"
-          :key="project.id"
+          v-for="(project, index) in projects.slice(isVisible_Proj).reverse()"
+          :key="index.id"
         >
           <div class="CardHeader">
             <div class="sort">{{ project.soort }} / {{ project.Datum }}</div>
@@ -66,6 +66,7 @@
 
           <img :src="SomeExercise.Img_src" alt="ProjectImg" />
 
+            <div v-html="SomeExercise.UsedTech.tags" class="tags"></div>
           <div class="UsedLang">
             <div class="title">Used Techniques</div>
             <div
@@ -152,13 +153,17 @@ export default {
         this.isVisible_Proj = 0;
         this.showMoreTxt = 'show less';
         // scroll to the beginning
-        this.$refs['projHeader'].scrollIntoView(true);
+        this.$refs['projHeader'].scrollIntoView({
+          behavior: 'smooth'
+        });
       } else {
         // shows only 3 projects
         this.isVisible_Proj = 2;
         this.showMoreTxt = 'show all';
         // scroll to the beginning
-        this.$refs['projHeader'].scrollIntoView(true);
+        this.$refs['projHeader'].scrollIntoView({
+          behavior: 'smooth'
+        });
       }
     },
     showExcercies() {
@@ -167,13 +172,17 @@ export default {
         this.isVisible_Excer = 0;
         this.showMoreTxt = 'show less';
         // scroll to the beginning
-        this.$refs['exerHeader'].scrollIntoView(true);
+        this.$refs['exerHeader'].scrollIntoView({
+          behavior: 'smooth'
+        });
       } else {
         // shows only 2 projects
         this.isVisible_Excer = 1;
         this.showMoreTxt = 'show all';
         // scroll to the beginning
-        this.$refs['exerHeader'].scrollIntoView(true);
+        this.$refs['exerHeader'].scrollIntoView({
+          behavior: 'smooth'
+        });
       }
     },
   },
@@ -245,11 +254,27 @@ export default {
           position: relative;
           filter: brightness(var(--ImageFilter));
         }
+        .tags {
+            display: inline;
+            margin: .4rem 0;
+            .TAG {
+              display: inline;
+              margin-right: .5rem;
+              text-transform: capitalize;
+              opacity: $WmarkOpacity;
+              &::before {
+                content: '#';
+              }
+            }
+          }
         .UsedLang {
+          margin: 0rem 0 1.5rem;
+
           .ProgrammeerTalen {
             display: block;
-            margin: .2rem 0;
+            margin: .5rem 0;
             // width: 100%;
+
             .ProgrammeerTaal {
               display: inline-block;
               text-transform: uppercase;
