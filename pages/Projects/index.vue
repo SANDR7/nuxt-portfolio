@@ -44,7 +44,7 @@
         <button class="showMore"
          @click="showProjects"
          >
-          {{ showMoreTxt }}
+          {{ showMoreTxtProj }}
         </button>
       </div>
     </div>
@@ -138,6 +138,7 @@ export default {
     return {
       projects,
       SomeExercises,
+      showMoreTxtProj: "Show All",
       showMoreTxt: "Show All",
       isVisible_Proj: 2,
       isVisible_Excer: 1,
@@ -151,7 +152,7 @@ export default {
       if(this.isVisible_Proj = this.isVisible_Proj) {
         // shows all projects
         this.isVisible_Proj = 0;
-        this.showMoreTxt = 'show less';
+        this.showMoreTxtProj = 'show less';
         // scroll to the beginning
         this.$refs['projHeader'].scrollIntoView({
           behavior: 'smooth'
@@ -159,7 +160,7 @@ export default {
       } else {
         // shows only 3 projects
         this.isVisible_Proj = 2;
-        this.showMoreTxt = 'show all';
+        this.showMoreTxtProj = 'show all';
         // scroll to the beginning
         this.$refs['projHeader'].scrollIntoView({
           behavior: 'smooth'
@@ -331,7 +332,8 @@ export default {
           }
           .noRepo {
             pointer-events: none;
-            cursor: default;
+            // cursor: default;
+            cursor: not-allowed;
             opacity: $WmarkOpacity * 2;
           }
         }
