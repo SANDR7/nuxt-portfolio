@@ -84,7 +84,7 @@
         <a href="https://nuxtjs.org/" target="blank" title="Nuxt.js website">
         Nuxt.js    
         </a> and lots of
-        <i class="fas fa-coffee-pot" title="Coffee" style="color: #6C4C35"></i>.
+        <i class="fas fa-coffee-pot" title="Coffee" style="color: #6C4C35"></i>
         <br />Made by
         <span class="Accent">SANDR7</span>
       </div>
