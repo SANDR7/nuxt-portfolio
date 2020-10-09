@@ -322,7 +322,7 @@ export default {
           width: 100%;
           padding: 0 2rem;
           justify-content: space-between;
-          a {
+              a {
             font-size: $fs-paragraph-1 * 1.3;
             padding: 0.5rem;
             span {
