@@ -206,12 +206,46 @@ export default {
   }
   .Section {
     .padding {
-      padding: 0rem 7rem;
+      padding: 0rem 2rem;
+        // @include ButtonStyle();
       .showMore {
         @include ButtonStyle();
+        margin: 0 auto;
       }
     }
 
+@media only screen and (min-width : $MobileSize1) and (orientation : portrait) {
+      .padding {
+        padding: 0rem 2rem;
+          // @include ButtonStyle();
+        .showMore {
+          @include ButtonStyle();
+          margin: 0 auto;
+        }
+      }
+}
+      @media only screen and (min-width: $TabletSize1) and (orientation: portrait) {
+      .padding {
+        padding: 0rem 4rem;
+          // @include ButtonStyle();
+        .showMore {
+          @include ButtonStyle();
+          margin: 0 auto;
+        }
+      }
+      
+      }
+      
+      @media only screen and (min-width: $Laptop1) {
+      .padding {
+        padding: 0rem 7rem;
+          // @include ButtonStyle();
+        .showMore {
+          @include ButtonStyle();
+          margin: 0 auto;
+        }
+      }
+      }
     .ProjectenGrid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
