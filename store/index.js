@@ -189,7 +189,13 @@ export const state = () => ({
         cat: 'File Transfer Software',
         Image_alt: 'filezilla_logo',
         name: 'FileZilla'
-      }
+      },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/netlify.svg',
+        cat: 'Web Hosting Platform',
+        Image_alt: 'netlify_logo',
+        name: 'Netlify'
+      },
     ],
     ComputerKennis: [
       {
