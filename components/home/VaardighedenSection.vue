@@ -490,6 +490,17 @@ export default {
                 }
               }
             }
+            &:nth-child(12) {
+              .NaamPrograms {
+                // netlify
+                @include ProgressBar(83%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
+            }
             .NaamPrograms,
             .NaamOs {
               width: 80%;
