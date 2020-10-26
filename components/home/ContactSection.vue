@@ -25,20 +25,17 @@
         </ul>
       </div>
     </div>
-    <div class="Icon">
+    <!-- <div class="Icon">
       <i class="fal fa-file-signature"></i>
-    </div>
-    <!-- <ContactForm/> -->
+    </div> -->
+    <ContactForm/>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import {fireDb} from '~/plugins/firebase.js'
-import ContactForm from "../../layouts/partials/contactform";
-
-const documentPath = 'contacts/sander';
-
+import ContactForm from "~/layouts/partials/contactform";
 export default {
   computed: {
     ...mapState(["Services"]),
@@ -60,9 +57,9 @@ export default {
   display: flex;
   justify-content: space-between;
   position: relative;
-  @include CardBackground;
+  // @include CardBackground;
   padding: 1rem 3rem;
-  box-shadow: $innerShadow;
+  // box-shadow: $innerShadow;
   .info {
     display: flex;
     flex-direction: column;
@@ -154,13 +151,13 @@ export default {
 @media only screen and (min-width: $MobileSize1) {
 .Contact {
   padding: 1rem 1.5rem;
-    // flex-direction: column;
+    flex-direction: column;
     .info {
       .Text {
         margin: 4rem 0 3rem;
         .header {
           line-height: 40px;
-          font-size: $fs-header * .6;
+          font-size: $fs-header * .8;
           span {
             font-size: $fs-paragraph-2;
           }
@@ -201,7 +198,7 @@ export default {
 /* Tablet ----------- */
 @media only screen and (min-width: $TabletSize1) {
   .Contact {
-    // flex-direction: column;
+    flex-direction: column;
     padding: 1rem 2rem;
     .info {
       .Text {
@@ -209,7 +206,7 @@ export default {
         .WMark {
           display: block;
           position: absolute;
-          font-size: 100px;
+          font-size: 120px;
           width: 100%;
           line-height: 100px;
         }
