@@ -102,7 +102,7 @@ export default [
         `,
         },
         FullDesc: `
-            This is project is to expand your general knowledge though a quiz with help from a separate Trivia API (library) call.
+            This is project to expand your general knowledge though a quiz with help from a separate Trivia API (library) call.
         `,
         Img_src: 'https://src.sandervanast.com/images/PNG/Thumbnails/Excercise_react-quiz.png',
         Url_src: "https://happy-austin-b5282d.netlify.app/",
