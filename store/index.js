@@ -312,32 +312,3 @@ export const state = () => ({
       password: '8FAYhJZK4BY2QbY'
     }
 })
-
-export const mutations = {
-  setNewEmailProvider (state, payload) {
-    state.emailProvider = payload
-  }
-}
-
-export const getters = {
-  emailProvider (state) {
-    return state.emailProvider
-  }
-}
-
-export const actions = {
-  async sendEmail ({state, commit}, payload) {
-    let emailInfo = payload
-    let emailProvider = state.emailProvider
-    if (emailProvider.username !== '' && emailProvider.password !== '') {
-      try {
-        const { res } = await axios.post('api/nodemailer.js', {
-          emailInfo,
-          emailProvider
-        });
-      } catch (e) {
-        alert(e)
-      }
-    }
-  }
-}
