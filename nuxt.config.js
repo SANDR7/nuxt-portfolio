@@ -27,7 +27,7 @@ export default {
       { 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: "I'm a web developer student who wants to develop the web by creating for other people!" },
-    // Meta tags voor google search results
+      // Meta tags voor google search results
       { 'http-equiv': 'content-language', content: 'EN' },
       { 'http-equiv': 'X-UA-Comatible', content: 'ie=edge' },
       { name: 'robots', content: 'all' },
@@ -35,7 +35,7 @@ export default {
       { name: 'theme-color', content: '#ef794d' },
       { name: 'msapplication-TileColor', content: '#F9F9F9' },
       { name: 'keywords', content: 'Portfolio, personal, Sander, webdeveloper, sma, develop, developing, web developer, web, websites' },
-    // Meta tags voor Facebook search results  (Alleen van facebook)
+      // Meta tags voor Facebook search results  (Alleen van facebook)
       { property: 'og:title', content: 'Personal Portfolio - Sander van Ast' },
       { property: 'og:site_name', content: 'Portfolio - Sander van Ast' },
       { property: 'og:locale', content: 'en_US' },
@@ -45,7 +45,7 @@ export default {
       { property: 'og:image', content: 'https://src.sandervanast.com/images/PNG/Main_Banner.png' },
       { property: 'og:image:width', content: '1201' },
       { property: 'og:image:height', content: '631' },
-    // Meta tags voor Twitter search results  (Alleen van twitter)
+      // Meta tags voor Twitter search results  (Alleen van twitter)
       { name: 'twitter:title', content: "Personal Portfolio - Sander van Ast" },
       { name: 'twitter:site', content: "https://www.sandervanast.com/" },
       { name: 'twitter:card', content: 'summary' },
@@ -70,8 +70,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '~plugins/ga.js', mode: 'client' },
-    { src: '~~/plugins/nodemailer.js', mode: 'server' },
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Auto import components
@@ -81,14 +80,14 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
- serverMiddleware: [
- ],
+  serverMiddleware: [
+  ],
   buildModules: [
   ],
   /*
   ** Nuxt.js modules
   */
- buildModules: [
+  buildModules: [
     ['@nuxtjs/google-analytics', {
       id: 'UA-174166351-1'
     }]
@@ -103,7 +102,7 @@ export default {
   ],
   styleResources: {
     scss: [
-        '@/assets/styles/_root.scss'
+      '@/assets/styles/_root.scss'
     ],
   },
 
@@ -131,12 +130,11 @@ export default {
       useWebmanifestExtension: false
     }
   },
-  
+
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
- build: {
-    transpile: ['nodemailer']
+  build: {
   }
 }
