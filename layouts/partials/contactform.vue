@@ -1,8 +1,8 @@
 <template>
   <div class="form">
       <form @submit.prevent="sendEmail">
-        <!-- <div :class=classMessage>{{sendMessage}}</div> -->
-        <p>This is form is under development</p>
+        <div :class=classMessage>{{sendMessage}}</div>
+        <!-- <p>This is form is under development</p> -->
         <div class="FormItem">
           <label for="name">Name</label>
           <input v-model.trim="name" type="text" id="name" name="name" required="required">
@@ -21,34 +21,46 @@
       </form>
     </div>
 </template>
+>
+
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
   data () {
-    return {
-      name: '',
-      email: '',
-      message: '',
-      sendMessage: '',
-      classMessage: ''
-    }
+  return {
+    name: '',
+    email: '',
+    message: '',
+    sendMessage: '',
+    classMessage: ''
+  }
   },
   methods: {
-    sendEmail () {
-      const emailData = {
+
+    sendEmail (e) {
+      var emailData = {
         email: this.email,
         name: this.name,
         message: this.message,
         sendMessage: this.sendMessage,
-        classMessage: this.classMessage
+        classMessage: this.classMessage,
       }
-      this.$store.dispatch('sendEmail', emailData)
-      this.name = ''
-      this.email = ''
-      this.message = ''
-      this.sendMessage = 'The message has been sent!',
-      this.classMessage = 'Endmessage'
 
+      emailjs.sendForm('service_y6go5eq', 'template_7udghln', e.target, 'user_a360ayAtdCnk1lSc5WtWv')
+        .then((result) => {
+            console.log('SUCCESS!', result.status, result.text);
+            
+        }, (error) => {
+          console.log('FAILED...', error);
+        });
+        this.email = '',
+        this.name = '',
+        this.message = '',
+        this.sendMessage = 'The message has been sent!',
+        this.classMessage = 'Endmessage',
+        e.target.reset();
     }
   }
 }
