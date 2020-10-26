@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -48,53 +48,53 @@ export default {
     VaardighedenSection,
     StrengthsSection,
     ContactSection,
-  }
+  },
 };
 </script>
 
 <style lang="scss">
-// 
+//
 // Basic styling voor heel de website
-// 
+//
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-    -webkit-font-smoothing: antialiased;
-    color: var(--TxtColor);
-    background-color: var(--BackgroundColor);
+  -webkit-font-smoothing: antialiased;
+  color: var(--TxtColor);
+  background-color: var(--BackgroundColor);
+  overflow-x: hidden;
+  @include ColorTransition;
+  margin: 0 auto;
+  max-width: 2160px;
+  @media only screen and (min-width: $TabletSize1) and (orientation: portrait) {
     overflow-x: hidden;
-    @include ColorTransition;
-    margin: 0 auto;
-    max-width: 2160px;
-    @media only screen and (min-width: $TabletSize1) and (orientation : portrait){
-      overflow-x: hidden;
-    }
-    @media only screen and (min-width: $TabletSize1) and (orientation : landscape){
-      overflow-x: hidden;
-    }
+  }
+  @media only screen and (min-width: $TabletSize1) and (orientation: landscape) {
+    overflow-x: hidden;
+  }
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 .Accent {
-    color: $OrangeColor1;
+  color: $OrangeColor1;
   filter: contrast(180%);
 }
 a {
-    @include HoverFx(2px, $LinkColor1, 0);
-    text-decoration: none;
-    color: $LinkColor1;
-    @include ColorTransition;
+  @include HoverFx(2px, $LinkColor1, 0);
+  text-decoration: none;
+  color: $LinkColor1;
+  @include ColorTransition;
 }
 p {
   line-height: 26px;
@@ -102,16 +102,15 @@ p {
 }
 // Scrollbar chrome
 ::-webkit-scrollbar-track {
-    background: Color(backgroundLight);
+  background: Color(backgroundLight);
 }
 ::-webkit-scrollbar-thumb {
-    background: #888;
+  background: #888;
 }
 ::selection {
-    color: $OrangeColor1;
-    background-color: #e6f4f1;
+  color: $OrangeColor1;
+  background-color: #e6f4f1;
 }
-
 
 .Sections {
   margin: 4rem 0;
@@ -120,13 +119,19 @@ p {
   // background-color: var(--BackgroundSections);
   // background-color: lightblue;
   .projects {
-    @include BackgroundImage("https://src.sandervanast.com/images/PNG/BackgroundImage1.png");
+    @include BackgroundImage(
+      "https://src.sandervanast.com/images/PNG/BackgroundImage1.png"
+    );
   }
   .skills {
-    @include BackgroundImage("https://src.sandervanast.com/images/PNG/BackgroundImage2.png");
+    @include BackgroundImage(
+      "https://src.sandervanast.com/images/PNG/BackgroundImage2.png"
+    );
   }
   .strengths {
-    @include BackgroundImage("https://src.sandervanast.com/images/PNG/BackgroundImage3.png");
+    @include BackgroundImage(
+      "https://src.sandervanast.com/images/PNG/BackgroundImage3.png"
+    );
   }
   .Section {
     width: 100%;
@@ -134,7 +139,7 @@ p {
     h2,
     h4 {
       text-transform: uppercase;
-      font-size: $fs-header * .9;
+      font-size: $fs-header * 0.9;
       transform: translateY(34%);
       margin: 0 2rem;
       &::after {
@@ -145,21 +150,20 @@ p {
     .Background {
       padding: 2.5rem 1rem;
     }
-    
 
     /* Smartphones (portrait) ----------- */
-    @media only screen and (max-width : $MobileSize1) {
+    @media only screen and (max-width: $MobileSize1) {
       h2,
       h4 {
-        font-size: $fs-header * .7;
+        font-size: $fs-header * 0.7;
         margin: 0 1rem;
       }
       .Background {
-        padding: 2.5rem .5rem;
+        padding: 2.5rem 0.5rem;
       }
     }
     /* iPads (portrait and landscape) ----------- */
-    @media only screen and (min-device-width : $TabletSize1){
+    @media only screen and (min-device-width: $TabletSize1) {
       h2,
       h4 {
         font-size: $fs-header * 1;
@@ -171,7 +175,7 @@ p {
       }
     }
     /* iPads (landscape) ----------- */
-    @media only screen and (min-device-width : $TabletSize1) and (max-device-width : $TabletSize2) and (orientation : landscape) {
+    @media only screen and (min-device-width: $TabletSize1) and (max-device-width: $TabletSize2) and (orientation: landscape) {
       h2,
       h4 {
         font-size: $fs-header * 1;
@@ -182,7 +186,7 @@ p {
       }
     }
     /* iPads (portrait) ----------- */
-    @media only screen and (min-device-width : $TabletSize1) and (max-device-width : $TabletSize2) and (orientation : portrait) {
+    @media only screen and (min-device-width: $TabletSize1) and (max-device-width: $TabletSize2) and (orientation: portrait) {
       h2,
       h4 {
         font-size: $fs-header * 1;
@@ -218,7 +222,7 @@ p {
       }
     }
     /* Desktops ----------- */
-    @media only screen and (min-width: $LargeScreen1){
+    @media only screen and (min-width: $LargeScreen1) {
       margin: 2rem 0;
       h2,
       h4 {
