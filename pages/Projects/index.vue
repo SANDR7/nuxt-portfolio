@@ -214,19 +214,20 @@ export default {
       }
     }
 
-@media only screen and (min-width : $MobileSize1) and (orientation : portrait) {
+    @media only screen and (min-width : $MobileSize1) {
       .padding {
         padding: 0rem 2rem;
           // @include ButtonStyle();
         .showMore {
           @include ButtonStyle();
+          width: 100%;
           margin: 0 auto;
         }
       }
-}
-      @media only screen and (min-width: $TabletSize1) and (orientation: portrait) {
+    }
+      @media only screen and (min-width: $TabletSize1) {
       .padding {
-        padding: 0rem 4rem;
+        padding: 0rem 14rem;
           // @include ButtonStyle();
         .showMore {
           @include ButtonStyle();
@@ -242,6 +243,7 @@ export default {
           // @include ButtonStyle();
         .showMore {
           @include ButtonStyle();
+          width: 20%;
           margin: 0 auto;
         }
       }
