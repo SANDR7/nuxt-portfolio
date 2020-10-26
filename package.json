@@ -18,6 +18,7 @@
     "debounce": "^1.2.0",
     "dgram": "^1.0.1",
     "dns": "^0.2.2",
+    "emailjs-com": "^2.6.3",
     "express": "^4.17.1",
     "firebase": "^7.17.2",
     "fs": "0.0.1-security",
@@ -34,7 +35,6 @@
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
     "node-sass": "^4.14.1",
-    "nodemailer": "^6.4.11",
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^9.0.3"
