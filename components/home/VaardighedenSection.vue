@@ -4,7 +4,7 @@
       <!-- Frameworks -->
       <div class="Card">
         &lt;{{framework}}&gt;
-        <div style="margin-left: 1rem; position: absolute">&lt;Libraries &#47;&gt;</div>
+        <div style="margin-top: .6rem; margin-left: 1rem; position: absolute">&lt;Libraries &#47;&gt;</div>
         <div class="Scroll">
           <div class="subCard" v-for="(Framework, id) in Frameworks" :key="id">
             <img :src="Framework.Image_src" :alt="Framework.Image_alt" />
@@ -20,8 +20,10 @@
       <!-- Programmeertalen -->
       <div class="Card">
          return &#40;
-          <div style="margin-left: 1rem; position: absolute;">programming&#91; Languages &#93;</div>
-          <div style="margin-top: 1.2rem; margin-left: 1rem; position: absolute;">&#46;Databases&#40;&#41;</div>
+          <div style="margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div>
+          <!-- <div style="margin-left: 1rem; position: absolute;">import &#123; Databases &#125; from sources</div> -->
+          <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">import &#123; Databases	&#125; from sources</div>
+          <!-- <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div> -->
         <div class="Scroll">
           <div class="subCard" v-for="(ProgrammeerTaal, id) in ProgrammeerTalen" :key="id">
             <img :src="ProgrammeerTaal.Image_src" :alt="ProgrammeerTaal.Image_alt" height="70" width="70"/>
@@ -71,6 +73,7 @@
           <div class="subCard">graphic design</div>
           <div class="subCard">Logo design</div>
           <div class="subCard">progressive web app</div>
+          <div class="subCard">JSX</div>
           <div class="subCard">AJAX</div>
           <div class="subCard">SEO</div>
           <div class="subCard">Adobe Xd</div>
@@ -130,6 +133,8 @@ export default {
       &:nth-child(1) {
         grid-area: frameworks;
         .Scroll {
+          margin-top: 3rem;
+          margin-bottom: .3rem;
           .subCard {
             &:nth-child(1) {
               .Frameworks {
@@ -185,6 +190,12 @@ export default {
               .Frameworks {
                 // Tailwindcss
                 @include ProgressBar(62%, $GreenColor1);
+              }
+            }
+            &:nth-child(10) {
+              .Frameworks {
+                // Foundation
+                @include ProgressBar(48%, $GreenColor1);
               }
             }
           }
