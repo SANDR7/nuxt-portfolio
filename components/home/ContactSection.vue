@@ -3,24 +3,44 @@
     <div class="info">
       <div class="Text">
         <span class="WMark">Get in Touch</span>
-        <div class="header">Feel free to Reach Out <br/><span>For Projects or Work</span></div>
+        <div class="header">
+          Feel free to Reach Out <br /><span>For Projects or Work</span>
+        </div>
       </div>
       <div class="Social">
         <ul>
+          <li>
             <b class="title">Phone number</b>
-          <li>
-            <i class="fas fa-phone-alt" title="Phone"></i>
-            <a href="tel:0681314693" target="blank" title="Phone Number">+31 (06) 81314693</a>
+            <div>
+              <i class="fas fa-phone-alt" title="Phone"></i>
+              <a href="tel:0681314693" target="blank" title="Phone Number"
+                >+31 (06) 81314693</a
+              >
+            </div>
           </li>
+          <li>
             <b class="title">E-mail Address</b>
-          <li>
-            <i class="fas fa-envelope" title="Mail"></i>
-            <a href="mailto:contact@sandervanast.com" title="E-mail Address" target="blank">contact@sandervanast.com</a>
+            <div>
+              <i class="fas fa-envelope" title="Mail"></i>
+              <a
+                href="mailto:contact@sandervanast.com"
+                title="E-mail Address"
+                target="blank"
+                >contact@sandervanast.com</a
+              >
+            </div>
           </li>
-            <b class="title">Github Page</b>
           <li>
-            <i class="fab fa-github" title="Github"></i>
-            <a href="https://github.com/SANDR7" title="Github Profile" target="blank">SANDR7</a>
+            <b class="title">Github Page</b>
+            <div>
+              <i class="fab fa-github" title="Github"></i>
+              <a
+                href="https://github.com/SANDR7"
+                title="Github Profile"
+                target="blank"
+                >SANDR7</a
+              >
+            </div>
           </li>
         </ul>
       </div>
@@ -28,13 +48,13 @@
     <!-- <div class="Icon">
       <i class="fal fa-file-signature"></i>
     </div> -->
-    <ContactForm/>
+    <ContactForm />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import {fireDb} from '~/plugins/firebase.js'
+import { fireDb } from "~/plugins/firebase.js";
 import ContactForm from "~/layouts/partials/contactform";
 export default {
   computed: {
@@ -47,8 +67,8 @@ export default {
   //   }
   // }
   components: {
-    ContactForm
-  }
+    ContactForm,
+  },
 };
 </script>
 
@@ -64,7 +84,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: max-content;
+    width: 100%;
     .Text {
       .header {
         font-weight: 700;
@@ -73,7 +93,7 @@ export default {
         line-height: 50px;
         span {
           font-weight: 400;
-        text-transform: initial;
+          text-transform: initial;
           font-size: $fs-header / 2;
         }
       }
@@ -97,36 +117,39 @@ export default {
         justify-content: space-around;
         height: 100%;
         .title {
-          margin: 1rem 0 -.2rem;
+          margin: 1rem 0 .5rem;
           font-size: $fs-paragraph-2;
           opacity: $WmarkOpacity * 3;
           text-transform: uppercase;
         }
         li {
           display: flex;
+          flex-direction: column;
           font-size: $fs-header / 2.5;
           width: max-content;
-          align-items: center;
           @include ColorTransition;
           &:hover svg {
-              color: Color(DarkerGreyColor);
-            }
+            color: Color(DarkerGreyColor);
+          }
           svg {
             @include ColorTransition;
             font-size: 30px;
             color: Color(GreyColor);
-            
+          }
+          div {
+            display: flex;
+            text-align: center;
+            height: 100%;
           }
           a {
             margin: 0 1rem;
-            
           }
         }
       }
       height: 25%;
     }
   }
-  
+
   .Icon {
     display: flex;
     width: 30%;
@@ -140,7 +163,7 @@ export default {
     }
   }
   .form {
-    width: 50%;
+    width: 100%;
     justify-content: flex-end;
     @media screen and (max-width: 1300px) {
       width: 100%;
@@ -149,15 +172,15 @@ export default {
 }
 /* Tablet ----------- */
 @media only screen and (min-width: $MobileSize1) {
-.Contact {
-  padding: 1rem 1.5rem;
+  .Contact {
+    padding: 0;
     flex-direction: column;
     .info {
       .Text {
         margin: 4rem 0 3rem;
         .header {
           line-height: 40px;
-          font-size: $fs-header * .8;
+          font-size: $fs-header * 0.8;
           span {
             font-size: $fs-paragraph-2;
           }
@@ -180,7 +203,7 @@ export default {
     .Icon {
       position: absolute;
       display: none;
-    top: 16%;
+      top: 16%;
       right: 5%;
       .fa-file-signature {
         font-size: $fs-header * 6;
@@ -210,16 +233,19 @@ export default {
           width: 100%;
           line-height: 100px;
         }
+        .header {
+          width: 100%;
+        }
       }
       .Social {
-          margin: 3rem 0;
-          ul {
-            li {
-              margin: 1rem 0;
-              font-size: $fs-header / 3;
-            }
+        margin: 3rem 0;
+        ul {
+          li {
+            margin: 1rem 0;
+            font-size: $fs-header / 3;
           }
         }
+      }
     }
     .Icon {
       position: relative;
@@ -240,7 +266,7 @@ export default {
     }
   }
 }
-@media only screen and (min-width: $TabletSize1) and (orientation : portrait) {
+@media only screen and (min-width: $TabletSize1) and (orientation: portrait) {
   .Contact {
     .Icon {
       position: relative;
@@ -251,7 +277,7 @@ export default {
     }
   }
 }
-@media only screen and (min-width: $TabletSize1) and (orientation : landscape) {
+@media only screen and (min-width: $TabletSize1) and (orientation: landscape) {
   .Contact {
     .Icon {
       position: relative;
@@ -259,7 +285,6 @@ export default {
       right: 10%;
       display: block;
       margin: 20rem 0 0;
-
     }
   }
 }
@@ -274,24 +299,24 @@ export default {
         .header {
           font-size: $fs-header;
           line-height: 50px;
-        span {
-          font-weight: 400;
-          font-size: $fs-header * .7;
+          span {
+            font-weight: 400;
+            font-size: $fs-header * 0.7;
+          }
         }
-      }
         .WMark {
           font-size: 130px;
         }
       }
       .Social {
-          margin: 2rem 0;
-          ul {
-            li {
-              font-size: $fs-header / 2.5;
-              margin: .5rem 0;
-            }
+        margin: 2rem 0;
+        ul {
+          li {
+            font-size: $fs-header / 2.5;
+            margin: 0.5rem 0;
           }
         }
+      }
     }
     .Icon {
       display: block;
