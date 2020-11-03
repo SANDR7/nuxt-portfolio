@@ -4,7 +4,7 @@
       <div class="leftSide">
         <div class="text">
           <div class="WMark">Portfolio \ 07{{date - 2002}}</div>
-          <h1 class="Header">Developing the web by Creating for You.</h1>
+          <h2 class="Header">Developing the web by Creating for You.</h2>
           <p>
             Hey there! Welcome to my personal portfolio, I'm {{fname}} {{lname}} {{llname}} and here you'll find my collection of projects and skills that I've collected over the
             years. I'm currently a student at the
@@ -26,11 +26,11 @@
         </div>
       </div>
       <div class="rightSide">
-        <div class="name">
+        <h1 class="name">
           <span>{{fname}}</span>
           <span>{{ lname }}</span>
           <span>{{ llname }}</span>
-        </div>
+        </h1>
         <div class="Hero">
           <img src="https://src.sandervanast.com/images/PNG/Sander.png" width="460" height="520" alt="Sander" />
           <div class="ide">SMA ⁄ 0{{countProjects}}</div>
