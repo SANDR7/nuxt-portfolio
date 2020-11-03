@@ -2,21 +2,44 @@
   <div class="footer">
     <div class="explore footerItem">
       <div class="Header">Explore</div>
-      <ul  @click="ScrolltoTop">
-        <nuxt-link @click="ScrolltoTop" to="/" title="Home Page">Home Page</nuxt-link>
-        <nuxt-link @click="ScrolltoTop" to="/Projects" title="Projects Page">Projects Page</nuxt-link>
-        <nuxt-link @click="ScrolltoTop" to="/Contact" title="Contact Page">Contact Page</nuxt-link>
-        <nuxt-link @click="ScrolltoTop" to="/About" title="About Page">About Page</nuxt-link>
-        <a
-          href="https://src.sandervanast.com/docs/PDF/Sander%20van%20Ast.pdf"
-          title="Resume ( CV )"
-          target="blank"
-        >My Resume</a>
-        <a class="Donate" href="https://www.paypal.com/paypalme/SndrOfficial" target="blank">
-         <i class="fab fa-paypal"></i><br> <div class="T">Support my Work</div> 
-        </a>
+      <ul @click="ScrolltoTop">
+        <li>
+          <nuxt-link @click="ScrolltoTop" to="/" title="Home Page"
+            >Home Page</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link @click="ScrolltoTop" to="/Projects" title="Projects Page"
+            >Projects Page</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link @click="ScrolltoTop" to="/Contact" title="Contact Page"
+            >Contact Page</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link @click="ScrolltoTop" to="/About" title="About Page"
+            >About Page</nuxt-link
+          >
+        </li>
+        <li>
+          <a
+            href="https://src.sandervanast.com/docs/PDF/Sander%20van%20Ast.pdf"
+            title="Resume ( CV )"
+            target="blank"
+            >My Resume</a
+          >
+          <a
+            class="Donate"
+            href="https://www.paypal.com/paypalme/SndrOfficial"
+            target="blank"
+          >
+            <i class="fab fa-paypal"></i><br />
+            <div class="T">Support my Work</div>
+          </a>
+        </li>
       </ul>
-      
     </div>
     <div class="recentProjects footerItem">
       <div class="Header">Recent Projects</div>
@@ -27,15 +50,14 @@
           v-for="(project, id) in projects.slice(Math.max(projects.length - 3))"
           :key="id"
         >
-        <nuxt-link
-        
-              title="Open Case Study"
-              class="ProjectLink"
-              :to="`/Projects/${project.id}`"
+          <nuxt-link
+            title="Open Case Study"
+            class="ProjectLink"
+            :to="`/Projects/${project.id}`"
           >
-          <p class="ProjectTitle">{{project.Projectnaam}}</p>
-        </nuxt-link>
-          <p class="ProjectDesc">{{project.UsedTech.Skills}}</p>
+            <p class="ProjectTitle">{{ project.Projectnaam }}</p>
+          </nuxt-link>
+          <p class="ProjectDesc">{{ project.UsedTech.Skills }}</p>
         </div>
       </div>
     </div>
@@ -50,7 +72,7 @@
           alt="logo"
         />
         <div @click="ScrolltoTopSmooth">
-          <i class="fas fa-arrow-alt-up"  title="Scroll to Top"></i>
+          <i class="fas fa-arrow-alt-up" title="Scroll to Top"></i>
         </div>
       </div>
 
@@ -69,22 +91,27 @@
           <a href="https://twitter.com/SANDR__7" target="blank" title="Twitter">
             <i class="fab fa-twitter-square"></i>
           </a>
-          <a href="https://www.instagram.com/sndr.dsgn/" target="blank" title="Instagram">
+          <a
+            href="https://www.instagram.com/sndr.dsgn/"
+            target="blank"
+            title="Instagram"
+          >
             <i class="fab fa-instagram-square"></i>
           </a>
         </div>
         <div class="share">
           <button ref="Sharing" @click="Sharewidget">
-            {{shareBtn}}</button>
-            
+            {{ shareBtn }}
+          </button>
         </div>
       </div>
       <div class="TextMark">
         Developing the web by Creating with
         <a href="https://nuxtjs.org/" target="blank" title="Nuxt.js website">
-        Nuxt.js    
-        </a> and lots of
-        <i class="fas fa-coffee-pot" title="Coffee" style="color: #6C4C35"></i>
+          Nuxt.js
+        </a>
+        and lots of
+        <i class="fas fa-coffee-pot" title="Coffee" style="color: #6c4c35"></i>
         <br />Made by
         <span class="Accent">SANDR7</span>
       </div>
@@ -93,49 +120,51 @@
 </template>
 
 <script>
-import projects from '~~/projects';
+import projects from "~~/projects";
 export default {
   data() {
     return {
       projects,
-      shareBtn: 'Share the Website'
-    }
+      shareBtn: "Share the Website",
+    };
   },
   methods: {
     ScrolltoTop() {
-      scrollTo({scrollTop:1200},'0');
+      scrollTo({ scrollTop: 1200 }, "0");
     },
     ScrolltoTopSmooth() {
       scrollTo({
         top: 0,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     },
     Sharewidget: function () {
       const btn = this.$refs.Sharing;
       const Url = window.document.location.href;
       const shareData = {
-        title: 'SMA Website',
-        text: 'Portfolio Website from Sander van Ast | SMA ',
+        title: "SMA Website",
+        text: "Portfolio Website from Sander van Ast | SMA ",
         url: `${Url}`,
-      }
-      if(navigator.share) {
-        navigator.share(shareData)
-        .then(()=> {
-          console.log('Thanks for Sharing!')
-        }).catch(console.error)
+      };
+      if (navigator.share) {
+        navigator
+          .share(shareData)
+          .then(() => {
+            console.log("Thanks for Sharing!");
+          })
+          .catch(console.error);
       } else {
-        console.log('Not Supported')
-        this.shareBtn = 'Only works on Mobile Devices'
+        console.log("Not Supported");
+        this.shareBtn = "Only works on Mobile Devices";
       }
-        // try {
-        //   await navigator.share(shareData)
-        //   console.log('Thanks for Sharing!');
-        // } catch(err) {
-        //   console.log(`Error: ${err}`);
-        // }
-    }
-  }
+      // try {
+      //   await navigator.share(shareData)
+      //   console.log('Thanks for Sharing!');
+      // } catch(err) {
+      //   console.log(`Error: ${err}`);
+      // }
+    },
+  },
 };
 </script>
 
@@ -149,7 +178,7 @@ export default {
   grid-template-columns: 100%;
 
   $listMargin: 1rem;
-  
+
   .logo {
     display: flex;
     justify-content: space-evenly;
@@ -168,7 +197,7 @@ export default {
         @include ColorTransition;
         &:hover {
           @include ColorTransition;
-          transform: scale(.9);
+          transform: scale(0.9);
         }
       }
       img {
@@ -176,21 +205,21 @@ export default {
         width: 100px;
       }
     }
-    
+
     .Socials {
       display: flex;
       flex-direction: column;
       .SocialList {
-      font-size: $fs-paragraph-2 * 2.8;
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      margin: 1rem 0;
-      a {
-        color: Color(GreyColor);
-        margin: 0 1rem;
-        &:hover {
-          color: Color(DarkerGreyColor);
+        font-size: $fs-paragraph-2 * 2.8;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 1rem 0;
+        a {
+          color: Color(GreyColor);
+          margin: 0 1rem;
+          &:hover {
+            color: Color(DarkerGreyColor);
           }
         }
       }
@@ -208,7 +237,7 @@ export default {
     .TextMark {
       text-align: center;
       line-height: 24px;
-        margin: 1.5rem 0 3rem;
+      margin: 1.5rem 0 3rem;
       .fa-coffee-togo {
         color: #6a2b05;
       }
@@ -242,7 +271,7 @@ export default {
       height: 60%;
       margin: $listMargin 0;
       a {
-        margin: .5rem 0;
+        margin: 0.5rem 0;
         &:nth-child(5) {
           color: $RedColor1;
           filter: brightness(110%);
@@ -255,11 +284,10 @@ export default {
         padding: 0.5rem 0;
         display: flex;
         width: 70%;
-          .fa-paypal {
-            margin-right: 1rem;
-          }
+        .fa-paypal {
+          margin-right: 1rem;
+        }
       }
-      
     }
   }
   .recentProjects {
@@ -270,15 +298,15 @@ export default {
       .recentP {
         margin: 1rem 0;
         .ProjectLink {
-            color: var(--TxtColor);
-            outline: none;
-            .ProjectTitle {
+          color: var(--TxtColor);
+          outline: none;
+          .ProjectTitle {
             @include HoverFx(1px, var(--TxtColor), 0);
             font-weight: bold;
             width: 50%;
           }
         }
-       
+
         .ProjectDesc {
           width: 85%;
         }
@@ -287,26 +315,26 @@ export default {
   }
   /* Smartphones (portrait) ----------- */
   @media only screen and (max-width: $MobileSize1) {
-  height: max-content + 200px;
-  padding: 3rem 2rem 4rem;
+    height: max-content + 200px;
+    padding: 3rem 2rem 4rem;
 
     grid-template-columns: 100%;
     .logo {
       margin: 2rem 0;
       .wrapper {
-      img {
-        height: 100px;
-        width: 100px;
+        img {
+          height: 100px;
+          width: 100px;
         }
       }
       .Socials {
         flex-direction: column;
       }
       .Socials {
-      .SocialList {
-        display: flex;
-        flex-direction: column;
-        a {
+        .SocialList {
+          display: flex;
+          flex-direction: column;
+          a {
             display: flex;
             margin: 0.5rem 0;
             justify-content: center;
@@ -331,16 +359,16 @@ export default {
       }
     }
     .explore {
-      ul { 
-        a { 
-          margin: .2rem 0;
+      ul {
+        a {
+          margin: 0.2rem 0;
           padding: 1rem 0;
           font-size: $fs-paragraph-2;
         }
         .Donate {
           display: flex;
-          padding: .8rem 0;   
-          width: 100%;       
+          padding: 0.8rem 0;
+          width: 100%;
           .fa-paypal {
             margin-right: 1rem;
           }
@@ -357,37 +385,37 @@ export default {
       margin: 2rem 0;
       width: 200%;
       .wrapper {
-      img {
-        height: 135px;
-        width: 135px;
+        img {
+          height: 135px;
+          width: 135px;
         }
       }
-       .Socials {
-      display: flex;
-      flex-direction: column;
-      .SocialList {
-      font-size: $fs-paragraph-2 * 2.8;
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      margin: 1rem 0;
-      a {
-        color: Color(GreyColor);
-        margin: 0 3rem;
-        &:hover {
-          color: Color(DarkerGreyColor);
+      .Socials {
+        display: flex;
+        flex-direction: column;
+        .SocialList {
+          font-size: $fs-paragraph-2 * 2.8;
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          margin: 1rem 0;
+          a {
+            color: Color(GreyColor);
+            margin: 0 3rem;
+            &:hover {
+              color: Color(DarkerGreyColor);
+            }
+          }
+        }
+        .share {
+          display: flex;
+          justify-content: center;
+          button {
+            width: 185%;
+            @include ButtonStyle;
           }
         }
       }
-      .share {
-        display: flex;
-        justify-content: center;
-        button {
-          width: 185%;
-          @include ButtonStyle;
-        }
-      }
-    }
     }
     .recentProjects {
       margin: 0;
@@ -402,13 +430,13 @@ export default {
     .explore {
       ul {
         a {
-          margin: .2rem 0;
+          margin: 0.2rem 0;
           padding: 1rem 0;
           font-size: $fs-paragraph-2;
         }
         .Donate {
           display: flex;
-          padding: .8rem 0;          
+          padding: 0.8rem 0;
           .fa-paypal {
             font-size: $fs-paragraph-2 * 1.7;
             margin-right: 1rem;
@@ -431,32 +459,32 @@ export default {
         height: 175px;
         width: 175px;
       }
-    .Socials {
-      display: flex;
-      flex-direction: column;
-      .SocialList {
-      font-size: $fs-paragraph-2 * 2.8;
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      margin: 1rem 0;
-      a {
-        color: Color(GreyColor);
-        margin: 0 1.5rem;
-        &:hover {
-          color: Color(DarkerGreyColor);
+      .Socials {
+        display: flex;
+        flex-direction: column;
+        .SocialList {
+          font-size: $fs-paragraph-2 * 2.8;
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          margin: 1rem 0;
+          a {
+            color: Color(GreyColor);
+            margin: 0 1.5rem;
+            &:hover {
+              color: Color(DarkerGreyColor);
+            }
+          }
+        }
+        .share {
+          display: none;
+          justify-content: center;
+          button {
+            width: 185%;
+            @include ButtonStyle;
           }
         }
       }
-      .share {
-        display: none;
-        justify-content: center;
-        button {
-          width: 185%;
-          @include ButtonStyle;
-        }
-      }
-    }
       .TextMark {
         .fa-coffee-togo {
           color: #6a2b05;
@@ -492,10 +520,10 @@ export default {
         margin: $listMargin 0;
         a {
           margin: 0;
-          padding: .8rem 0;
+          padding: 0.8rem 0;
           font-size: $fs-paragraph-1;
           width: 70%;
-          
+
           .fa-paypal {
             font-size: $fs-paragraph-2 * 1.7;
           }
@@ -505,9 +533,9 @@ export default {
           align-items: center;
           height: 100%;
           margin-top: 1rem;
-          
+
           .T {
-            margin: 0 .5rem;
+            margin: 0 0.5rem;
           }
         }
       }
