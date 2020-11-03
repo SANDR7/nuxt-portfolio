@@ -65,6 +65,13 @@ export const state = () => ({
         name: 'Tailwindcss',
         BeginDate: 2020
       },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/foundation.svg',
+        Url_src: 'https://get.foundation/',
+        Image_alt: 'Foundation_logo',
+        name: 'Foundation',
+        BeginDate: 2020
+      },
     ],
     // programmeertalen inclusief databes  
     ProgrammeerTalen: [
