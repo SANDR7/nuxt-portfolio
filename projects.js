@@ -121,11 +121,11 @@ export default [
         Collection for me and others, because in that way I can self-reflect & see my evaluation.
         `,
         Requirements: `
-        <li>Expandable</li>
-        <li>Categorized</li>
-        <li>Future Proofed</li>
-        <li>Ease of Use</li>
-        <li>Decent Design</li>
+        <li class='requirementItem'>Expandable</li>
+        <li class='requirementItem'>Categorized</li>
+        <li class='requirementItem'>Future Proofed</li>
+        <li class='requirementItem'>Ease of Use</li>
+        <li class='requirementItem'>Decent Design</li>
         `,
         Research: `
         To create the website that is fullpage I’m going to use a library. The only one I could find is the fullpage.js
