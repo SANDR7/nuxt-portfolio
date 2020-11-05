@@ -28,19 +28,31 @@
           </div>
         </div>
         <div class="secondSect">
-          <div>
-            <h3 class="header">Research &amp; Approach</h3>
-            <p>
-              {{project.Research}}
-            </p>
+          <div class="leftSect">
+            <div class="research">
+              <h3 class="header">Research &amp; Approach</h3>
+              <p>
+                {{ project.Research }}
+              </p>
+            </div>
+            <div class="columns">
+              <div>
+                <h3 class="header">The Experience</h3>
+                <p>
+                  {{ project.Ideas }}
+                </p>
+              </div>
+              <div>
+                <h3 class="header">Process</h3>
+                <p>
+                  {{ project.Process }}
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <div>
-              <h3 class="header">The Experience</h3>
-            </div>
-            <div>
-              <h3 class="header">Process</h3>
-            </div>
+          <div class="rightSect">
+            <h3 class="header">Some thoughts</h3>
+            <!-- <ul v-html="project."></ul> -->
           </div>
         </div>
       </article>
@@ -48,28 +60,27 @@
   </div>
 </template>
 
-
 <script>
 import projects from "~~/projects";
 export default {
   head() {
     return {
-      title: `Case Study | ${this.project.Projectnaam} - Sander van Ast`,
+      title: `Case Study | ${this.project.Projectnaam} - Sander van Ast`
     };
   },
   data() {
     return {
-      projects,
+      projects
     };
   },
   computed: {
     project() {
       let id = this.$route.params.id;
-      return this.projects.find((project) => {
+      return this.projects.find(project => {
         return project.id == id;
       });
-    },
-  },
+    }
+  }
   // asyncData({store}) {
   //     console.log(store.state.ProjectCards)
   // },
@@ -126,6 +137,10 @@ export default {
         }
       }
 
+      p {
+        font-size: $fs-paragraph-2;
+        line-height: 36px;
+      }
       .firstSect {
         display: flex;
         width: 100%;
@@ -172,6 +187,30 @@ export default {
               }
             }
           }
+        }
+      }
+      .secondSect {
+        display: flex;
+        margin: 2rem 0;
+        .leftSect {
+          width: 73%;
+          .research {
+            margin-bottom: 2rem;
+          }
+          .columns {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            p {
+              width: 90%;
+            }
+          }
+        }
+        .rightSect {
+          @include CardBackground;
+          margin: 0 4rem;
+          padding: 1em 3em;
+          min-width: max-content;
         }
       }
     }
