@@ -1,44 +1,49 @@
 <template>
   <div class="Projecten">
-    &#46;Recent Projects 	&#123;
-      <div class="comment">Click this link ↓ to see the full descriptions</div>
-    <div style="margin-left: 1rem;" @click="ScrolltoTop">
+    &#46;Recent Projects &#123;
+    <div class="comment">Click this link ↓ to know more about the project</div>
+    <div style="margin-left: 1rem" @click="ScrolltoTop">
       &#64;include
-      <nuxt-link to="/Projects" title="All Projects" @click="ScrolltoTop">all&#95;Projects</nuxt-link>&#59;
+      <nuxt-link to="/Projects" title="All Projects" @click="ScrolltoTop"
+        >all&#95;Projects</nuxt-link
+      >&#59;
     </div>
     <div class="Cards">
       <div
         class="Card"
-        v-for="(project, id) in projects.slice(Math.max(projects.length - 3)).reverse()"
+        v-for="(project, id) in projects
+          .slice(Math.max(projects.length - 3))
+          .reverse()"
         :key="id"
       >
-        <a :href=project.Url_src target="blank">
+        <a :href="project.Url_src" target="blank">
           <img :src="project.Img_src" alt="ProjectImg" />
         </a>
         <div class="Beschrijving">
           <div class="subTitle">Quick Description</div>
-          <p>{{project.QuickDesc}}</p>
+          <p>{{ project.QuickDesc }}</p>
         </div>
-        <header>{{project.Projectnaam}}</header>
+        <header>{{ project.Projectnaam }}</header>
       </div>
-    </div>&#125;
+    </div>
+    &#125;
   </div>
 </template>
 
 <script>
-import projects from '~~/projects';
+import projects from "~~/projects";
 import { mapState } from "vuex";
 export default {
   data() {
     return {
-      projects
-    }
+      projects,
+    };
   },
   methods: {
     ScrolltoTop() {
-      scrollTo({scrollTop:1200},'0');
+      scrollTo({ scrollTop: 1200 }, "0");
     },
-  }
+  },
 };
 </script>
 
@@ -50,10 +55,10 @@ export default {
     margin-left: 1rem;
     font-style: italic;
     &::before {
-      content: '/* ';
+      content: "/* ";
     }
     &::after {
-      content: ' */';
+      content: " */";
     }
   }
   // deze div is een wrapper van de cards
@@ -71,7 +76,7 @@ export default {
       .Card {
         padding: 2rem 1rem;
         header {
-          font-size: $fs-paragraph-2 * .9;
+          font-size: $fs-paragraph-2 * 0.9;
         }
         .Beschrijving {
           min-height: 6rem;
@@ -92,17 +97,17 @@ export default {
         letter-spacing: 0.7px;
         font-weight: 700;
         @media screen and (min-width: $Laptop1) {
-          font-size: $fs-header * .4;
+          font-size: $fs-header * 0.4;
         }
-        @media only screen and (min-width: $TabletSize1){
-        font-size: $fs-header * .7;
+        @media only screen and (min-width: $TabletSize1) {
+          font-size: $fs-header * 0.7;
         }
-        @media only screen and (min-width: $MobileSize1)  {
-        font-size: $fs-header * .4;
+        @media only screen and (min-width: $MobileSize1) {
+          font-size: $fs-header * 0.4;
         }
       }
       a {
-        @include HoverFx(0,transparent,0);
+        @include HoverFx(0, transparent, 0);
         img {
           display: inline-block;
           width: 100%;
@@ -115,10 +120,10 @@ export default {
           filter: brightness(var(--ImageFilter));
         }
         &:hover {
-          filter: opacity(.6);
+          filter: opacity(0.6);
         }
       }
-      
+
       .Beschrijving {
         margin: 1rem 0 2rem;
         text-align: left;
@@ -136,24 +141,24 @@ export default {
     }
   }
 }
-@media only screen and (max-width : 970px) {
-.Projecten {
-  font-size: $fs-paragraph-2;
-  // deze div is een wrapper van de cards
-  .Cards {
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 3rem 1rem;
+@media only screen and (max-width: 970px) {
+  .Projecten {
+    font-size: $fs-paragraph-2;
+    // deze div is een wrapper van de cards
+    .Cards {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 3rem 1rem;
+    }
   }
-}
 }
 
-@media only screen and (min-width : $LargeScreen1) {
-.Projecten {
-  font-size: $fs-paragraph-2;
-  // deze div is een wrapper van de cards
-  .Cards {
+@media only screen and (min-width: $LargeScreen1) {
+  .Projecten {
+    font-size: $fs-paragraph-2;
+    // deze div is een wrapper van de cards
+    .Cards {
       grid-gap: 3rem;
+    }
   }
-}
 }
 </style>
