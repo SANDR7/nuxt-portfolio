@@ -92,7 +92,7 @@
             <i class="fab fa-twitter-square"></i>
           </a>
           <a
-            href="https://www.instagram.com/sndr.dsgn/"
+            href="https://www.instagram.com/sandr.9/"
             target="blank"
             title="Instagram"
           >
