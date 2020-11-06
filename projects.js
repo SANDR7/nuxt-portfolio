@@ -140,26 +140,26 @@ export default [
         Ideas: `
         The idea that I had in mind is some kind of fullpage website, because it is mainly easy to navigate and easy to
         use. But first I need to create some sort of layout or wireframe for the School Collection, so I can look at a
-        glance what needs to happen. I know for certain that the wireframe needs a navigation bar and a footer, but also
-        a component tree, color scheme and a character style. The School Collection will have 3 main pages in the
-        navigation; the homepage, contactpage and an aboutpage. Thereby 12 subject pages, 2 about pages. For all of this
-        I will use Adobe XD.
+        glance what needs 
         `,
         Process: `
         I began by opening an Adobe XD Project and setup all my components and assets that I’m going to use. Things such
         as colors and type sizes & styles. But also the navigation and footer, because the components aren’t going to
-        change much. When I’m done with setting up the component I will start with the home page. Specifically the hero
-        section, that the section what you will see first when you’re visiting the website. Then I will make the other
-        pages like the about page and subjects page.
-        Now It’s time for development, The only programming languages that I knew back then was HTML & CSS. So I had to
-        make every induvial page separately from the rest.
+        change much. When I’m done with
+        `,
+        Thoughts: `
+        <li class='ThoughtItem'>Expandable</li>
+        <li class='ThoughtItem'>Expandable</li>
+        <li class='ThoughtItem'>Expandable</li>
+        <li class='ThoughtItem'>Expandable</li>
+        
         `,
         Techniques: `
-        <li>Expandable</li>
-        <li>Categorized</li>
-        <li>Future Proofed</li>
-        <li>Ease of Use</li>
-        <li>Decent Design</li>
+        <li class='TechniqueItem'>Expandable</li>
+        <li class='TechniqueItem'>Categorized</li>
+        <li class='TechniqueItem'>Future Proofed</li>
+        <li class='TechniqueItem'>Ease of Use</li>
+        <li class='TechniqueItem'>Decent Design</li>
         `,
         // END - Case study content
         // ======================================================================================================================================================================
