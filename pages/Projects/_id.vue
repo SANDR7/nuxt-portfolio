@@ -36,26 +36,42 @@
               </p>
             </div>
             <div class="columns">
-              <div>
+              <div class="experience">
                 <h3 class="header">The Experience</h3>
                 <p>
                   {{ project.Ideas }}
                 </p>
               </div>
-              <div>
+              <div class="process">
                 <h3 class="header">Process</h3>
                 <p>
                   {{ project.Process }}
                 </p>
               </div>
             </div>
+            <div class="PreviewImg">
+              <img :src="project.Img_src" alt="testing" />
+            </div>
           </div>
           <div class="rightSect">
             <h3 class="header">Some thoughts</h3>
-            <!-- <ul v-html="project."></ul> -->
+            <div class="ThoughtList">
+              <ul class="scroll" v-html="project.Thoughts"></ul>
+            </div>
+            <h3 class="header">Used Techniques</h3>
+            <div class="TechniqueList">
+              <ul class="scroll" v-html="project.Techniques"></ul>
+            </div>
           </div>
         </div>
       </article>
+      <div class="endWord">
+        <h3>Final Result</h3>
+        <!-- <h3>Final Outcome</h3> -->
+        <!-- <p>
+          {{project.Summery}}
+        </p> -->
+      </div>
     </div>
   </div>
 </template>
@@ -202,16 +218,63 @@ export default {
             width: 100%;
             justify-content: space-between;
             p {
-              width: 90%;
+              width: 100%;
+            }
+
+            .experience {
+              @include CardBackground;
+              margin-right: 4em;
+              padding: 2em 3em;
+            }
+          }
+
+          .PreviewImg {
+            padding: 2em 0 0;
+            border-radius: $borderRadius12;
+            img {
+              border-radius: $borderRadius12;
+              width: 100%;
+              height: 500px;
+              object-fit: cover;
             }
           }
         }
         .rightSect {
           @include CardBackground;
-          margin: 0 4rem;
-          padding: 1em 3em;
+          margin: 0 1.5rem;
+          padding: 4em 3em;
           min-width: max-content;
+          .ThoughtList,
+          .TechniqueList {
+            margin: 1em 0;
+            ::-webkit-scrollbar {
+              width: 5px;
+            }
+            .scroll,
+            .scroll {
+              overflow-y: auto;
+              scrollbar-width: thin; /* Firefox */
+              display: flex;
+              flex-direction: column;
+              height: 400px;
+              .ThoughtItem,
+              .TechniqueItem {
+                @include subCardBackground;
+                width: 95%;
+                margin: 0.7rem 0;
+                justify-content: center;
+              }
+            }
+          }
         }
+      }
+    }
+    .endWord {
+      padding: 2rem 0;
+      width: 100%;
+      text-align: center;
+      h3 {
+        font-size: $fs-header * .8;
       }
     }
   }
