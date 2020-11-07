@@ -125,6 +125,14 @@ export default {
         -webkit-text-stroke: 2px $OrangeColor1;
         -webkit-text-fill-color: transparent;
       }
+      @media only screen and (min-width: $MobileSize1) {
+        font-size: $fs-header * 0.7;
+        letter-spacing: inherit;
+      }
+      @media only screen and (min-width: $Laptop1) {
+        font-size: $fs-header * 1.3;
+        letter-spacing: 2px;
+      }
     }
     // project datum en dienst
     .Pinfo {
@@ -135,6 +143,12 @@ export default {
       text-transform: uppercase;
       justify-content: space-between;
       opacity: $WmarkOpacity * 3;
+      @media only screen and (min-width: $MobileSize1) {
+        font-size: $fs-paragraph-2 * 0.6;
+      }
+      @media only screen and (min-width: $MobileSize1) {
+        font-size: $fs-paragraph-2;
+      }
     }
     .Background {
       @include CardBackground;
@@ -159,6 +173,7 @@ export default {
       }
       .firstSect {
         display: flex;
+        flex-direction: row;
         width: 100%;
         .Image {
           width: 45%;
@@ -269,12 +284,160 @@ export default {
         }
       }
     }
+    @media only screen and (min-width: $MobileSize1) {
+      .Background {
+        .firstSect {
+          flex-direction: column;
+          .Image {
+            width: 100%;
+            height: 100px;
+          }
+        }
+      }
+    }
+    @media only screen and (min-width: $Laptop1) {
+      .Background {
+        @include CardBackground;
+        background-color: var(--BackgroundLevel2);
+        box-shadow: $innerShadow;
+        margin: 0 2rem;
+        padding: 2rem 2.5rem !important;
+        z-index: 10;
+
+        .header {
+          font-size: $fs-paragraph-2 * 1.5;
+          text-transform: capitalize;
+          &::after {
+            content: ":";
+            color: $OrangeColor1;
+          }
+        }
+
+        p {
+          font-size: $fs-paragraph-2;
+          line-height: 36px;
+        }
+        .firstSect {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          .Image {
+            width: 45%;
+            height: max-content;
+            object-fit: cover;
+            border-radius: $borderRadius12;
+            filter: brightness(var(--ImageFilter));
+          }
+          .rightSect {
+            margin: 0 4rem;
+            width: 50%;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: space-between;
+            .objective {
+              p {
+                font-size: $fs-paragraph-2;
+                line-height: 36px;
+              }
+            }
+            .requirements {
+              margin-top: 4rem;
+              width: 100%;
+              .requirementsList {
+                margin: 1rem 0;
+                @include CardBackground;
+                padding: 1em 1.2em;
+                .scroll {
+                  overflow-x: auto;
+                  scrollbar-width: thin; /* Firefox */
+                  display: flex;
+                }
+                ::-webkit-scrollbar {
+                  height: 5px;
+                }
+                .requirementItem {
+                  @include subCardBackground;
+                  margin: 0;
+                  margin-right: 3em;
+                  margin-bottom: 1em;
+                  min-width: 200px;
+                  justify-content: center;
+                }
+              }
+            }
+          }
+        }
+        .secondSect {
+          display: flex;
+          margin: 2rem 0;
+          .leftSect {
+            width: 73%;
+            .research {
+              margin-bottom: 2rem;
+            }
+            .columns {
+              display: flex;
+              width: 100%;
+              justify-content: space-between;
+              p {
+                width: 100%;
+              }
+
+              .experience {
+                @include CardBackground;
+                margin-right: 4em;
+                padding: 2em 3em;
+              }
+            }
+
+            .PreviewImg {
+              padding: 2em 0 0;
+              border-radius: $borderRadius12;
+              img {
+                border-radius: $borderRadius12;
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+              }
+            }
+          }
+          .rightSect {
+            @include CardBackground;
+            margin: 0 1.5rem;
+            padding: 4em 3em;
+            min-width: max-content;
+            .ThoughtList,
+            .TechniqueList {
+              margin: 1em 0;
+              ::-webkit-scrollbar {
+                width: 5px;
+              }
+              .scroll,
+              .scroll {
+                overflow-y: auto;
+                scrollbar-width: thin; /* Firefox */
+                display: flex;
+                flex-direction: column;
+                height: 400px;
+                .ThoughtItem,
+                .TechniqueItem {
+                  @include subCardBackground;
+                  width: 95%;
+                  margin: 0.7rem 0;
+                  justify-content: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     .endWord {
       padding: 2rem 0;
       width: 100%;
       text-align: center;
       h3 {
-        font-size: $fs-header * .8;
+        font-size: $fs-header * 0.8;
       }
     }
   }
