@@ -22,7 +22,7 @@
          return &#40;
           <div style="margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div>
           <!-- <div style="margin-left: 1rem; position: absolute;">import &#123; Databases &#125; from sources</div> -->
-          <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">import &#123; Databases	&#125; from sources</div>
+          <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">import &#123; Databases	&#125; from sources&#59;</div>
           <!-- <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div> -->
         <div class="Scroll">
           <div class="subCard" v-for="(ProgrammeerTaal, id) in ProgrammeerTalen" :key="id">
