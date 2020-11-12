@@ -99,6 +99,7 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/recaptcha',
   ],
   styleResources: {
     scss: [
@@ -131,6 +132,12 @@ export default {
     }
   },
 
+  recaptcha: {
+    hideBadge: true, // Hide badge element (v3 & v2 via size=invisible)
+    siteKey: '6LcEJuIZAAAAAA6FGqXZ7QTm3MkvgsuDLjBtSXJP', // Site key for requests
+    version: 2, // Version
+    size: 'normal' // Size: 'compact', 'normal', 'invisible' (v2)
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
