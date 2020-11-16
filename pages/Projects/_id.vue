@@ -125,14 +125,6 @@ export default {
         -webkit-text-stroke: 2px $OrangeColor1;
         -webkit-text-fill-color: transparent;
       }
-      @media only screen and (min-width: $MobileSize1) {
-        font-size: $fs-header * 0.7;
-        letter-spacing: inherit;
-      }
-      @media only screen and (min-width: $Laptop1) {
-        font-size: $fs-header * 1.3;
-        letter-spacing: 2px;
-      }
     }
     // project datum en dienst
     .Pinfo {
@@ -143,12 +135,7 @@ export default {
       text-transform: uppercase;
       justify-content: space-between;
       opacity: $WmarkOpacity * 3;
-      @media only screen and (min-width: $MobileSize1) {
-        font-size: $fs-paragraph-2 * 0.6;
-      }
-      @media only screen and (min-width: $MobileSize1) {
-        font-size: $fs-paragraph-2;
-      }
+      font-size: $fs-paragraph-2;
     }
     .Background {
       @include CardBackground;
@@ -285,17 +272,193 @@ export default {
       }
     }
     @media only screen and (min-width: $MobileSize1) {
+      // height: 80vh;
+      h1 {
+        font-size: $fs-header * 0.55;
+        letter-spacing: 0px;
+        font-weight: 700;
+        margin: 2rem 2rem 1.5rem;
+        transform: translateY(34%);
+        padding: 1rem 0;
+        -webkit-text-stroke: transparent;
+        -webkit-text-fill-color: var(--TxtColor);
+        opacity: $WmarkOpacity * 5.8;
+        &::after {
+          content: ".";
+          @include ColorTransition;
+          -webkit-text-stroke: 2px $OrangeColor1;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+      .Pinfo {
+        padding: 0 2rem;
+        margin: 1rem 0 1.5rem;
+        display: flex;
+        width: 100%;
+        text-transform: uppercase;
+        justify-content: space-between;
+        opacity: $WmarkOpacity * 3;
+        font-size: $fs-paragraph-2 * 0.7;
+      }
       .Background {
+        padding: 1rem 1.5rem !important;
+        .header {
+          &::after {
+          }
+        }
+        p {
+        }
         .firstSect {
           flex-direction: column;
           .Image {
             width: 100%;
-            height: 100px;
+            height: auto;
+          }
+          .rightSect {
+            margin: 2rem 0;
+            width: 100%;
+            .objective {
+              p {
+                line-height: 28px;
+                font-size: $fs-paragraph-1;
+              }
+            }
+            .requirements {
+              margin-top: 2rem;
+              .requirementsList {
+                .requirementItem {
+                  margin-right: 2em;
+                }
+              }
+            }
+          }
+        }
+        .secondSect {
+          flex-direction: column;
+          // background-color: red;
+          .leftSect {
+            width: 100%;
+            .research {
+              p {
+                line-height: 28px;
+                font-size: $fs-paragraph-1;
+
+              }
+            }
+            .columns {
+              p {
+              }
+              .experience {
+              }
+            }
+            .PreviewImg {
+              img {
+              }
+            }
+          }
+          .rightSect {
+            display: none;
+            .ThoughtList,
+            .TechniqueList {
+              .scroll,
+              .scroll {
+                .ThoughtItem,
+                .TechniqueItem {
+                }
+              }
+            }
           }
         }
       }
     }
+    // @media only screen and (min-width: $TabletSize1) {
+    //   .Background {
+    //     .header {
+    //       &::after {
+    //       }
+    //     }
+    //     p {
+    //     }
+    //     .firstSect {
+    //       flex-direction: column;
+    //       .Image {
+    //         width: 100%;
+    //         height: 100px;
+    //       }
+    //       .rightSect {
+    //         .objective {
+    //           p {
+    //           }
+    //         }
+    //         .requirements {
+    //           .requirementsList {
+    //             .scroll {
+    //             }
+    //             .requirementItem {
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //     .secondSect {
+    //       .leftSect {
+    //         .research {
+    //         }
+    //         .columns {
+    //           p {
+    //           }
+    //           .experience {
+    //           }
+    //         }
+    //         .PreviewImg {
+    //           img {
+    //           }
+    //         }
+    //       }
+    //       .rightSect {
+    //         .ThoughtList,
+    //         .TechniqueList {
+    //           .scroll,
+    //           .scroll {
+    //             .ThoughtItem,
+    //             .TechniqueItem {
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
     @media only screen and (min-width: $Laptop1) {
+      h1 {
+        @include ColorTransition;
+        font-size: $fs-header * 1.3;
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin: 2rem 4rem 1.5rem;
+        transform: translateY(34%);
+        padding: 1rem 0;
+        -webkit-text-stroke: transparent;
+        -webkit-text-fill-color: var(--TxtColor);
+        opacity: $WmarkOpacity * 5.8;
+        &::after {
+          content: ".";
+          @include ColorTransition;
+          -webkit-text-stroke: 2px $OrangeColor1;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+      // project datum en dienst
+      .Pinfo {
+        padding: 0 4rem;
+        margin: 1rem 0 1.5rem;
+        display: flex;
+        width: 100%;
+        text-transform: uppercase;
+        justify-content: space-between;
+        opacity: $WmarkOpacity * 3;
+        font-size: $fs-paragraph-2;
+      }
       .Background {
         @include CardBackground;
         background-color: var(--BackgroundLevel2);
@@ -432,6 +595,64 @@ export default {
         }
       }
     }
+    //   @media only screen and (min-width: $LargeScreen1) {
+    //   .Background {
+    //     .header {
+    //       &::after {
+    //       }
+    //     }
+    //     p {
+    //     }
+    //     .firstSect {
+    //       flex-direction: column;
+    //       .Image {
+    //         width: 100%;
+    //         height: 100px;
+    //       }
+    //       .rightSect {
+    //         .objective {
+    //           p {
+    //           }
+    //         }
+    //         .requirements {
+    //           .requirementsList {
+    //             .scroll {
+    //             }
+    //             .requirementItem {
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //     .secondSect {
+    //       .leftSect {
+    //         .research {
+    //         }
+    //         .columns {
+    //           p {
+    //           }
+    //           .experience {
+    //           }
+    //         }
+    //         .PreviewImg {
+    //           img {
+    //           }
+    //         }
+    //       }
+    //       .rightSect {
+    //         .ThoughtList,
+    //         .TechniqueList {
+    //           .scroll,
+    //           .scroll {
+    //             .ThoughtItem,
+    //             .TechniqueItem {
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
     .endWord {
       padding: 2rem 0;
       width: 100%;
