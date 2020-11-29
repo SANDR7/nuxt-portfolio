@@ -72,6 +72,8 @@
           <div class="subCard">User Experience design</div>
           <div class="subCard">graphic design</div>
           <div class="subCard">Logo design</div>
+          <div class="subCard">MEVN Stack</div>
+          <div class="subCard">MERN Stack</div>
           <div class="subCard">progressive web app</div>
           <div class="subCard">JSX</div>
           <div class="subCard">AJAX</div>
@@ -252,19 +254,25 @@ export default {
             &:nth-child(7) {
               .ProgrammeerTalen {
                 // FireBase
-                @include ProgressBar(34%, $OrangeColor1);
+                @include ProgressBar(34%, $PurpleColor1);
               }
             }
             &:nth-child(8) {
               .ProgrammeerTalen {
-                // My SQL
-                @include ProgressBar(47%, $OrangeColor1);
+                // MongoDB
+                @include ProgressBar(58%, $PurpleColor1);
               }
             }
             &:nth-child(9) {
               .ProgrammeerTalen {
+                //My SQL 
+                @include ProgressBar(47%, $PurpleColor1);
+              }
+            }
+            &:nth-child(10) {
+              .ProgrammeerTalen {
                 // Php My Admin
-                @include ProgressBar(65%, $OrangeColor1);
+                @include ProgressBar(65%, $PurpleColor1);
               }
             }
           }
@@ -500,11 +508,31 @@ export default {
                   top: $top;
                 }
               }
+              .NaamOs {
+                //Notion 
+                @include ProgressBar(100%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
             }
             &:nth-child(12) {
               .NaamPrograms {
                 // netlify
                 @include ProgressBar(83%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
+            }
+            &:nth-child(13) {
+              .NaamPrograms {
+                //Heroku 
+                @include ProgressBar(67%, $RedColor1);
 
                 &::before,
                 &::after {
