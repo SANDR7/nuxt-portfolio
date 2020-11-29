@@ -335,6 +335,9 @@ export default {
             .GREEN {
               color: $GreenColor1;
             }
+            .PURPLE {
+              color: $PurpleColor1;
+            }
           }
         }
         .Description,
