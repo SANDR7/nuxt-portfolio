@@ -1,185 +1,180 @@
-
 $colors: (
-    "backgroundNavLight": rgba(236, 236, 236, .96),
-    "backgroundLight": #ececec,
-    "backgroundDark": #1A1A1A,
-    "backgroundNavDark": rgba(26, 26, 26, .96),
-
-    "backgroundSections_Light": rgba(236, 236, 236, .6),
-    "backgroundSections_Dark": rgba(26, 26, 26, .6),
-    "backgroundCard1_Light": #F8F9F9,
-    "backgroundCard2_Light": #F0EFEF,
-    "backgroundCard1_Dark": #080808,
-    "backgroundCard2_Dark": #0f0f0f,
-
-    "txtLight": #2E2E2E,
-    "txtDark": #E6E4E4,
-
-    // Grey Colors worden gebruikt voor social meida icons + hover
-    "GreyColor": #666666,
-    "DarkerGreyColor": #383838,
-
-    "GeneralLight": #e6e4e4,
-    "GeneralDark": #2E2E2E,
-
-    "BoxShadowLight":   (5px 5px 22px 0 rgba(0, 0, 0, .1),
-                        -10px -10px 22px 0 rgba(255, 255, 255, .5),
-                        inset -5px -5px 5px 0 rgba(0, 0, 0, .05),
-                        inset 5px 5px 5px 0 rgba(255, 255, 255, .7)),
-                        
-    "BoxShadowDark":    (10px 10px 8px rgba(0, 0, 0, .2),
-                        -10px -10px 22px 0 rgba(29, 29, 29, .5),
-                        inset -5px -5px 5px 0 rgba(0, 0, 0, .05),
-                        inset 5px 5px 5px 0 rgba(255, 255, 255, .03))
-
+  "backgroundNavLight": rgba(236, 236, 236, 0.96),
+  "backgroundLight": #ececec,
+  "backgroundDark": #1a1a1a,
+  "backgroundNavDark": rgba(26, 26, 26, 0.96),
+  "backgroundSections_Light": rgba(236, 236, 236, 0.6),
+  "backgroundSections_Dark": rgba(26, 26, 26, 0.6),
+  "backgroundCard1_Light": #f8f9f9,
+  "backgroundCard2_Light": #f0efef,
+  "backgroundCard1_Dark": #080808,
+  "backgroundCard2_Dark": #0f0f0f,
+  "txtLight": #2e2e2e,
+  "txtDark": #e6e4e4,
+  // Grey Colors worden gebruikt voor social meida icons + hover "GreyColor": #666666,
+  "DarkerGreyColor": #383838,
+  "GeneralLight": #e6e4e4,
+  "GeneralDark": #2e2e2e,
+  "BoxShadowLight": (
+    5px 5px 22px 0 rgba(0, 0, 0, 0.1),
+    -10px -10px 22px 0 rgba(255, 255, 255, 0.5),
+    inset -5px -5px 5px 0 rgba(0, 0, 0, 0.05),
+    inset 5px 5px 5px 0 rgba(255, 255, 255, 0.7)
+  ),
+  "BoxShadowDark": (
+    10px 10px 8px rgba(0, 0, 0, 0.2),
+    -10px -10px 22px 0 rgba(29, 29, 29, 0.5),
+    inset -5px -5px 5px 0 rgba(0, 0, 0, 0.05),
+    inset 5px 5px 5px 0 rgba(255, 255, 255, 0.03)
+  )
 );
 @function Color($sort) {
-    @return map-get($colors, $sort);
-};
+  @return map-get($colors, $sort);
+}
 
 @mixin ColorTransition {
-    transition-property: all;
-    transition: $transitionDuration cubic-bezier(0,.79,.79,.93);
+  transition-property: all;
+  transition: $transitionDuration cubic-bezier(0, 0.79, 0.79, 0.93);
 }
 
 @mixin ButtonStyle {
-    cursor: pointer;
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2px;
+  cursor: pointer;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
 
-    border-radius: $borderRadius12;
-    padding: 1rem 1.5rem;
-    border: none;
+  border-radius: $borderRadius12;
+  padding: 1rem 1.5rem;
+  border: none;
 
+  color: Color(GeneralLight);
+  background: $GreenColor1;
+  background: linear-gradient(182deg, #2c9e8e, #44cebb);
+  box-shadow: inset -5px -5px 5px 0 rgba(68, 68, 68, 0.08),
+    inset 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+  @include ColorTransition;
+  &:hover,
+  &:focus {
     color: Color(GeneralLight);
-    background: $GreenColor1;
-    background: linear-gradient(182deg,#2c9e8e,#44cebb);
-    box-shadow: inset -5px -5px 5px 0 rgba(68, 68, 68, 0.08),inset 5px 5px 5px 0 rgba(0, 0, 0, .1);
-    @include ColorTransition;
-    &:hover,
-    &:focus {
-        color: Color(GeneralLight);
-        background-color: $GreenColor1;
-        outline: none;
-        filter: brightness(1.2);
-        a {
-            color: Color(GeneralLight);
-            @include HoverFx(0,transparent,0)
-        }
-    }
+    background-color: $GreenColor1;
+    outline: none;
+    filter: brightness(1.2);
     a {
-        color: Color(GeneralLight);
-        padding: 1rem 1.5rem;
-        width: 100%;
-        @include HoverFx(0,transparent,0)
+      color: Color(GeneralLight);
+      @include HoverFx(0, transparent, 0);
     }
+  }
+  a {
+    color: Color(GeneralLight);
+    padding: 1rem 1.5rem;
+    width: 100%;
+    @include HoverFx(0, transparent, 0);
+  }
 
-    @media only screen and (min-width: $TabletSize1) {
-        font-size: 20px;
-    }
-    @media only screen and (min-width: $Laptop1) {
-        font-size: 24px;
-    }
+  @media only screen and (min-width: $TabletSize1) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: $Laptop1) {
+    font-size: 24px;
+  }
 }
 
 @mixin CardBackground {
-    @include ColorTransition;
-    background-color: var(--BackGroundCardLevel1);
-    border-radius: $borderRadius12;
-    padding: 1.5rem 1rem;
-    box-shadow: var(--BoxShadow);
-    z-index: 1;
+  @include ColorTransition;
+  background-color: var(--BackGroundCardLevel1);
+  border-radius: $borderRadius12;
+  padding: 1.5rem 1rem;
+  box-shadow: var(--BoxShadow);
+  z-index: 1;
 }
 @mixin subCardBackground {
-    @include CardBackground;
-    background-color: var(--BackGroundCardLevel2);
-    display: flex;
-    margin: .7rem 1rem;
-    box-shadow: none;
-    &:hover {
-        box-shadow: $innerShadow;
-        // transform: scale(.97);
-    }
+  @include CardBackground;
+  background-color: var(--BackGroundCardLevel2);
+  display: flex;
+  margin: 0.7rem 1rem;
+  box-shadow: none;
+  &:hover {
+    box-shadow: $innerShadow;
+    // transform: scale(.97);
+  }
 }
 
 @mixin funkyText($stroke) {
-    -webkit-text-stroke: $stroke var(--TxtColor);
-    -webkit-text-fill-color: transparent;
-    // &:hover {
-    //     -webkit-text-stroke: transparent;
-    //     -webkit-text-fill-color: $GreenColor1;
-    // }
+  -webkit-text-stroke: $stroke var(--TxtColor);
+  -webkit-text-fill-color: transparent;
+  // &:hover {
+  //     -webkit-text-stroke: transparent;
+  //     -webkit-text-fill-color: $GreenColor1;
+  // }
 }
 
 @mixin BackgroundImage($url) {
-    position: relative;
-    &::after {
-        content: '';
-        background-image:url($url);
-        background-repeat: no-repeat;
-        position: absolute;
-        background-size: 100% auto;
-        top:0px;
-        left: 0px;
-        width: 100%;
-        overflow: auto;
-        height: 100%;
-        z-index:-1;
-        opacity: $WmarkOpacity / 1.7;
-    }
-
+  position: relative;
+  &::after {
+    content: "";
+    background-image: url($url);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: 100% auto;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+    z-index: -1;
+    opacity: $WmarkOpacity / 1.7;
+  }
 }
 
 @mixin ProgressBar($width, $Color) {
-    position: relative;
-    width: 70%;
-    $Top: 80%;
-    &:before {
-        content: '';
-        position: absolute;
-        top: $Top;
-        left: 0;
-        width: 100%;
-        height: 7px;
-        background-color: var(--ProgressColor);
-        border-radius: 50px;
-    }
-    &:after {
-        content: '';
-        position: absolute;
-        top: $Top;
-        left: 0;
-        width: $width;
-        height: 7px;
-        background-color: $Color;
-        border-radius: 50px;
-    }
+  position: relative;
+  width: 70%;
+  $Top: 80%;
+  &:before {
+    content: "";
+    position: absolute;
+    top: $Top;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: var(--ProgressColor);
+    border-radius: 50px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: $Top;
+    left: 0;
+    width: $width;
+    height: 7px;
+    background-color: $Color;
+    border-radius: 50px;
+  }
 }
 
-@mixin HoverFx($height, $Color, $scaleX ) {
-    position: relative;
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -1px;
-        width: 100%;
-        height: $height;
-        background-color: $Color;
-        border-radius: 50px;
+@mixin HoverFx($height, $Color, $scaleX) {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: $height;
+    background-color: $Color;
+    border-radius: 50px;
 
-        // @include ColorTransition;
-        transform-origin: right;
-        transform: scaleX($scaleX);
-        transition: transform .3s cubic-bezier(0,.79,.79,.93);
-    }
-    &:hover::after,
-    &:focus::after {
-        transform: scaleX(1);
-        transform-origin: left;
-    }
+    // @include ColorTransition;
+    transform-origin: right;
+    transform: scaleX($scaleX);
+    transition: transform 0.3s cubic-bezier(0, 0.79, 0.79, 0.93);
+  }
+  &:hover::after,
+  &:focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
 $laptopSize1: 1600px;
 $laptopSize2: 1200px;
@@ -199,31 +194,31 @@ $LargeScreen1: 1600px;
 //--------------------------
 // Standaard gegevens
 //--------------------------
-$transitionDuration: .63s;
+$transitionDuration: 0.63s;
 $borderRadius12: 12px;
 $borderRadius8: 8px;
 
-$RedColor1: #C94040;
-$OrangeColor1: #FF7B47;
+$RedColor1: #c94040;
+$OrangeColor1: #ff7b47;
 $GreenColor1: #31af9f;
 $PurpleColor1: #4764ff;
 $LinkColor1: #b03132;
 $sectionPadding: 0 4rem;
 
-
-$innerShadow: inset -5px -5px 5px 0 rgba(68, 68, 68, 0.08),inset 5px 5px 5px 0 rgba(0, 0, 0, .1);
-$innerShadowLink: inset -5px -5px 5px 0 rgba(176, 49, 50, 0.14),inset 5px 5px 5px 0 rgba(127, 36, 36, .26);
+$innerShadow: inset -5px -5px 5px 0 rgba(68, 68, 68, 0.08),
+  inset 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+$innerShadowLink: inset -5px -5px 5px 0 rgba(176, 49, 50, 0.14),
+  inset 5px 5px 5px 0 rgba(127, 36, 36, 0.26);
 // Fontsizes
-
 
 $fs-header: 54px;
 $fs-paragraph-1: 16px;
 $fs-paragraph-2: 18px;
-$WmarkOpacity: .15;
+$WmarkOpacity: 0.15;
 
 $thumbnailWidth: 1440px;
 $thumbnailHeight: 870px;
-$thumbnailZoom: .25;
+$thumbnailZoom: 0.25;
 //--------------------------
 // Theme
 //--------------------------
@@ -232,7 +227,37 @@ $thumbnailZoom: .25;
 //     // display: none;
 //     width: 5px;
 // }
-.dark {
+// .dark {
+//     --BackgroundNavColor: #{Color(backgroundNavDark)};
+//     --BackgroundColor: #{Color(backgroundDark)};
+//     --BackGroundCardLevel1: #{Color(backgroundCard1_Dark)};
+//     --BackGroundCardLevel2: #{Color(backgroundCard2_Dark)};
+//     --BackgroundSections: #{Color(backgroundSections_Dark)};
+
+//     --ProgressColor: #{Color(GeneralDark)};
+
+//     --TxtColor: #{Color(txtDark)};
+
+//     --BoxShadow: #{Color(BoxShadowDark)};
+//     --ImageFilter: 75%;
+// }
+// .light {
+//     --BackgroundNavColor: #{Color(backgroundNavLight)};
+//     --BackgroundColor: #{Color(backgroundLight)};
+//     --BackGroundCardLevel1: #{Color(backgroundCard1_Light)};
+//     --BackGroundCardLevel2: #{Color(backgroundCard2_Light)};
+
+//     --BackgroundSections: #{Color(backgroundSections_Light)};
+
+//     --ProgressColor: #{Color(GeneralLight)};
+
+//     --TxtColor: #{Color(txtLight)};
+
+//     --BoxShadow: #{Color(BoxShadowLight)};
+//     --ImageFilter: 100%;
+// }
+@media (prefers-color-scheme: dark) {
+  :root {
     --BackgroundNavColor: #{Color(backgroundNavDark)};
     --BackgroundColor: #{Color(backgroundDark)};
     --BackGroundCardLevel1: #{Color(backgroundCard1_Dark)};
@@ -245,8 +270,10 @@ $thumbnailZoom: .25;
 
     --BoxShadow: #{Color(BoxShadowDark)};
     --ImageFilter: 75%;
+  }
 }
-.light {
+@media (prefers-color-scheme: light) {
+  :root {
     --BackgroundNavColor: #{Color(backgroundNavLight)};
     --BackgroundColor: #{Color(backgroundLight)};
     --BackGroundCardLevel1: #{Color(backgroundCard1_Light)};
@@ -260,21 +287,23 @@ $thumbnailZoom: .25;
 
     --BoxShadow: #{Color(BoxShadowLight)};
     --ImageFilter: 100%;
+  }
 }
-
 
 .contentAni-enter-active {
-    @include ColorTransition;
-    transition: $transitionDuration * 1 cubic-bezier(.53,.99,.67,.66);
-    opacity: 1;
+  @include ColorTransition;
+  transition: $transitionDuration * 1 cubic-bezier(0.53, 0.99, 0.67, 0.66);
+  opacity: 1;
 }
 .contentAni-enter {
-    transition-delay: .5s;
+  transition-delay: 0.5s;
 }
-.contentAni-enter, .contentAni-leave-to {
-    opacity: 0;
+.contentAni-enter,
+.contentAni-leave-to {
+  opacity: 0;
 }
 
-.contentAni-enter-to, .contentAni-leave {
-    opacity: 1;
+.contentAni-enter-to,
+.contentAni-leave {
+  opacity: 1;
 }
