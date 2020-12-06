@@ -16,7 +16,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: 'Personal Portfolio - Sander van Ast',
+    title: 'Sander van Ast',
     htmlAttrs: {
       lang: 'en'
     },
