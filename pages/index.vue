@@ -49,6 +49,11 @@ export default {
     StrengthsSection,
     ContactSection,
   },
+  head() {
+    return {
+      titleTemplate: "Personal Portfolio - %s"
+    }
+  }
 };
 </script>
 

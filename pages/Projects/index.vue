@@ -41,9 +41,7 @@
         <br />
       </div>
       <div class="padding">
-        <button class="showMore"
-         @click="showProjects"
-         >
+        <button class="showMore" @click="showProjects">
           {{ showMoreTxtProj }}
         </button>
       </div>
@@ -54,7 +52,9 @@
       <div class="Background ProjectenGrid">
         <div
           class="Card"
-          v-for="(SomeExercise, index) in SomeExercises.slice(isVisible_Excer).reverse()"
+          v-for="(SomeExercise, index) in SomeExercises.slice(
+            isVisible_Excer
+          ).reverse()"
           :key="index.id"
         >
           <div class="CardHeader">
@@ -66,7 +66,7 @@
 
           <img :src="SomeExercise.Img_src" alt="ProjectImg" />
 
-            <div v-html="SomeExercise.UsedTech.tags" class="tags"></div>
+          <div v-html="SomeExercise.UsedTech.tags" class="tags"></div>
           <div class="UsedLang">
             <div class="title">Used Techniques</div>
             <div
@@ -97,11 +97,7 @@
             >
               <i class="far fa-code-branch"></i><span>Source Code</span>
             </a>
-            <a
-              :href="SomeExercise.Url_src"
-              target="blank"
-              title="View Website"
-            >
+            <a :href="SomeExercise.Url_src" target="blank" title="View Website">
               <i class="far fa-link"></i><span>Visit Site</span>
             </a>
           </div>
@@ -131,7 +127,15 @@ import ContactSection from "~/components/home/ContactSection";
 export default {
   head() {
     return {
-      title: "Projects - Sander van Ast"
+      titleTemplate: "Projects - %s",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Here you can view my projects that I jave collected to show you what I'm capable of."
+        }
+      ]
     };
   },
   data() {
@@ -141,7 +145,7 @@ export default {
       showMoreTxtProj: "Show All",
       showMoreTxt: "Show All",
       isVisible_Proj: 2,
-      isVisible_Excer: 1,
+      isVisible_Excer: 1
     };
   },
   methods: {
@@ -149,43 +153,43 @@ export default {
       scrollTo({ scrollTop: 1200 }, "0");
     },
     showProjects() {
-      if(this.isVisible_Proj = this.isVisible_Proj) {
+      if ((this.isVisible_Proj = this.isVisible_Proj)) {
         // shows all projects
         this.isVisible_Proj = 0;
-        this.showMoreTxtProj = 'show less';
+        this.showMoreTxtProj = "show less";
         // scroll to the beginning
-        this.$refs['projHeader'].scrollIntoView({
-          behavior: 'smooth'
+        this.$refs["projHeader"].scrollIntoView({
+          behavior: "smooth"
         });
       } else {
         // shows only 3 projects
         this.isVisible_Proj = 2;
-        this.showMoreTxtProj = 'show all';
+        this.showMoreTxtProj = "show all";
         // scroll to the beginning
-        this.$refs['projHeader'].scrollIntoView({
-          behavior: 'smooth'
+        this.$refs["projHeader"].scrollIntoView({
+          behavior: "smooth"
         });
       }
     },
     showExcercies() {
-      if(this.isVisible_Excer = this.isVisible_Excer) {
+      if ((this.isVisible_Excer = this.isVisible_Excer)) {
         // shows all projects
         this.isVisible_Excer = 0;
-        this.showMoreTxt = 'show less';
+        this.showMoreTxt = "show less";
         // scroll to the beginning
-        this.$refs['exerHeader'].scrollIntoView({
-          behavior: 'smooth'
+        this.$refs["exerHeader"].scrollIntoView({
+          behavior: "smooth"
         });
       } else {
         // shows only 2 projects
         this.isVisible_Excer = 1;
-        this.showMoreTxt = 'show all';
+        this.showMoreTxt = "show all";
         // scroll to the beginning
-        this.$refs['exerHeader'].scrollIntoView({
-          behavior: 'smooth'
+        this.$refs["exerHeader"].scrollIntoView({
+          behavior: "smooth"
         });
       }
-    },
+    }
   },
   components: {
     ContactSection
@@ -207,17 +211,17 @@ export default {
   .Section {
     .padding {
       padding: 0rem 2rem;
-        // @include ButtonStyle();
+      // @include ButtonStyle();
       .showMore {
         @include ButtonStyle();
         margin: 0 auto;
       }
     }
 
-    @media only screen and (min-width : $MobileSize1) {
+    @media only screen and (min-width: $MobileSize1) {
       .padding {
         padding: 0rem 2rem;
-          // @include ButtonStyle();
+        // @include ButtonStyle();
         .showMore {
           @include ButtonStyle();
           width: 100%;
@@ -225,29 +229,28 @@ export default {
         }
       }
     }
-      @media only screen and (min-width: $TabletSize1) {
+    @media only screen and (min-width: $TabletSize1) {
       .padding {
         padding: 0rem 14rem;
-          // @include ButtonStyle();
+        // @include ButtonStyle();
         .showMore {
           @include ButtonStyle();
           margin: 0 auto;
         }
       }
-      
-      }
-      
-      @media only screen and (min-width: $Laptop1) {
+    }
+
+    @media only screen and (min-width: $Laptop1) {
       .padding {
         padding: 0rem 7rem;
-          // @include ButtonStyle();
+        // @include ButtonStyle();
         .showMore {
           @include ButtonStyle();
           width: 20%;
           margin: 0 auto;
         }
       }
-      }
+    }
     .ProjectenGrid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -292,24 +295,24 @@ export default {
           filter: brightness(var(--ImageFilter));
         }
         .tags {
+          display: inline;
+          margin: 0.4rem 0;
+          .TAG {
             display: inline;
-            margin: .4rem 0;
-            .TAG {
-              display: inline;
-              margin-right: .5rem;
-              text-transform: capitalize;
-              opacity: $WmarkOpacity;
-              &::before {
-                content: '#';
-              }
+            margin-right: 0.5rem;
+            text-transform: capitalize;
+            opacity: $WmarkOpacity;
+            &::before {
+              content: "#";
             }
           }
+        }
         .UsedLang {
           margin: 0rem 0 1.5rem;
 
           .ProgrammeerTalen {
             display: block;
-            margin: .5rem 0;
+            margin: 0.5rem 0;
             // width: 100%;
 
             .ProgrammeerTaal {
@@ -318,7 +321,7 @@ export default {
               font-weight: bolder;
               font-size: 14px;
               letter-spacing: 0.7px;
-              margin: .3rem .5rem;
+              margin: 0.3rem 0.5rem;
               margin-left: 0;
               @include CardBackground;
               background-color: var(--BackGroundCardLevel2);
@@ -361,7 +364,7 @@ export default {
           width: 100%;
           padding: 0 2rem;
           justify-content: space-between;
-              a {
+          a {
             font-size: $fs-paragraph-1 * 1.3;
             padding: 0.5rem;
             span {

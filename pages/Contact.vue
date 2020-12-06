@@ -21,12 +21,20 @@ import ContactSection from "~/components/home/ContactSection";
 export default {
   head() {
     return {
-      title: "Contact - Sander van Ast",
+      titleTemplate: "Contact - %s",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "I'm currently searching for a dutch internship. If you have any interest you can easily fill out the contact form."
+        }
+      ]
     };
   },
   components: {
     ContactSection,
     landingPage
-  },
+  }
 };
 </script>
