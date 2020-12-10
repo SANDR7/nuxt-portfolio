@@ -145,7 +145,7 @@ export default [
         `,
     Img_src:
       "https://src.sandervanast.com/images/PNG/Thumbnails/Excercise_mern-exerciseTracker.png",
-    Url_src: "https://damp-peak-91653.herokuapp.com//",
+    Url_src: "https://damp-peak-91653.herokuapp.com",
     // name of repo
     Git_url: `${prefix}/mern-exercise-tracker`,
     Datum: "Nov. 2020",
