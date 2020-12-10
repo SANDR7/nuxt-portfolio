@@ -438,8 +438,8 @@ export default {
         .Hero {
           height: 55%;
           img {
-            height: 27vw;
-            transform: translate(-3%, -20%);
+            height: 30vw;
+            transform: translate(-10%, -20%);
           }
           .ide {
             font-size: $fs-header;
