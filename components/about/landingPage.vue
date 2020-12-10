@@ -137,10 +137,12 @@ export default {
       display: grid;
       align-content: center;
       justify-content: center;
+      position: relative;
+      left:3%;
       .Gallery {
         display: grid;
         margin: 2rem 0;
-        width: max-content;
+        // width: max-content;
         grid-template-areas:
           "F1 F4 F4 F3"
           "F2 F6 F5 F5";
@@ -327,7 +329,7 @@ export default {
           grid-gap: 1rem;
           .F1,
           .F5 {
-            height: 100%;
+            height: 416px;
           }
         }
       }
