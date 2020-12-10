@@ -3,11 +3,11 @@ $colors: (
   "backgroundLight": #ececec,
   "backgroundDark": #1a1a1a,
   "backgroundNavDark": rgba(26, 26, 26, 0.96),
-  "backgroundSections_Light": rgba(236, 236, 236, 0.6),
-  "backgroundSections_Dark": rgba(26, 26, 26, 0.6),
-  "backgroundCard1_Light": #f8f9f9,
-  "backgroundCard2_Light": #f0efef,
-  "backgroundCard1_Dark": #080808,
+  "backgroundSections_Light": rgba(236, 236, 236, 0.2),
+  "backgroundSections_Dark": rgba(26, 26, 26, 0.2),
+  "backgroundCard1_Light": #ffffff49,
+  "backgroundCard2_Light": #f8f9f9,
+  "backgroundCard1_Dark": #08080879,
   "backgroundCard2_Dark": #0f0f0f,
   "txtLight": #2e2e2e,
   "txtDark": #e6e4e4,
@@ -82,11 +82,14 @@ $colors: (
 
 @mixin CardBackground {
   @include ColorTransition;
-  background-color: var(--BackGroundCardLevel1);
+  background: var(--BackGroundCardLevel1);
   border-radius: $borderRadius12;
   padding: 1.5rem 1rem;
   box-shadow: var(--BoxShadow);
   z-index: 1;
+  backdrop-filter: blur(12px);
+  border: solid 3px transparent;
+  background-clip: border-box;
 }
 @mixin subCardBackground {
   @include CardBackground;
@@ -123,7 +126,7 @@ $colors: (
     overflow: auto;
     height: 100%;
     z-index: -1;
-    opacity: $WmarkOpacity / 1.7;
+    opacity: $WmarkOpacity / 0.9;
   }
 }
 
