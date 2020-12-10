@@ -58,7 +58,7 @@ import { fireDb } from "~/plugins/firebase.js";
 import ContactForm from "~/layouts/partials/contactform";
 export default {
   computed: {
-    ...mapState(["Services"]),
+    ...mapState(["Services"])
   },
 
   // firestore() {
@@ -67,8 +67,8 @@ export default {
   //   }
   // }
   components: {
-    ContactForm,
-  },
+    ContactForm
+  }
 };
 </script>
 
@@ -117,7 +117,7 @@ export default {
         justify-content: space-around;
         height: 100%;
         .title {
-          margin: 1rem 0 .5rem;
+          margin: 1rem 0 0.5rem;
           font-size: $fs-paragraph-2;
           opacity: $WmarkOpacity * 3;
           text-transform: uppercase;
@@ -305,7 +305,7 @@ export default {
           }
         }
         .WMark {
-          font-size: 130px;
+          font-size: 146px;
         }
       }
       .Social {
