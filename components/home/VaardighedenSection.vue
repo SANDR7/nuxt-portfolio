@@ -570,6 +570,15 @@ export default {
                   top: $top;
                 }
               }
+              .NaamOs {
+                //Google cloud
+                @include ProgressBar(70%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
             }
             &:nth-child(13) {
               .NaamPrograms {
