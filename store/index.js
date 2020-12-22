@@ -283,6 +283,12 @@ export const state = () => ({
         Image_alt: 'notion_logo',
         name: 'Notion'
       },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/google-cloud.svg',
+        cat: 'Cloud Computing-Services',
+        Image_alt: 'Gcloud_logo',
+        name: 'Google Cloud'
+      },
     ],
     Services: [
       {
