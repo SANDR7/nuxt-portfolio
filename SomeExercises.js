@@ -150,5 +150,38 @@ export default [
     Git_url: `${prefix}/mern-exercise-tracker`,
     Datum: "Nov. 2020",
     gitRepo: true
+  },
+  {
+    Projectnaam: "Random Things Generator",
+    id: "exercise-tracker",
+    soort: "Website",
+    QuickDesc: "This project has no content so it's empty.",
+    UsedTech: {
+      tags: `
+        <div class="TAG">Database</div>
+        <div class="TAG">Server</div>
+        <div class="TAG">faker.js</div>
+        <div class="TAG">FireStore</div>
+        `,
+      Langs: `
+        <div class="ProgrammeerTaal ORANGE">Javascript</div>
+        <div class="ProgrammeerTaal PURPLE">FireBase</div>
+        <div class="ProgrammeerTaal GREEN">Bootstrap</div>
+        `,
+      Programs: `
+            <div class="ProgrammeerTaal RED">Google Cloud</div>
+            <div class="ProgrammeerTaal RED">Git</div>
+        `
+    },
+    FullDesc: `
+    Simple website that uses google authentication and firestore for saving list items in a database.
+        `,
+    Img_src:
+      "https://src.sandervanast.com/images/PNG/Thumbnails/Excercise_FIreList.png",
+    Url_src: "https://fir-demo-b2234.web.app/",
+    // name of repo
+    Git_url: noRepoLink,
+    Datum: "Dec. 2020",
+    gitRepo: false
   }
 ];
