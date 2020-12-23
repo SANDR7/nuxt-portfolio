@@ -100,7 +100,9 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/recaptcha',
+    '@nuxt/content',
   ],
+  router: {},
   styleResources: {
     scss: [
       '@/assets/styles/_root.scss'
