@@ -114,6 +114,8 @@ export default {
     },
     onSuccess(token) {
       console.log("Succeeded:", token);
+      this.sendMessageErr = "";
+      this.classMessageErr = "";
     },
     onExpired() {
       console.log("Expired");
