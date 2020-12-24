@@ -1,7 +1,8 @@
 <template>
   <div class="form">
-    <form @submit.prevent="sendEmail" method="post" ref="form">
+    <form @submit.prevent="Submit" method="post" ref="form" action="sendEmail">
       <div :class="classMessage">{{ sendMessage }}</div>
+      <div :class="classMessageErr">{{ sendMessageErr }}</div>
       <!-- <p>This is form is under development</p> -->
       <div class="FormItem">
         <label for="name">Name</label>
@@ -34,9 +35,15 @@
           required="required"
         ></textarea>
       </div>
-      <!-- <div class="FormItem">
+      <div class="FormItem">
         <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
-      </div> -->
+        <small style="margin-top: 2em; filter: brightness(50%);"
+          >This site is protected by reCAPTCHA and the Google
+          <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+          <a href="https://policies.google.com/terms">Terms of Service</a>
+          apply.
+        </small>
+      </div>
       <div class="FormItem">
         <input class="Submit" type="submit" name="submit" value="Send" />
       </div>
@@ -44,7 +51,6 @@
   </div>
 </template>
 >
-
 
 <script>
 import emailjs from "emailjs-com";
@@ -56,82 +62,63 @@ export default {
       email: "",
       message: "",
       sendMessage: "",
+      sendMessageErr: "",
       classMessage: "",
+      classMessageErr: ""
     };
   },
   methods: {
-    sendEmail(e) {
-      // this.test();
-      emailjs
-        .sendForm(
-          "service_y6go5eq",
-          "template_7udghln",
-          e.target,
-          "user_a360ayAtdCnk1lSc5WtWv"
-        )
-        .then(
-          (result) => {
-            console.log("SUCCESS!", result.status, result.text);
-          },
-          (error) => {
-            console.log("FAILED...", error);
-          }
-        );
-      var emailData = {
-        email: this.email,
-        name: this.name,
-        message: this.message,
-        sendMessage: this.sendMessage,
-        classMessage: this.classMessage,
-      };
+    Submit: async function(e, token) {
+      // =====================================================
+      // GOOGLE RECAPTCHA
+      // =====================================================
+      try {
+        const token = await this.$recaptcha.getResponse();
+        console.log("ReCaptcha token:", token);
+        await this.$recaptcha.reset();
+        if (token) {
+          emailjs
+            .sendForm(
+              "service_y6go5eq",
+              "template_7udghln",
+              e.target,
+              "user_a360ayAtdCnk1lSc5WtWv"
+            )
+            .then(
+              result => {
+                console.log("SUCCESS!", result.status, result.text);
+              },
+              error => {
+                console.log("FAILED...", error);
+              }
+            );
 
-      (this.name = ""),
-        (this.email = ""),
-        (this.message = ""),
-        (this.sendMessage = "The message has been sent!"),
-        (this.classMessage = "Endmessage");
-      e.target.reset();
+          (this.name = ""),
+            (this.email = ""),
+            (this.message = ""),
+            (this.sendMessage = "The message has been sent!"),
+            (this.classMessage = "Endmessage");
+          e.target.reset();
+        }
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log("Login error:", error);
+      }
+      // =====================================================
     },
-      // =====================================================
-      // GOOGLE RECAPTCHA  
-      // =====================================================
-    // async test() {
-    //   try {
-    //     const token = await this.$recaptcha.getResponse();
-    //     console.log("ReCaptcha token:", token);
-    //     await this.$recaptcha.reset();
-    //   } catch (error) {
-    //     // eslint-disable-next-line no-console
-    //     console.log("Login error:", error);
-    //   }
-    //   this.sendEmail();
-    // },
-    // 
-    // onError(error) {
-    //   console.log("Error happened:", error);
-    //   this.sendMessage = "Error";
-    //   this.classMessage = "Endmessage";
-    // },
-    // onSuccess(token) {
-    //   console.log("Succeeded:", token);
-    //   var emailData = {
-    //     email: this.email,
-    //     name: this.name,
-    //     message: this.message,
-    //     sendMessage: this.sendMessage,
-    //     classMessage: this.classMessage,
-    //   };
-
-    //   (this.name = ""),
-    //     (this.email = ""),
-    //     (this.message = ""),
-    //     (this.sendMessage = "The message has been sent!"),
-    //     (this.classMessage = "Endmessage");
-    // },
-    // onExpired() {
-    //   console.log("Expired");
-    // },
-  },
+    // recapchta handeling
+    onError(error) {
+      console.log("Error happened:", error);
+      this.sendMessageErr = "Recaptcha unsuccessful";
+      this.classMessageErr = "EndmessageErr";
+    },
+    onSuccess(token) {
+      console.log("Succeeded:", token);
+    },
+    onExpired() {
+      console.log("Expired");
+    }
+  }
 };
 </script>
 
@@ -153,8 +140,12 @@ export default {
       font-weight: 600;
       font-size: $fs-paragraph-2 * 1.2;
       color: Color(GeneralLight);
-      background-color: #4FCFBE;
+      background-color: #4fcfbe;
       box-shadow: $innerShadow;
+    }
+    .EndmessageErr {
+      @extend  .Endmessage;
+      background-color: $RedColor1;
     }
     .FormItem {
       display: flex;
