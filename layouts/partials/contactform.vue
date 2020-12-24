@@ -1,6 +1,6 @@
 <template>
   <div class="form">
-    <form @submit.prevent="Submit" method="post" ref="form" action="sendEmail">
+    <form @submit.prevent="Submit" method="post" ref="form">
       <div :class="classMessage">{{ sendMessage }}</div>
       <div :class="classMessageErr">{{ sendMessageErr }}</div>
       <!-- <p>This is form is under development</p> -->
@@ -114,6 +114,8 @@ export default {
     },
     onSuccess(token) {
       console.log("Succeeded:", token);
+      this.sendMessageErr = "";
+      this.classMessageErr = "";
     },
     onExpired() {
       console.log("Expired");
