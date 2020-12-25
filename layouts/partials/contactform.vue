@@ -15,7 +15,14 @@
         />
       </div>
       <div class="FormItem">
-        <label for="email">Email</label>
+        <label for="email"
+          ><span
+            class="Accent2"
+            title="You must enter a real email address, otherwise I will not respond"
+            >*</span
+          >
+          Email</label
+        >
         <input
           v-model.trim="email"
           type="email text"
@@ -31,7 +38,7 @@
           name="message"
           id="message"
           lang="en"
-          rows="10"
+          rows="6"
           required="required"
         ></textarea>
       </div>
@@ -45,7 +52,7 @@
         </small>
       </div>
       <div class="FormItem">
-        <input class="Submit" type="submit" name="submit" value="Send" />
+        <input class="Submit" type="submit" name="submit" value="Send" @click="topOfForm" />
       </div>
     </form>
   </div>
@@ -76,35 +83,47 @@ export default {
         const token = await this.$recaptcha.getResponse();
         console.log("ReCaptcha token:", token);
         await this.$recaptcha.reset();
+        // recaptcha validation
         if (token) {
-          emailjs
-            .sendForm(
-              "service_y6go5eq",
-              "template_7udghln",
-              e.target,
-              "user_a360ayAtdCnk1lSc5WtWv"
-            )
-            .then(
-              result => {
-                console.log("SUCCESS!", result.status, result.text);
-              },
-              error => {
-                console.log("FAILED...", error);
-              }
-            );
+          // email validation
+          if (this.email.includes("@") && this.email.includes(".")) {
+            emailjs
+              .sendForm(
+                "service_y6go5eq",
+                "template_7udghln",
+                e.target,
+                "user_a360ayAtdCnk1lSc5WtWv"
+              )
+              .then(
+                result => {
+                  console.log("SUCCESS!", result.status, result.text);
+                },
+                error => {
+                  console.log("FAILED...", error);
+                }
+              );
 
-          (this.name = ""),
-            (this.email = ""),
-            (this.message = ""),
-            (this.sendMessage = "The message has been sent!"),
-            (this.classMessage = "Endmessage");
-          e.target.reset();
+            (this.name = ""),
+              (this.email = ""),
+              (this.message = ""),
+              (this.sendMessage = "The message has been sent!"),
+              (this.classMessage = "Endmessage");
+            e.target.reset();
+          } else {
+            this.sendMessageErr = "E-mail requires an '@' sign";
+            this.classMessageErr = "EndmessageErr";
+          }
         }
       } catch (error) {
         // eslint-disable-next-line no-console
         console.log("Login error:", error);
       }
       // =====================================================
+    },
+    topOfForm() {
+      this.$refs["form"].scrollIntoView({
+        behavior: "smooth"
+      });
     },
     // recapchta handeling
     onError(error) {
@@ -146,7 +165,7 @@ export default {
       box-shadow: $innerShadow;
     }
     .EndmessageErr {
-      @extend  .Endmessage;
+      @extend .Endmessage;
       background-color: $RedColor1;
     }
     .FormItem {
@@ -159,6 +178,9 @@ export default {
       label {
         font-weight: bold;
         font-size: $fs-paragraph-2 * 1.5;
+        [title] {
+          color: red !important;
+        }
         &::after {
           content: ":";
           color: $OrangeColor1;
