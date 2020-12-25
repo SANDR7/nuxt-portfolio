@@ -87,21 +87,23 @@ export default {
     ]
   },
 
+  loading: { color: 'red' },
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
     {
-      src: "~plugins/GoogleAnalytics.js",
+      src: "~/plugins/GoogleAnalytics.js",
       mode: "client"
     },
     {
-      src: "~plugins/ga.js",
+      src: "~/plugins/ga.js",
       mode: "client"
     }
   ],
@@ -126,6 +128,7 @@ export default {
       }
     ]
   ],
+
   googleAnalytics: {
     id: "UA-174166351-1" // Used as fallback if no runtime config is provided
   },
@@ -134,11 +137,10 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
     "@nuxtjs/recaptcha",
-    "@nuxt/content"
   ],
   router: {},
   styleResources: {
-    scss: ["@/assets/styles/_root.scss"]
+    scss: ["./assets/styles/*.scss"]
   },
 
   loading: {
