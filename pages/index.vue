@@ -41,19 +41,20 @@ import ProjectenSection from "~/components/home/ProjectenSection";
 import VaardighedenSection from "~/components/home/VaardighedenSection";
 import StrengthsSection from "~/components/home/StrengthsSection";
 import ContactSection from "~/components/home/ContactSection";
+import conf from "../conf";
 export default {
   components: {
     landingPage,
     ProjectenSection,
     VaardighedenSection,
     StrengthsSection,
-    ContactSection,
+    ContactSection
   },
   head() {
     return {
       titleTemplate: "Personal Portfolio - %s"
-    }
-  }
+    };
+  },
 };
 </script>
 
@@ -94,6 +95,9 @@ li {
 .Accent {
   color: $OrangeColor1;
   filter: contrast(180%);
+}
+.Accent2 {
+  color: $RedColor1;
 }
 a {
   @include HoverFx(2px, $LinkColor1, 0);
