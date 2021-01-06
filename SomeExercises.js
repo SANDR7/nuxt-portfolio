@@ -162,8 +162,10 @@ export default [
         <div class="TAG">Server</div>
         <div class="TAG">faker.js</div>
         <div class="TAG">FireStore</div>
+        <div class="TAG">Cloud computing</div>
         `,
       Langs: `
+        <div class="ProgrammeerTaal ORANGE">HTML</div>
         <div class="ProgrammeerTaal ORANGE">Javascript</div>
         <div class="ProgrammeerTaal PURPLE">FireBase</div>
         <div class="ProgrammeerTaal GREEN">Bootstrap</div>
@@ -183,5 +185,44 @@ export default [
     Git_url: noRepoLink,
     Datum: "Dec. 2020",
     gitRepo: false
-  }
+  },
+  {
+    Projectnaam: "Vue Todo App",
+    id: "exercise-tracker",
+    soort: "Website",
+    QuickDesc: "This project has no content so it's empty.",
+    UsedTech: {
+      tags: `
+        <div class="TAG">Database</div>
+        <div class="TAG">Server</div>
+        <div class="TAG">axios.js</div>
+        <div class="TAG">express.js</div>
+        <div class="TAG">SPA</div>
+        <div class="TAG">School</div>
+        <div class="TAG">MySqli</div>
+        `,
+      Langs: `
+        <div class="ProgrammeerTaal ORANGE">HTML</div>
+        <div class="ProgrammeerTaal ORANGE">Javascript</div>
+        <div class="ProgrammeerTaal ORANGE">PHP</div>
+        <div class="ProgrammeerTaal GREEN">Vue</div>
+        <div class="ProgrammeerTaal GREEN">Bootstrap</div>
+        <div class="ProgrammeerTaal PURPLE">MySql</div>
+        <div class="ProgrammeerTaal PURPLE">PhpmyAdmin</div>
+        `,
+      Programs: `
+            <div class="ProgrammeerTaal RED">Git</div>
+        `
+    },
+    FullDesc: `
+      A Dutch todo application for a schoolproject. The Site is connected with a remote database through axios reqeust.
+        `,
+    Img_src:
+      "https://src.sandervanast.com/images/PNG/Thumbnails/Excercise_vue-todo.png",
+    Url_src: "https://84231.ict-lab.nl/SPA/Vue/",
+    // name of repo
+    Git_url: noRepoLink,
+    Datum: "Dec. 2020",
+    gitRepo: false
+  },
 ];
