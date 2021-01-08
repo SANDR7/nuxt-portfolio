@@ -116,5 +116,5 @@ dist
 .pnp.*
 
 
-./SomeExercises.js 
-./project.js
+SomeExercises.js
+projects.js

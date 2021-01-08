@@ -52,7 +52,13 @@
         </small>
       </div>
       <div class="FormItem">
-        <input class="Submit" type="submit" name="submit" value="Send" @click="topOfForm" />
+        <input
+          class="Submit"
+          type="submit"
+          name="submit"
+          value="Send"
+          @click="topOfForm"
+        />
       </div>
     </form>
   </div>
@@ -61,7 +67,6 @@
 
 <script>
 import emailjs from "emailjs-com";
-
 export default {
   data() {
     return {
@@ -89,17 +94,20 @@ export default {
           if (this.email.includes("@") && this.email.includes(".")) {
             emailjs
               .sendForm(
-                "service_y6go5eq",
-                "template_7udghln",
+                'service_y6go5eq',
+               'template_7udghln',
                 e.target,
-                "user_a360ayAtdCnk1lSc5WtWv"
-              )
+                'user_a360ayAtdCnk1lSc5WtWv'
+                
+                )
               .then(
                 result => {
                   console.log("SUCCESS!", result.status, result.text);
                 },
                 error => {
                   console.log("FAILED...", error);
+                  this.sendMessageErr = "Error occurred.";
+                  this.classMessageErr = "EndmessageErr";
                 }
               );
 
@@ -110,7 +118,7 @@ export default {
               (this.classMessage = "Endmessage");
             e.target.reset();
           } else {
-            this.sendMessageErr = "E-mail requires an '@' sign";
+            this.sendMessageErr = "E-mail requires an '@' sign.";
             this.classMessageErr = "EndmessageErr";
           }
         }
