@@ -86,13 +86,10 @@ export default {
       }
     ]
   },
-
-  loading: { color: 'red' },
   /*
    ** Global CSS
    */
-  css: [
-  ],
+  css: [],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -116,18 +113,19 @@ export default {
    ** Nuxt.js dev-modules
    */
   serverMiddleware: [],
-  buildModules: [],
   /*
    ** Nuxt.js modules
    */
   buildModules: [
     [
+      "@nuxtjs/dotenv",
       "@nuxtjs/google-analytics",
       {
         id: "UA-174166351-1"
       }
     ]
   ],
+  buildModules: [["@nuxtjs/dotenv", { path: "./env" }]],
 
   googleAnalytics: {
     id: "UA-174166351-1" // Used as fallback if no runtime config is provided
@@ -136,11 +134,11 @@ export default {
     "@nuxtjs/style-resources",
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
-    "@nuxtjs/recaptcha",
+    "@nuxtjs/recaptcha"
   ],
   router: {},
   styleResources: {
-    scss: ["./assets/styles/*.scss"]
+    scss: ["@/assets/styles/*.scss"]
   },
 
   loading: {
@@ -162,6 +160,29 @@ export default {
       start_url: "/",
       lang: "en",
       theme_color: "#ef794d",
+      shortcuts: [
+        {
+          name: "Contact Page",
+          short_name: "Contact",
+          descirption: "View my contact information",
+          url: "/Contact",
+          icon: [{ src: "/icon.png" }]
+        },
+        {
+          name: "About Page",
+          short_name: "About",
+          descirption: "View my information about myself",
+          url: "/About",
+          icon: [{ src: "/icon.png" }]
+        },
+        {
+          name: "Projects Page",
+          short_name: "Projects",
+          descirption: "View my projects",
+          url: "/Projects",
+          icon: [{ src: "/icon.png" }]
+        }
+      ],
       background_color: "#F9F9F9",
       ogImage: `https://www.sandervanast.com/hi-icon.png`,
       useWebmanifestExtension: false

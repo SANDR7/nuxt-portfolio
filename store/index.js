@@ -338,8 +338,8 @@ export const state = () => ({
       },
     ],
     emailProvider: {
-      host: 'smtp.strato.com',
-      username: 'contact@sandervanast.com',
-      password: '8FAYhJZK4BY2QbY'
+      host: process.env.PROV,
+      username: process.env.MAIL,
+      password: process.env.MAIL_PASSWORD
     }
 })
