@@ -118,6 +118,12 @@ export const state = () => ({
         BeginDate: 2020
       },
       {
+        Image_src: 'https://src.sandervanast.com/images/SVG/mongodb.svg',
+        Image_alt: 'Mongodb_logo',
+        name: 'MongoDB',
+        BeginDate: 2020
+      },
+      {
         Image_src: 'https://src.sandervanast.com/images/SVG/mysql.svg',
         Image_alt: 'MySql_logo',
         name: 'MySQL',
@@ -128,7 +134,7 @@ export const state = () => ({
         Image_alt: 'PhpMyAdmin_logo',
         name: 'PhpMyAdmin',
         BeginDate: 2019
-      }
+      },
     ],
     Programmas: [
       {
@@ -203,6 +209,12 @@ export const state = () => ({
         Image_alt: 'netlify_logo',
         name: 'Netlify'
       },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/heroku.svg',
+        cat: 'Hosting Platform',
+        Image_alt: 'heroku_logo',
+        name: 'Heroku'
+      },
     ],
     ComputerKennis: [
       {
@@ -265,6 +277,18 @@ export const state = () => ({
         Image_alt: 'xampp_logo',
         name: 'Xampp'
       },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/notion.svg',
+        cat: 'Organizing & Planning Tool',
+        Image_alt: 'notion_logo',
+        name: 'Notion'
+      },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/google-cloud.svg',
+        cat: 'Cloud Computing-Services',
+        Image_alt: 'Gcloud_logo',
+        name: 'Google Cloud'
+      },
     ],
     Services: [
       {
@@ -314,8 +338,8 @@ export const state = () => ({
       },
     ],
     emailProvider: {
-      host: 'smtp.strato.com',
-      username: 'contact@sandervanast.com',
-      password: '8FAYhJZK4BY2QbY'
+      host: process.env.PROV,
+      username: process.env.MAIL,
+      password: process.env.MAIL_PASSWORD
     }
 })

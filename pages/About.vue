@@ -6,7 +6,7 @@
       <div class="Section">
         <h2>Education</h2>
         <div class="Background">
-         <EducationSection />
+          <EducationSection />
         </div>
       </div>
       <!-- Skills -->
@@ -25,19 +25,25 @@ import landingPage from "~/components/about/landingPage";
 import EducationSection from "~/components/about/EducationSection";
 import VaardighedenSection from "~/components/home/VaardighedenSection";
 export default {
-    head() {
+  head() {
     return {
-      title: "About - Sander van Ast",
+      titleTemplate: "About - %s",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Hi, my name is Sander van Ast. I am a enthusiastic programmer and a starting entrepreneur based in The Netherlands."
+        }
+      ]
     };
   },
   components: {
     landingPage,
     EducationSection,
-    VaardighedenSection,
-  },
+    VaardighedenSection
+  }
 };
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

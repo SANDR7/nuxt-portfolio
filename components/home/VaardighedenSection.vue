@@ -3,64 +3,105 @@
     <div class="Cards">
       <!-- Frameworks -->
       <div class="Card">
-        &lt;{{framework}}&gt;
-        <div style="margin-top: .6rem; margin-left: 1rem; position: absolute">&lt;Libraries &#47;&gt;</div>
+        &lt;{{ framework }}&gt;
+        <div style="margin-top: .6rem; margin-left: 1rem; position: absolute">
+          &lt;Libraries &#47;&gt;
+        </div>
         <div class="Scroll">
           <div class="subCard" v-for="(Framework, id) in Frameworks" :key="id">
             <img :src="Framework.Image_src" :alt="Framework.Image_alt" />
             <div class="Frameworks">
-              <div class="header">{{Framework.name}}</div>
-              <p>Startd since {{Framework.BeginDate}}</p>
-              <p><a :href="Framework.Url_src" title="Framework website" target="blank"><i class="far fa-info-circle"></i> {{Framework.name}}</a></p>
+              <div class="header">{{ Framework.name }}</div>
+              <p>Startd since {{ Framework.BeginDate }}</p>
+              <p>
+                <a
+                  :href="Framework.Url_src"
+                  title="Framework website"
+                  target="blank"
+                  ><i class="far fa-info-circle"></i> {{ Framework.name }}</a
+                >
+              </p>
             </div>
           </div>
         </div>
-        &lt;&#47;{{framework}}&gt;
+        &lt;&#47;{{ framework }}&gt;
       </div>
       <!-- Programmeertalen -->
       <div class="Card">
-         return &#40;
-          <div style="margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div>
-          <!-- <div style="margin-left: 1rem; position: absolute;">import &#123; Databases &#125; from sources</div> -->
-          <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">import &#123; Databases	&#125; from sources&#59;</div>
-          <!-- <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div> -->
+        return &#40;
+        <div style="margin-left: 1rem; position: absolute;">
+          programming&#95;Languages&#59;
+        </div>
+        <!-- <div style="margin-left: 1rem; position: absolute;">import &#123; Databases &#125; from sources</div> -->
+        <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">
+          import &#123; Databases &#125; from sources&#59;
+        </div>
+        <!-- <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div> -->
         <div class="Scroll">
-          <div class="subCard" v-for="(ProgrammeerTaal, id) in ProgrammeerTalen" :key="id">
-            <img :src="ProgrammeerTaal.Image_src" :alt="ProgrammeerTaal.Image_alt" height="70" width="70"/>
+          <div
+            class="subCard"
+            v-for="(ProgrammeerTaal, id) in ProgrammeerTalen"
+            :key="id"
+          >
+            <img
+              :src="ProgrammeerTaal.Image_src"
+              :alt="ProgrammeerTaal.Image_alt"
+              height="70"
+              width="70"
+            />
             <div class="ProgrammeerTalen">
-              <div class="header">{{ProgrammeerTaal.name}}</div>
-              <p>Started since {{ProgrammeerTaal.BeginDate}}</p>
+              <div class="header">{{ ProgrammeerTaal.name }}</div>
+              <p>Started since {{ ProgrammeerTaal.BeginDate }}</p>
             </div>
           </div>
-        </div>&#41;
+        </div>
+        &#41;
       </div>
       <!-- Programms -->
       <div class="Card">
-        C&#58;&#92;Users&#92;<span class="Accent">{{GebruikersNaam}}</span>&#92;Programs&#92;Tools
+        C&#58;&#92;Users&#92;<span class="Accent">{{ GebruikersNaam }}</span
+        >&#92;Programs&#92;Tools
         <div class="Scroll">
           <div class="subCard" v-for="(Programma, id) in Programmas" :key="id">
             <div class="NaamPrograms">
               <div class="header">{{ Programma.name }}</div>
-              <div>{{Programma.cat}}</div>
+              <div>{{ Programma.cat }}</div>
             </div>
-            <div>
-              <img loading="lazy" :src="Programma.Image_src" :alt="Programma.Image_alt" height="70" width="70"/>
+            <div class="Logo">
+              <img
+                loading="lazy"
+                class="logoImg"
+                :src="Programma.Image_src"
+                :alt="Programma.Image_alt"
+                height="70"
+                width="70"
+              />
             </div>
           </div>
-        </div>&#92;
+        </div>
+        &#92;
         <br />
-        <br /><span class="Accent">{{GebruikersNaam}}</span> &rsaquo; Knowledge &rsaquo; Computers &#38; Software
+        <br /><span class="Accent">{{ GebruikersNaam }}</span> &rsaquo;
+        Knowledge &rsaquo; Computers &#38; Software
         <div class="Scroll">
           <div class="subCard" v-for="(Kennis, id) in ComputerKennis" :key="id">
             <div class="NaamOs">
               <div class="header">{{ Kennis.name }}</div>
-              <div>{{Kennis.cat}}</div>
+              <div>{{ Kennis.cat }}</div>
             </div>
-            <div>
-              <img loading="lazy" :src="Kennis.Image_src" :alt="Kennis.Image_alt" height="70" width="70"/>
+            <div class="Logo">
+              <img
+                loading="lazy"
+                class="logoImg"
+                :src="Kennis.Image_src"
+                :alt="Kennis.Image_alt"
+                height="70"
+                width="70"
+              />
             </div>
           </div>
-        </div>&rsaquo;
+        </div>
+        &rsaquo;
       </div>
     </div>
     <div class="Overig">
@@ -72,6 +113,8 @@
           <div class="subCard">User Experience design</div>
           <div class="subCard">graphic design</div>
           <div class="subCard">Logo design</div>
+          <div class="subCard">MEVN Stack</div>
+          <div class="subCard">MERN Stack</div>
           <div class="subCard">progressive web app</div>
           <div class="subCard">JSX</div>
           <div class="subCard">AJAX</div>
@@ -93,13 +136,12 @@
 </template>
 
 <script>
-
 import { mapState } from "vuex";
 export default {
   data() {
     return {
       framework: "Frameworks",
-      GebruikersNaam: "SANDR7",
+      GebruikersNaam: "SANDR7"
     };
   },
   computed: {
@@ -107,9 +149,9 @@ export default {
       "Frameworks",
       "ProgrammeerTalen",
       "Programmas",
-      "ComputerKennis",
-    ]),
-  },
+      "ComputerKennis"
+    ])
+  }
 };
 </script>
 
@@ -134,7 +176,7 @@ export default {
         grid-area: frameworks;
         .Scroll {
           margin-top: 3rem;
-          margin-bottom: .3rem;
+          margin-bottom: 0.3rem;
           .subCard {
             &:nth-child(1) {
               .Frameworks {
@@ -207,7 +249,7 @@ export default {
         grid-area: programlang;
         .Scroll {
           margin-top: 3rem;
-          margin-bottom: .3rem;
+          margin-bottom: 0.3rem;
           .subCard {
             &:nth-child(1) {
               .ProgrammeerTalen {
@@ -252,19 +294,25 @@ export default {
             &:nth-child(7) {
               .ProgrammeerTalen {
                 // FireBase
-                @include ProgressBar(34%, $OrangeColor1);
+                @include ProgressBar(34%, $PurpleColor1);
               }
             }
             &:nth-child(8) {
               .ProgrammeerTalen {
-                // My SQL
-                @include ProgressBar(47%, $OrangeColor1);
+                // MongoDB
+                @include ProgressBar(58%, $PurpleColor1);
               }
             }
             &:nth-child(9) {
               .ProgrammeerTalen {
+                //My SQL
+                @include ProgressBar(47%, $PurpleColor1);
+              }
+            }
+            &:nth-child(10) {
+              .ProgrammeerTalen {
                 // Php My Admin
-                @include ProgressBar(65%, $OrangeColor1);
+                @include ProgressBar(65%, $PurpleColor1);
               }
             }
           }
@@ -354,7 +402,9 @@ export default {
               .NaamPrograms {
                 // GitHub
                 @include ProgressBar(55%, $RedColor1);
-
+                path {
+                  fill: red;
+                }
                 &::before,
                 &::after {
                   top: $top;
@@ -470,7 +520,7 @@ export default {
                 }
               }
             }
-             &:nth-child(10) {
+            &:nth-child(10) {
               .NaamPrograms {
                 // google my business
                 @include ProgressBar(92%, $RedColor1);
@@ -500,11 +550,40 @@ export default {
                   top: $top;
                 }
               }
+              .NaamOs {
+                //Notion
+                @include ProgressBar(100%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
             }
             &:nth-child(12) {
               .NaamPrograms {
                 // netlify
                 @include ProgressBar(83%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
+              .NaamOs {
+                //Google cloud
+                @include ProgressBar(70%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
+            }
+            &:nth-child(13) {
+              .NaamPrograms {
+                //Heroku
+                @include ProgressBar(67%, $RedColor1);
 
                 &::before,
                 &::after {
@@ -542,18 +621,18 @@ export default {
               font-weight: 700;
               font-size: $fs-header / 2.5;
             }
-            p:nth-child(3){
+            p:nth-child(3) {
               margin-top: 18px;
               a {
                 color: var(--TxtColor);
-                opacity: .6;
+                opacity: 0.6;
                 @include HoverFx(1px, var(--TxtColor), 0);
               }
             }
           }
           img {
             height: 70px;
-            padding: .3rem;
+            padding: 0.3rem;
             width: 50px;
             margin-right: 1rem;
             user-select: none;
@@ -575,9 +654,9 @@ export default {
     }
     .Card {
       @include CardBackground;
-    
+
       font-weight: 600;
-      letter-spacing: .4px;
+      letter-spacing: 0.4px;
       margin: 1rem 0;
       width: 100%;
       padding: 0 1.5rem;
@@ -589,26 +668,25 @@ export default {
           @include subCardBackground;
           box-shadow: $innerShadow;
           margin: 1.4rem 0;
-          margin-right: .9rem;
+          margin-right: 0.9rem;
           min-width: 300px;
           display: block;
           text-transform: capitalize;
           text-align: center;
         }
       }
-      
     }
   }
 }
 /* Mobile ----------- */
-@media only screen and (min-width: $MobileSize1){
-.Vaardigheden {
+@media only screen and (min-width: $MobileSize1) {
+  .Vaardigheden {
     // background-color: red;
     .Cards {
       grid-gap: 2rem;
       grid-template-columns: repeat(1, 100%);
       grid-template-rows: 1fr;
-      grid-template-areas: "frameworks""programlang""program";
+      grid-template-areas: "frameworks" "programlang" "program";
       .Card {
         padding: 1.5rem 1.2rem;
 
@@ -621,24 +699,24 @@ export default {
           .subCard {
             .Frameworks,
             .ProgrammeerTalen {
-            .header {
+              .header {
                 text-transform: capitalize;
                 font-weight: 700;
                 font-size: $fs-paragraph-2 * 1.1;
               }
-              p:nth-child(3){
+              p:nth-child(3) {
                 margin-top: 30px;
                 a {
                   color: var(--TxtColor);
-                  opacity: .6;
+                  opacity: 0.6;
                   @include HoverFx(1px, var(--TxtColor), 0);
                 }
               }
             }
           }
           p {
-              line-height: 16px;
-            }
+            line-height: 16px;
+          }
         }
       }
     }
@@ -646,14 +724,15 @@ export default {
 }
 /* Tablet ----------- */
 @media only screen and (min-width: $TabletSize1) {
-.Vaardigheden {
+  .Vaardigheden {
     // background-color: red;
     .Cards {
       grid-gap: 2rem;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 1fr;
-      grid-template-areas: "frameworks programlang"
-                            "program program";
+      grid-template-areas:
+        "frameworks programlang"
+        "program program";
       .Card {
         padding: 1.5rem 1.2rem;
         &:nth-child(3) {
@@ -665,16 +744,16 @@ export default {
           .subCard {
             .Frameworks,
             .ProgrammeerTalen {
-            .header {
+              .header {
                 text-transform: capitalize;
                 font-weight: 700;
                 font-size: $fs-header / 2.5;
               }
-              p:nth-child(3){
+              p:nth-child(3) {
                 margin-top: 18px;
                 a {
                   color: var(--TxtColor);
-                  opacity: .6;
+                  opacity: 0.6;
                   @include HoverFx(1px, var(--TxtColor), 0);
                 }
               }
@@ -716,7 +795,7 @@ export default {
     background-color: transparent;
     .Cards {
       grid-gap: 2rem;
-      
+
       .Card {
         padding: 1.5rem 1.7rem;
         .Scroll {
@@ -728,11 +807,11 @@ export default {
                 font-weight: 700;
                 font-size: $fs-header / 2.5;
               }
-              p:nth-child(3){
+              p:nth-child(3) {
                 margin-top: 18px;
                 a {
                   color: var(--TxtColor);
-                  opacity: .6;
+                  opacity: 0.6;
                   @include HoverFx(1px, var(--TxtColor), 0);
                 }
               }

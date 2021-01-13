@@ -1,7 +1,8 @@
 <template>
   <div class="form">
-    <form @submit.prevent="sendEmail" method="post" ref="form">
+    <form @submit.prevent="Submit" method="post" ref="form">
       <div :class="classMessage">{{ sendMessage }}</div>
+      <div :class="classMessageErr">{{ sendMessageErr }}</div>
       <!-- <p>This is form is under development</p> -->
       <div class="FormItem">
         <label for="name">Name</label>
@@ -14,7 +15,14 @@
         />
       </div>
       <div class="FormItem">
-        <label for="email">Email</label>
+        <label for="email"
+          ><span
+            class="Accent2"
+            title="You must enter a real email address, otherwise I will not respond"
+            >*</span
+          >
+          Email</label
+        >
         <input
           v-model.trim="email"
           type="email text"
@@ -30,25 +38,35 @@
           name="message"
           id="message"
           lang="en"
-          rows="10"
+          rows="6"
           required="required"
         ></textarea>
       </div>
-      <!-- <div class="FormItem">
-        <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
-      </div> -->
       <div class="FormItem">
-        <input class="Submit" type="submit" name="submit" value="Send" />
+        <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
+        <small style="margin-top: 2em; filter: brightness(50%);"
+          >This site is protected by reCAPTCHA and the Google
+          <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+          <a href="https://policies.google.com/terms">Terms of Service</a>
+          apply.
+        </small>
+      </div>
+      <div class="FormItem">
+        <input
+          class="Submit"
+          type="submit"
+          name="submit"
+          value="Send"
+          @click="topOfForm"
+        />
       </div>
     </form>
   </div>
 </template>
 >
 
-
 <script>
 import emailjs from "emailjs-com";
-
 export default {
   data() {
     return {
@@ -56,82 +74,80 @@ export default {
       email: "",
       message: "",
       sendMessage: "",
+      sendMessageErr: "",
       classMessage: "",
+      classMessageErr: ""
     };
   },
   methods: {
-    sendEmail(e) {
-      // this.test();
-      emailjs
-        .sendForm(
-          "service_y6go5eq",
-          "template_7udghln",
-          e.target,
-          "user_a360ayAtdCnk1lSc5WtWv"
-        )
-        .then(
-          (result) => {
-            console.log("SUCCESS!", result.status, result.text);
-          },
-          (error) => {
-            console.log("FAILED...", error);
+    Submit: async function(e, token) {
+      // =====================================================
+      // GOOGLE RECAPTCHA
+      // =====================================================
+      try {
+        const token = await this.$recaptcha.getResponse();
+        console.log("ReCaptcha token:", token);
+        await this.$recaptcha.reset();
+        // recaptcha validation
+        if (token) {
+          // email validation
+          if (this.email.includes("@") && this.email.includes(".")) {
+            emailjs
+              .sendForm(
+                'service_y6go5eq',
+               'template_7udghln',
+                e.target,
+                'user_a360ayAtdCnk1lSc5WtWv'
+                
+                )
+              .then(
+                result => {
+                  console.log("SUCCESS!", result.status, result.text);
+                },
+                error => {
+                  console.log("FAILED...", error);
+                  this.sendMessageErr = "Error occurred.";
+                  this.classMessageErr = "EndmessageErr";
+                }
+              );
+
+            (this.name = ""),
+              (this.email = ""),
+              (this.message = ""),
+              (this.sendMessage = "The message has been sent!"),
+              (this.classMessage = "Endmessage");
+            e.target.reset();
+          } else {
+            this.sendMessageErr = "E-mail requires an '@' sign.";
+            this.classMessageErr = "EndmessageErr";
           }
-        );
-      var emailData = {
-        email: this.email,
-        name: this.name,
-        message: this.message,
-        sendMessage: this.sendMessage,
-        classMessage: this.classMessage,
-      };
-
-      (this.name = ""),
-        (this.email = ""),
-        (this.message = ""),
-        (this.sendMessage = "The message has been sent!"),
-        (this.classMessage = "Endmessage");
-      e.target.reset();
+        }
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log("Login error:", error);
+      }
+      // =====================================================
     },
-      // =====================================================
-      // GOOGLE RECAPTCHA  
-      // =====================================================
-    // async test() {
-    //   try {
-    //     const token = await this.$recaptcha.getResponse();
-    //     console.log("ReCaptcha token:", token);
-    //     await this.$recaptcha.reset();
-    //   } catch (error) {
-    //     // eslint-disable-next-line no-console
-    //     console.log("Login error:", error);
-    //   }
-    //   this.sendEmail();
-    // },
-    // 
-    // onError(error) {
-    //   console.log("Error happened:", error);
-    //   this.sendMessage = "Error";
-    //   this.classMessage = "Endmessage";
-    // },
-    // onSuccess(token) {
-    //   console.log("Succeeded:", token);
-    //   var emailData = {
-    //     email: this.email,
-    //     name: this.name,
-    //     message: this.message,
-    //     sendMessage: this.sendMessage,
-    //     classMessage: this.classMessage,
-    //   };
-
-    //   (this.name = ""),
-    //     (this.email = ""),
-    //     (this.message = ""),
-    //     (this.sendMessage = "The message has been sent!"),
-    //     (this.classMessage = "Endmessage");
-    // },
-    // onExpired() {
-    //   console.log("Expired");
-    // },
-  },
+    topOfForm() {
+      this.$refs["form"].scrollIntoView({
+        behavior: "smooth"
+      });
+    },
+    // recapchta handeling
+    onError(error) {
+      console.log("Error happened:", error);
+      this.sendMessageErr = "Recaptcha unsuccessful";
+      this.classMessageErr = "EndmessageErr";
+    },
+    onSuccess(token) {
+      console.log("Succeeded:", token);
+      this.sendMessageErr = "";
+      this.classMessageErr = "";
+    },
+    onExpired() {
+      console.log("Expired");
+    }
+  }
 };
 </script>
 
@@ -153,8 +169,12 @@ export default {
       font-weight: 600;
       font-size: $fs-paragraph-2 * 1.2;
       color: Color(GeneralLight);
-      background-color: #4FCFBE;
+      background-color: #4fcfbe;
       box-shadow: $innerShadow;
+    }
+    .EndmessageErr {
+      @extend .Endmessage;
+      background-color: $RedColor1;
     }
     .FormItem {
       display: flex;
@@ -166,6 +186,9 @@ export default {
       label {
         font-weight: bold;
         font-size: $fs-paragraph-2 * 1.5;
+        [title] {
+          color: red !important;
+        }
         &::after {
           content: ":";
           color: $OrangeColor1;

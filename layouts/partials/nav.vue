@@ -1,9 +1,9 @@
 <template>
   <header>
       <div id="nav">
-          <div class="ToggleTheme" @click="toggle" style="cursor: pointer" title="Change theme">
+          <!-- <div class="ToggleTheme" @click="toggle" style="cursor: pointer" title="Change theme">
             <i class="fas fa-adjust"></i>
-          </div>
+          </div> -->
       <div class="NavLinks" @click="ScrolltoTop">
         <nuxt-link to="/" title="Home Page">Home</nuxt-link>
         <nuxt-link to="/Projects" title="Projects Page">Projects</nuxt-link>

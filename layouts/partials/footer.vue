@@ -469,7 +469,7 @@ export default {
           justify-content: space-evenly;
           margin: 1rem 0;
           a {
-            color: Color(GreyColor);
+            color: Color(txtLight);
             margin: 0 1.5rem;
             &:hover {
               color: Color(DarkerGreyColor);
