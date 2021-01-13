@@ -6,10 +6,10 @@
         <div>{{ project.UsedTech.Skills }}</div>
         <div>{{ project.Datum }}</div>
       </div>
-      <!-- <div class="Background">
+      <div class="Background">
         Developing...
-      </div> -->
-      <article class="Background">
+      </div>
+      <!-- <article class="Background">
         <div class="firstSect">
           <img class="Image" :src="project.Img_src" alt="Projectname" />
           <div class="rightSect">
@@ -67,11 +67,11 @@
       </article>
       <div class="endWord">
         <h3>Final Result</h3>
-        <!-- <h3>Final Outcome</h3> -->
-        <!-- <p>
+        <h3>Final Outcome</h3>
+        <p>
           {{project.Summery}}
-        </p> -->
-      </div>
+        </p>
+      </div> -->
     </div>
   </div>
 </template>
@@ -81,22 +81,22 @@ import projects from "~~/projects";
 export default {
   head() {
     return {
-      title: `Case Study | ${this.project.Projectnaam} - Sander van Ast`
+      title: `Case Study | ${this.project.Projectnaam} - Sander van Ast`,
     };
   },
   data() {
     return {
-      projects
+      projects,
     };
   },
   computed: {
     project() {
       let id = this.$route.params.id;
-      return this.projects.find(project => {
+      return this.projects.find((project) => {
         return project.id == id;
       });
-    }
-  }
+    },
+  },
   // asyncData({store}) {
   //     console.log(store.state.ProjectCards)
   // },

@@ -56,7 +56,8 @@ export default {
       { src: 'https://src.sandervanast.com/code/JS/FontAwesome.min.js' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&family=Share+Tech+Mono&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&family=Share+Tech+Mono&display=swap' },
+      { rel: 'canonical', href: 'https://sandervanast.com/' }
     ]
   },
 
