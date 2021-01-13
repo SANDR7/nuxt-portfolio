@@ -1,7 +1,7 @@
 <template>
   <div class="Background">
     <h2>Download Resume</h2>
-    <button class="download"  @click="viewCV()">Download CV</button>
+    <button class="download" @click="viewCV()">Download CV</button>
   </div>
 </template>
 
