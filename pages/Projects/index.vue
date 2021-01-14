@@ -145,7 +145,7 @@ export default {
       showMoreTxtProj: "Show All",
       showMoreTxt: "Show All",
       isVisible_Proj: 2,
-      isVisible_Excer: 2
+      isVisible_Excer: 3
     };
   },
   methods: {
@@ -182,7 +182,7 @@ export default {
         });
       } else {
         // shows only 2 projects
-        this.isVisible_Excer = 2;
+        this.isVisible_Excer = 3;
         this.showMoreTxt = "show all";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
