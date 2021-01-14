@@ -25,7 +25,7 @@
         </li>
         <li>
           <a
-            href="https://src.sandervanast.com/docs/PDF/Sander%20van%20Ast.pdf"
+            href="https://src.sandervanast.com/CV.pdf"
             title="Resume ( CV )"
             target="blank"
             >My Resume</a
