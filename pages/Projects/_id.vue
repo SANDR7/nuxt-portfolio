@@ -79,6 +79,7 @@
 <script>
 import projects from "~~/projects";
 export default {
+  layout: 'nofooter',
   head() {
     return {
       title: `Case Study | ${this.project.Projectnaam} - Sander van Ast`,
