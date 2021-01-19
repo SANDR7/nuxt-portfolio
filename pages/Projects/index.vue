@@ -144,7 +144,7 @@ export default {
       SomeExercises,
       showMoreTxtProj: "Show All",
       showMoreTxt: "Show All",
-      isVisible_Proj: 2,
+      isVisible_Proj: 3,
       isVisible_Excer: 3
     };
   },
@@ -163,7 +163,7 @@ export default {
         });
       } else {
         // shows only 3 projects
-        this.isVisible_Proj = 2;
+        this.isVisible_Proj = 3;
         this.showMoreTxtProj = "show all";
         // scroll to the beginning
         this.$refs["projHeader"].scrollIntoView({
@@ -207,6 +207,7 @@ export default {
     &::after {
       background-repeat: repeat-y;
       background-position: 80%;
+      opacity: .1 !important;
     }
   }
   .Section {
