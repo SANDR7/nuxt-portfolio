@@ -1,0 +1,163 @@
+// transistions
+// ===================
+@mixin ColorTransition {
+  transition-property: all;
+  transition: $transitionDuration cubic-bezier(0, 0.79, 0.79, 0.93);
+}
+
+// Global button
+// ===================
+@mixin ButtonStyle {
+  cursor: pointer;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  border-radius: $borderRadius12;
+  padding: 1rem 1.5rem;
+  border: none;
+
+  color: Color(GeneralLight);
+  background: $GreenColor1;
+  background: linear-gradient(182deg, #2c9e8e, #44cebb);
+  box-shadow: inset -5px -5px 5px 0 rgba(68, 68, 68, 0.08),
+    inset 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+  @include ColorTransition;
+  &:hover,
+  &:focus {
+    color: Color(GeneralLight);
+    background-color: $GreenColor1;
+    outline: none;
+    filter: brightness(1.2);
+    a {
+      color: Color(GeneralLight);
+      @include HoverFx(0, transparent, 0);
+    }
+  }
+  a {
+    color: Color(GeneralLight);
+    padding: 1rem 1.5rem;
+    width: 100%;
+    @include HoverFx(0, transparent, 0);
+  }
+
+  @media only screen and (min-width: $TabletSize1) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: $Laptop1) {
+    font-size: 24px;
+  }
+}
+
+// Background card
+// ===================
+@mixin CardBackground {
+  @include ColorTransition;
+  background: var(--BackGroundCardLevel1);
+  border-radius: $borderRadius12;
+  padding: 1.5rem 1rem;
+  box-shadow: var(--BoxShadow);
+  z-index: 1;
+  backdrop-filter: blur(12px);
+  border: solid 3px transparent;
+  background-clip: border-box;
+}
+// Background card 2
+// ===================
+@mixin subCardBackground {
+  @include CardBackground;
+  background-color: var(--BackGroundCardLevel2);
+  display: flex;
+  margin: 0.7rem 1rem;
+  box-shadow: none;
+  &:hover {
+    box-shadow: $innerShadow;
+    // transform: scale(.97);
+  }
+}
+
+// text outline
+// ===================
+@mixin funkyText($stroke) {
+  -webkit-text-stroke: $stroke var(--TxtColor);
+  -webkit-text-fill-color: transparent;
+  // &:hover {
+  //     -webkit-text-stroke: transparent;
+  //     -webkit-text-fill-color: $GreenColor1;
+  // }
+}
+
+// Background IMG
+// ===================
+@mixin BackgroundImage($url) {
+  position: relative;
+  &::after {
+    content: "";
+    background-image: url($url);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: 100% auto;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+    z-index: -1;
+    opacity: $WmarkOpacity / 0.7;
+  }
+}
+
+// Progressie bar
+// ===================
+@mixin ProgressBar($width, $Color) {
+  position: relative;
+  width: 70%;
+  $Top: 80%;
+  &:before {
+    content: "";
+    position: absolute;
+    top: $Top;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: var(--ProgressColor);
+    border-radius: 50px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: $Top;
+    left: 0;
+    width: $width;
+    height: 7px;
+    background-color: $Color;
+    border-radius: 50px;
+  }
+}
+
+// Hover link effect
+// ===================
+@mixin HoverFx($height, $Color, $scaleX) {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: $height;
+    background-color: $Color;
+    border-radius: 50px;
+
+    // @include ColorTransition;
+    transform-origin: right;
+    transform: scaleX($scaleX);
+    transition: transform 0.3s cubic-bezier(0, 0.79, 0.79, 0.93);
+  }
+  &:hover::after,
+  &:focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
