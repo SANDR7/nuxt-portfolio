@@ -133,9 +133,9 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "Here you can view my projects that I jave collected to show you what I'm capable of."
-        }
-      ]
+            "Here you can view my projects that I jave collected to show you what I'm capable of.",
+        },
+      ],
     };
   },
   data() {
@@ -145,7 +145,7 @@ export default {
       showMoreTxtProj: "Show All",
       showMoreTxt: "Show All",
       isVisible_Proj: 3,
-      isVisible_Excer: 3
+      isVisible_Excer: 3,
     };
   },
   methods: {
@@ -159,7 +159,7 @@ export default {
         this.showMoreTxtProj = "show less";
         // scroll to the beginning
         this.$refs["projHeader"].scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
         });
       } else {
         // shows only 3 projects
@@ -167,7 +167,7 @@ export default {
         this.showMoreTxtProj = "show all";
         // scroll to the beginning
         this.$refs["projHeader"].scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }
     },
@@ -178,7 +178,7 @@ export default {
         this.showMoreTxt = "show less";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
         });
       } else {
         // shows only 2 projects
@@ -186,14 +186,14 @@ export default {
         this.showMoreTxt = "show all";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }
-    }
+    },
   },
   components: {
-    ContactSection
-  }
+    ContactSection,
+  },
 };
 </script>
 
@@ -207,7 +207,7 @@ export default {
     &::after {
       background-repeat: repeat-y;
       background-position: 80%;
-      opacity: .1 !important;
+      opacity: 0.1 !important;
     }
   }
   .Section {
@@ -288,7 +288,7 @@ export default {
           display: inline-block;
           width: 100%;
           margin: 1rem auto;
-          height: 300px;
+          height: 286px !important;
           border-radius: $borderRadius8;
           object-fit: cover;
           object-position: 50% 50%;
@@ -442,7 +442,7 @@ export default {
             height: 380px;
           }
           .Description {
-            min-height: 200px;
+            min-height: 170px;
           }
         }
       }
