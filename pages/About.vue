@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <landingPage />
+    <LandingAboutPage />
     <div class="Sections">
       <!-- Education -->
       <div class="Section">
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import landingPage from "~/components/about/landingPage";
+import LandingAboutPage from "~/components/about/LandingAboutPage";
 import EducationSection from "~/components/about/EducationSection";
 import VaardighedenSection from "~/components/home/VaardighedenSection";
 export default {
@@ -39,7 +39,7 @@ export default {
     };
   },
   components: {
-    landingPage,
+    LandingAboutPage,
     EducationSection,
     VaardighedenSection
   }

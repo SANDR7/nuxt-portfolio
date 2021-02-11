@@ -1,9 +1,9 @@
 <template>
   <div>
     <Nav/>
-    <transition name="contentAni">
+    <pageTransition name="contentAni" mode="out-in">
       <Nuxt />
-    </transition>
+    </pageTransition>
     <Footer/>
   </div>
 </template>
@@ -14,6 +14,13 @@ export default {
   components: {
     Nav,
     Footer
+  },
+   mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 2500)
+    })
   }
 }
 </script>

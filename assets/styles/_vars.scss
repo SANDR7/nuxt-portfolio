@@ -1,0 +1,43 @@
+$laptopSize1: 1600px;
+$laptopSize2: 1200px;
+$largeSize: 3840px;
+$tabletSize: 1024px;
+
+$MobileSize1: 320px;
+$MobileSize2: 480px;
+$MobileSize3: 568px;
+$MobileSizeLandSc: 321px;
+
+$TabletSize1: 768px;
+$TabletSize2: 1024px;
+
+$Laptop1: 1280px;
+$LargeScreen1: 1600px;
+//--------------------------
+// Standaard gegevens
+//--------------------------
+$transitionDuration: 0.63s;
+$borderRadius12: 12px;
+$borderRadius8: 8px;
+
+$RedColor1: #c94040;
+$OrangeColor1: #ff7b47;
+$GreenColor1: #31af9f;
+$PurpleColor1: #4764ff;
+$LinkColor1: #b03132;
+$sectionPadding: 0 4rem;
+
+$innerShadow: inset -5px -5px 5px 0 rgba(68, 68, 68, 0.08),
+  inset 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+$innerShadowLink: inset -5px -5px 5px 0 rgba(176, 49, 50, 0.14),
+  inset 5px 5px 5px 0 rgba(127, 36, 36, 0.26);
+// Fontsizes
+
+$fs-header: 54px;
+$fs-paragraph-1: 16px;
+$fs-paragraph-2: 18px;
+$WmarkOpacity: 0.15;
+
+$thumbnailWidth: 1440px;
+$thumbnailHeight: 870px;
+$thumbnailZoom: 0.25;

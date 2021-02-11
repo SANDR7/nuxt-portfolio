@@ -142,7 +142,17 @@ export default {
   },
 
   loading: {
-    color: "#ef794d"
+    continuous: true,
+    color: '#FF7B47',
+    height: '5px'
+  },
+  loadingIndicator: {
+    name: 'circle',
+    color: '#FF7B47',
+    background: 'white'
+  },
+  transition: {
+    name: 'contentAni',
   },
 
   pwa: {
@@ -193,7 +203,7 @@ export default {
     hideBadge: true, // Hide badge element (v3 & v2 via size=invisible)
     siteKey: "6LcEJuIZAAAAAA6FGqXZ7QTm3MkvgsuDLjBtSXJP", // Site key for requests
     version: 2, // Version
-    size: "normal" // Size: 'compact', 'normal', 'invisible' (v2)
+    size: "normal", // Size: 'compact', 'normal', 'invisible' (v2)
   },
   /*
    ** Build configuration
