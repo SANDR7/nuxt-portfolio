@@ -44,12 +44,6 @@
       </div>
       <div class="FormItem">
         <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
-        <small style="margin-top: 2em; filter: brightness(50%);"
-          >This site is protected by reCAPTCHA and the Google
-          <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-          <a href="https://policies.google.com/terms">Terms of Service</a>
-          apply.
-        </small>
       </div>
       <div class="FormItem">
         <input
@@ -76,11 +70,11 @@ export default {
       sendMessage: "",
       sendMessageErr: "",
       classMessage: "",
-      classMessageErr: ""
+      classMessageErr: "",
     };
   },
   methods: {
-    Submit: async function(e, token) {
+    Submit: async function (e, token) {
       // =====================================================
       // GOOGLE RECAPTCHA
       // =====================================================
@@ -94,17 +88,16 @@ export default {
           if (this.email.includes("@") && this.email.includes(".")) {
             emailjs
               .sendForm(
-                'service_y6go5eq',
-               'template_7udghln',
+                "service_y6go5eq",
+                "template_7udghln",
                 e.target,
-                'user_a360ayAtdCnk1lSc5WtWv'
-                
-                )
+                "user_a360ayAtdCnk1lSc5WtWv"
+              )
               .then(
-                result => {
+                (result) => {
                   console.log("SUCCESS!", result.status, result.text);
                 },
-                error => {
+                (error) => {
                   console.log("FAILED...", error);
                   this.sendMessageErr = "Error occurred.";
                   this.classMessageErr = "EndmessageErr";
@@ -130,7 +123,7 @@ export default {
     },
     topOfForm() {
       this.$refs["form"].scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth",
       });
     },
     // recapchta handeling
@@ -146,8 +139,8 @@ export default {
     },
     onExpired() {
       console.log("Expired");
-    }
-  }
+    },
+  },
 };
 </script>
 
