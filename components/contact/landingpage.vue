@@ -7,10 +7,10 @@
           Als lerend student op het Grafisch Lyceum
           Rotterdam zou ik graag iets willen toelichten. In het derde jaar van
           mijn opleiding(2021) wordt er mij verzoekt om een stage te zoeken.
-          Hierdoor kan ik het bedrijf helpen en mezelf evalueren. Het gaat om een
-          stage van een geheel school jaar. Dus bent u een bedrijf of kent u
-          iemand die een stagiaire in (2021 - 2022) gaat aannemen. Ik zou het erg
-          appreciëren als u een mail sturen via mijn <a href="mailto:84231@glr.nl" title="84231@glr.nl">schoolmail</a>. 
+          Hierdoor kan ik het bedrijf helpen en mezelf ontwikkelen. Het gaat om een
+          stage van een geheel school jaar. Kortom bent u een bedrijf of kent u
+          iemand die een stagiaire in (2021 - 2022) gaat aannemen dan zou ik het erg
+          appreciëren als u een mail sturen naar mijn <a href="mailto:84231@glr.nl" title="84231@glr.nl">schoolmail</a>. 
           <br>
           <br>
           Bedank voor uw aandacht en voor het lezen.
