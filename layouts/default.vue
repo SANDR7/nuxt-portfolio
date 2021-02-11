@@ -1,9 +1,9 @@
 <template>
   <div>
     <Nav/>
-    <transition name="contentAni" mode="out-in">
+    <pageTransition name="contentAni" mode="out-in">
       <Nuxt />
-    </transition>
+    </pageTransition>
     <Footer/>
   </div>
 </template>
