@@ -14,7 +14,9 @@
           </div>
 
           <img :src="project.Img_src" alt="ProjectImg" />
-
+          <div class="Description">
+            <p>{{ project.FullDesc }}</p>
+          </div>
           <div class="UsedLang">
             <div class="title">Used Techniques</div>
             <div class="ProgrammeerTalen" v-html="project.UsedTech.Langs"></div>
@@ -24,10 +26,6 @@
             ></div>
           </div>
 
-          <div class="Description">
-            <div class="title">Description</div>
-            <p>{{ project.FullDesc }}</p>
-          </div>
 
           <div class="links" @click="ScrolltoTop">
             <nuxt-link title="Open Case Study" :to="`/Projects/${project.id}`">
@@ -65,6 +63,9 @@
           </div>
 
           <img :src="SomeExercise.Img_src" alt="ProjectImg" />
+          <div class="Description">
+            <p>{{ SomeExercise.FullDesc }}</p>
+          </div>
 
           <div v-html="SomeExercise.UsedTech.tags" class="tags"></div>
           <div class="UsedLang">
@@ -79,10 +80,6 @@
             ></div>
           </div>
 
-          <div class="Description">
-            <div class="title">Description</div>
-            <p>{{ SomeExercise.FullDesc }}</p>
-          </div>
 
           <div class="links">
             <a
@@ -441,8 +438,17 @@ export default {
           img {
             height: 380px;
           }
+          .UsedLang {
+            margin: 4em 0;
+            .title {
+              font-size: $fs-paragraph-1 * 1.3;
+            }
+            p {
+              font-size: $fs-paragraph-1;
+            }
+          }
           .Description {
-            min-height: 170px;
+            min-height: max-content;
           }
         }
       }
