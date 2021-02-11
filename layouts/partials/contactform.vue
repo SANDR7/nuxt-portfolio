@@ -94,12 +94,11 @@ export default {
           if (this.email.includes("@") && this.email.includes(".")) {
             emailjs
               .sendForm(
-                'service_y6go5eq',
-               'template_7udghln',
+                "service_y6go5eq",
+                "template_7udghln",
                 e.target,
-                'user_a360ayAtdCnk1lSc5WtWv'
-                
-                )
+                "user_a360ayAtdCnk1lSc5WtWv"
+              )
               .then(
                 result => {
                   console.log("SUCCESS!", result.status, result.text);
@@ -108,18 +107,24 @@ export default {
                   console.log("FAILED...", error);
                   this.sendMessageErr = "Error occurred.";
                   this.classMessageErr = "EndmessageErr";
+                  this.sendMessage = "";
+                  this.classMessage = "";
                 }
               );
 
             (this.name = ""),
               (this.email = ""),
               (this.message = ""),
+              (this.classMessageErr = ""),
+              (this.sendMessageErr = ""),
               (this.sendMessage = "The message has been sent!"),
               (this.classMessage = "Endmessage");
             e.target.reset();
           } else {
             this.sendMessageErr = "E-mail requires an '@' sign.";
             this.classMessageErr = "EndmessageErr";
+            this.sendMessage = "";
+            this.classMessage = "";
           }
         }
       } catch (error) {
@@ -138,6 +143,8 @@ export default {
       console.log("Error happened:", error);
       this.sendMessageErr = "Recaptcha unsuccessful";
       this.classMessageErr = "EndmessageErr";
+      this.sendMessage = "";
+      this.classMessage = "";
     },
     onSuccess(token) {
       console.log("Succeeded:", token);
