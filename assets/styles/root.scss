@@ -5,7 +5,7 @@ $colors: (
   "backgroundNavDark": rgba(26, 26, 26, 0.96),
   "backgroundSections_Light": rgba(236, 236, 236, 0.2),
   "backgroundSections_Dark": rgba(26, 26, 26, 0.2),
-  "backgroundCard1_Light": #f8ece346,
+  "backgroundCard1_Light": #f8ece360,
   "backgroundCard2_Light": #f9f9f8,
   "backgroundCard1_Dark": #1d1a175b,
   "backgroundCard2_Dark": #0f0f0f,
@@ -293,20 +293,11 @@ $thumbnailZoom: 0.25;
   }
 }
 
-.contentAni-enter-active {
-  @include ColorTransition;
-  transition: $transitionDuration * 1 cubic-bezier(0.53, 0.99, 0.67, 0.66);
-  opacity: 1;
-}
-.contentAni-enter {
-  transition-delay: 0.5s;
-}
-.contentAni-enter,
-.contentAni-leave-to {
-  opacity: 0;
+.contentAni-leave-active {
+  transition-property: opacity;
+  transition: $transitionDuration cubic-bezier(0.53, 0.99, 0.67, 0.66);
 }
 
-.contentAni-enter-to,
-.contentAni-leave {
-  opacity: 1;
+.contentAni-leave-to {
+  opacity: 0;
 }
