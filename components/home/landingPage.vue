@@ -18,7 +18,7 @@
           <nuxt-link class="CtAButton" to="/Projects">View my Projects</nuxt-link>
           <span>Searching for a Dutch internship</span>
           <span>NL&nbsp;•&nbsp;<a
-            href="https://src.sandervanast.com/docs/PDF/Sander%20van%20Ast.pdf"
+            href="https://src.sandervanast.com/CV.pdf"
             target="blank"
             class="Download"
           >Donwload my Resume</a></span>
