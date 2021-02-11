@@ -1,7 +1,7 @@
 <template>
   <div>
     <Nav/>
-    <transition name="contentAni">
+    <transition name="contentAni" mode="out-in">
       <Nuxt />
     </transition>
     <Footer/>
@@ -14,6 +14,13 @@ export default {
   components: {
     Nav,
     Footer
+  },
+   mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 2500)
+    })
   }
 }
 </script>
