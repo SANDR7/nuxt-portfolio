@@ -9,17 +9,20 @@
         </div>
         <div class="Scroll">
           <div class="subCard" v-for="(Framework, id) in Frameworks" :key="id">
+            <!-- <div v-for="(n, id) in even([1,2,3,4])" :key="id">
+              {{ n }}
+            </div> -->
             <img :src="Framework.Image_src" :alt="Framework.Image_alt" />
             <div class="Frameworks">
               <div class="header">{{ Framework.name }}</div>
               <p>Startd since {{ Framework.BeginDate }}</p>
               <p>
-                <a
+                <!-- <a
                   :href="Framework.Url_src"
                   title="Framework website"
                   target="blank"
                   ><i class="far fa-info-circle"></i> {{ Framework.name }}</a
-                >
+                > -->
               </p>
             </div>
           </div>
@@ -151,7 +154,7 @@ export default {
       "Programmas",
       "ComputerKennis"
     ])
-  }
+  },
 };
 </script>
 
@@ -181,21 +184,21 @@ export default {
             &:nth-child(1) {
               .Frameworks {
                 // vue js
-                @include ProgressBar(84%, $GreenColor1);
+                @include ProgressBar(88%, $GreenColor1);
               }
             }
 
             &:nth-child(2) {
               .Frameworks {
                 // react js
-                @include ProgressBar(68%, $GreenColor1);
+                @include ProgressBar(74%, $GreenColor1);
               }
             }
 
             &:nth-child(3) {
               .Frameworks {
                 // sass js
-                @include ProgressBar(83%, $GreenColor1);
+                @include ProgressBar(93%, $GreenColor1);
               }
             }
             &:nth-child(4) {
@@ -238,6 +241,18 @@ export default {
               .Frameworks {
                 // Foundation
                 @include ProgressBar(48%, $GreenColor1);
+              }
+            }
+            &:nth-child(11) {
+              .Frameworks {
+                // Chartjs
+                @include ProgressBar(70%, $GreenColor1);
+              }
+            }
+            &:nth-child(12) {
+              .Frameworks {
+                // Leaflet
+                @include ProgressBar(56%, $GreenColor1);
               }
             }
           }
