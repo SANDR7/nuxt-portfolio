@@ -72,6 +72,20 @@ export const state = () => ({
         name: 'Foundation',
         BeginDate: 2020
       },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/chartjs.svg',
+        Url_src: 'https://www.chartjs.org/',
+        Image_alt: 'Chart_logo',
+        name: 'Chart.js',
+        BeginDate: 2021
+      },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/leaflet.svg',
+        Url_src: 'https://leafletjs.com/',
+        Image_alt: 'Leaflet_logo',
+        name: 'Leaflet',
+        BeginDate: 2021
+      },
     ],
     // programmeertalen inclusief databes  
     ProgrammeerTalen: [
