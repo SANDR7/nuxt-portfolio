@@ -26,7 +26,6 @@
             ></div>
           </div>
 
-
           <div class="links" @click="ScrolltoTop">
             <nuxt-link title="Open Case Study" :to="`/Projects/${project.id}`">
               <i class="far fa-file-search"></i><span>Case Study</span>
@@ -80,7 +79,6 @@
             ></div>
           </div>
 
-
           <div class="links">
             <a
               :class="hasRepo"
@@ -130,9 +128,9 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "Here you can view my projects that I jave collected to show you what I'm capable of.",
-        },
-      ],
+            "Here you can view my projects that I jave collected to show you what I'm capable of."
+        }
+      ]
     };
   },
   data() {
@@ -141,8 +139,8 @@ export default {
       SomeExercises,
       showMoreTxtProj: "Show All",
       showMoreTxt: "Show All",
-      isVisible_Proj: 3,
-      isVisible_Excer: 3,
+      isVisible_Proj: projects.length -3, // number of cards that are shown
+      isVisible_Excer: SomeExercises.length - 3, // number of cards that are shown
     };
   },
   methods: {
@@ -156,15 +154,15 @@ export default {
         this.showMoreTxtProj = "show less";
         // scroll to the beginning
         this.$refs["projHeader"].scrollIntoView({
-          behavior: "smooth",
+          behavior: "smooth"
         });
       } else {
         // shows only 3 projects
-        this.isVisible_Proj = 3;
+        this.isVisible_Proj = this.projects.length - 3;
         this.showMoreTxtProj = "show all";
         // scroll to the beginning
         this.$refs["projHeader"].scrollIntoView({
-          behavior: "smooth",
+          behavior: "smooth"
         });
       }
     },
@@ -175,22 +173,22 @@ export default {
         this.showMoreTxt = "show less";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
-          behavior: "smooth",
+          behavior: "smooth"
         });
       } else {
         // shows only 2 projects
-        this.isVisible_Excer = 3;
+        this.isVisible_Excer = this.SomeExercises.length - 3;
         this.showMoreTxt = "show all";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
-          behavior: "smooth",
+          behavior: "smooth"
         });
       }
-    },
+    }
   },
   components: {
-    ContactSection,
-  },
+    ContactSection
+  }
 };
 </script>
 
@@ -307,8 +305,7 @@ export default {
           }
         }
         .UsedLang {
-          margin: 0rem 0 1.5rem;
-
+          margin: 1em 0;
           .ProgrammeerTalen {
             display: block;
             margin: 0.5rem 0;
@@ -344,6 +341,8 @@ export default {
         }
         .Description,
         .UsedLang {
+          margin: 1em 0;
+          margin-bottom: 3em;
           .title {
             font-weight: 500;
             &::after {
@@ -402,6 +401,9 @@ export default {
           .Description {
             min-height: 180px;
           }
+          .UsedLang {
+            margin: 2em 0;
+          }
           .links {
             a {
               span {
@@ -421,6 +423,7 @@ export default {
           }
           .Description,
           .UsedLang {
+            margin: 4em 0;
             .title {
               font-size: $fs-paragraph-1 * 1.3;
             }
@@ -430,6 +433,7 @@ export default {
           }
           .Description {
             min-height: 200px;
+            margin: 0 !important;
           }
         }
       }
