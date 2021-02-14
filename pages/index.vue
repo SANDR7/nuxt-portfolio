@@ -51,9 +51,9 @@ export default {
   },
   head() {
     return {
-      titleTemplate: "Personal Portfolio - %s"
-    }
-  }
+      titleTemplate: "Personal Portfolio - %s",
+    };
+  },
 };
 </script>
 

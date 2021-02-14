@@ -134,7 +134,6 @@ export default {
           svg {
             @include ColorTransition;
             font-size: 30px;
-            color: Color(GreyColor);
           }
           div {
             display: flex;
