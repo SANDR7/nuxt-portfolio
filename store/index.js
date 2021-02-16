@@ -229,6 +229,12 @@ export const state = () => ({
         Image_alt: 'heroku_logo',
         name: 'Heroku'
       },
+      {
+        Image_src: 'https://src.sandervanast.com/images/SVG/plesk.svg',
+        cat: 'Hosting Platform',
+        Image_alt: 'Plesk_logo',
+        name: 'Plesk'
+      },
     ],
     ComputerKennis: [
       {
@@ -324,20 +330,6 @@ export const state = () => ({
     Educations: [
       {
         id: 1,
-        SchoolLogo: "https://src.sandervanast.com/images/PNG/Logos/RGO-Logo.png",
-        SchoolLogoalt: "RGO-Logo",
-        Schoolwebsite: "https://rgomiddelharnis.nl/",
-        SchoolName: 'RGO Goeree-Overflakkee',
-        SchoolSort: "VO",
-        Specialty: "Services & Products",
-        Niveau: "VMBO Kader",
-        Duration: "2015 - 2019",
-        Language: "Dutch",
-        FaseInfo: `In high school we participated and helped in various school projects such as: VR tour for open day, Skills Talent tournament and completed an Anglia exam.`,
-        Success: true
-      },
-      {
-        id: 2,
         SchoolLogo: "https://src.sandervanast.com/images/PNG/Logos/GLR-Logo.png",
         SchoolLogoalt: "GLR-Logo",
         Schoolwebsite: "https://www.glr.nl/",
@@ -349,6 +341,20 @@ export const state = () => ({
         Language: "Dutch",
         FaseInfo: `The degree is designed to apply all practical skills in the real world, things like: database structures, vocational training and an Internet Project Plan (IPP).`,
         Success: false
+      },
+      {
+        id: 2,
+        SchoolLogo: "https://src.sandervanast.com/images/PNG/Logos/RGO-Logo.png",
+        SchoolLogoalt: "RGO-Logo",
+        Schoolwebsite: "https://rgomiddelharnis.nl/",
+        SchoolName: 'RGO Goeree-Overflakkee',
+        SchoolSort: "VO",
+        Specialty: "Services & Products",
+        Niveau: "VMBO Kader",
+        Duration: "2015 - 2019",
+        Language: "Dutch",
+        FaseInfo: `In high school we participated and helped in various school projects such as: VR tour for open day, Skills Talent tournament and completed an Anglia exam.`,
+        Success: true
       },
     ],
     emailProvider: {
