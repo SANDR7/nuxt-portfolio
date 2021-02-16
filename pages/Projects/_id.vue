@@ -6,80 +6,86 @@
         <div>{{ project.UsedTech.Skills }}</div>
         <div>{{ project.Datum }}</div>
       </div>
-      <div class="Background">
-        Developing...
+      <div v-if="project.hasCaseStudy === false">
+        <div class="Background">Developing...</div>
+        <div class="endWord">
+          <ProjectBtns />
+        </div>
       </div>
-      <!-- <article class="Background">
-        <div class="firstSect">
-          <img class="Image" :src="project.Img_src" alt="Projectname" />
-          <div class="rightSect">
-            <div class="objective">
-              <h3 class="header">The Objective</h3>
-              <p>
-                {{ project.Objective }}
-              </p>
-            </div>
-            <div class="requirements">
-              <h3 class="header">The Requirements</h3>
-              <div class="requirementsList">
-                <ul class="scroll" v-html="project.Requirements"></ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="secondSect">
-          <div class="leftSect">
-            <div class="research">
-              <h3 class="header">Research &amp; Approach</h3>
-              <p>
-                {{ project.Research }}
-              </p>
-            </div>
-            <div class="columns">
-              <div class="experience">
-                <h3 class="header">The Experience</h3>
+      <div v-else>
+        <article class="Background">
+          <div class="firstSect">
+            <img class="Image" :src="project.Img_src" alt="Projectname" />
+            <div class="rightSect">
+              <div class="objective">
+                <h3 class="header">The Objective</h3>
                 <p>
-                  {{ project.Ideas }}
+                  {{ project.Objective }}
                 </p>
               </div>
-              <div class="process">
-                <h3 class="header">Process</h3>
-                <p>
-                  {{ project.Process }}
-                </p>
+              <div class="requirements">
+                <h3 class="header">The Requirements</h3>
+                <div class="requirementsList">
+                  <ul class="scroll" v-html="project.Requirements"></ul>
+                </div>
               </div>
             </div>
-            <div class="PreviewImg">
-              <img :src="project.Img_src" alt="testing" />
+          </div>
+          <div class="secondSect">
+            <div class="leftSect">
+              <div class="research">
+                <h3 class="header">Research &amp; Approach</h3>
+                <p>
+                  {{ project.Research }}
+                </p>
+              </div>
+              <div class="columns">
+                <div class="experience">
+                  <h3 class="header">The Experience</h3>
+                  <p>
+                    {{ project.Ideas }}
+                  </p>
+                </div>
+                <div class="process">
+                  <h3 class="header">Process</h3>
+                  <p>
+                    {{ project.Process }}
+                  </p>
+                </div>
+              </div>
+              <div class="PreviewImg">
+                <img :src="project.Img_src2" alt="sneekpeak" />
+              </div>
+            </div>
+            <div class="rightSect">
+              <h3 class="header">Some thoughts</h3>
+              <div class="ThoughtList">
+                <ul class="scroll" v-html="project.Thoughts"></ul>
+              </div>
+              <h3 class="header">Used Techniques</h3>
+              <div class="TechniqueList">
+                <ul class="scroll" v-html="project.Techniques"></ul>
+              </div>
             </div>
           </div>
-          <div class="rightSect">
-            <h3 class="header">Some thoughts</h3>
-            <div class="ThoughtList">
-              <ul class="scroll" v-html="project.Thoughts"></ul>
-            </div>
-            <h3 class="header">Used Techniques</h3>
-            <div class="TechniqueList">
-              <ul class="scroll" v-html="project.Techniques"></ul>
-            </div>
+        </article>
+        <div class="endWord">
+          <div class="LiveSite">
+            <a :href="project.Url_src" class="LiveSiteLink"
+              ><i class="far fa-link"></i> Live Demo</a
+            >
           </div>
+          <ProjectBtns />
         </div>
-      </article>
-      <div class="endWord">
-        <h3>Final Result</h3>
-        <h3>Final Outcome</h3>
-        <p>
-          {{project.Summery}}
-        </p>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import projects from "~~/projects";
+import ProjectBtns from "~~/components/projects/button";
 export default {
-  layout: 'nofooter',
   head() {
     return {
       title: `Case Study | ${this.project.Projectnaam} - Sander van Ast`,
@@ -89,6 +95,9 @@ export default {
     return {
       projects,
     };
+  },
+  components: {
+    ProjectBtns,
   },
   computed: {
     project() {
@@ -139,13 +148,18 @@ export default {
       font-size: $fs-paragraph-2;
     }
     .Background {
-      @include CardBackground;
+      @include BackgroundImage(
+        "https://src.sandervanast.com/images/PNG/BackgroundImage5.png"
+      );
+      &::after {
+        background-repeat: repeat-y;
+        opacity: 0.05 !important;
+      }
       background-color: var(--BackgroundLevel2);
       box-shadow: $innerShadow;
       margin: 0 2rem;
       padding: 2rem 2.5rem !important;
       z-index: 10;
-
       .header {
         font-size: $fs-paragraph-2 * 1.5;
         text-transform: capitalize;
@@ -199,18 +213,21 @@ export default {
               .requirementItem {
                 @include subCardBackground;
                 margin: 0;
-                margin-right: 3em;
+                margin-right: 1em !important;
                 margin-bottom: 1em;
                 min-width: 200px;
                 justify-content: center;
+                box-shadow: $innerShadow !important;
               }
             }
           }
         }
       }
+
       .secondSect {
         display: flex;
         margin: 2rem 0;
+        align-items: center;
         .leftSect {
           width: 73%;
           .research {
@@ -247,6 +264,7 @@ export default {
           margin: 0 1.5rem;
           padding: 4em 3em;
           min-width: max-content;
+          flex-direction: row !important;
           .ThoughtList,
           .TechniqueList {
             margin: 1em 0;
@@ -338,18 +356,22 @@ export default {
           flex-direction: column;
           // background-color: red;
           .leftSect {
+            margin: 3em 0;
             width: 100%;
             .research {
               p {
                 line-height: 28px;
                 font-size: $fs-paragraph-1;
-
               }
             }
             .columns {
+              flex-direction: column;
               p {
               }
               .experience {
+              }
+              .process {
+                margin: 2em 0;
               }
             }
             .PreviewImg {
@@ -358,7 +380,8 @@ export default {
             }
           }
           .rightSect {
-            display: none;
+            // display: none;
+            width: 100%;
             .ThoughtList,
             .TechniqueList {
               .scroll,
@@ -534,6 +557,8 @@ export default {
         .secondSect {
           display: flex;
           margin: 2rem 0;
+          flex-direction: row;
+          align-items: center;
           .leftSect {
             width: 73%;
             .research {
@@ -543,10 +568,10 @@ export default {
               display: flex;
               width: 100%;
               justify-content: space-between;
+              flex-direction: row;
               p {
                 width: 100%;
               }
-
               .experience {
                 @include CardBackground;
                 margin-right: 4em;
@@ -569,10 +594,11 @@ export default {
             @include CardBackground;
             margin: 0 1.5rem;
             padding: 4em 3em;
-            min-width: max-content;
+            width: 26%;
             .ThoughtList,
             .TechniqueList {
               margin: 1em 0;
+              text-align: center;
               ::-webkit-scrollbar {
                 width: 5px;
               }
@@ -654,12 +680,14 @@ export default {
     //     }
     //   }
     // }
-    .endWord {
+    .LiveSite,
+    .OverView {
       padding: 2rem 0;
       width: 100%;
       text-align: center;
-      h3 {
-        font-size: $fs-header * 0.8;
+      .LiveSiteLink {
+        font-size: 2.5em;
+        font-weight: bold;
       }
     }
   }
