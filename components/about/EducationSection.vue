@@ -1,24 +1,44 @@
 <template>
   <div class="Educations">
-      <div class="Education" v-for="Education in Educations" :key="Education.id">
-        <div class="Logo">
-          <img :src="Education.SchoolLogo" :alt="Education.SchoolLogoalt">
+    <div class="Education" v-for="Education in Educations" :key="Education.id">
+      <div class="Logo">
+        <img :src="Education.SchoolLogo" :alt="Education.SchoolLogoalt" />
+        <div
+          class="finished"
+          v-if="Education.Success === true"
+          :class="Education.Success == true ? 'isFinished' : 'notFinished'"
+        >
+          <i class="fad fa-file-check"></i>
+          <p>Passed with an average of 7</p>
         </div>
-        <div class="SchoolInfo">
-          <div class="Names">
-             <a :href="Education.Schoolwebsite" target="blank">{{ Education.SchoolName }}</a>
-            <b>{{ Education.Specialty }}</b>
-          </div>
-          <p class="Fases">
-            {{Education.FaseInfo}}
-          </p>
-          <div class="Info">
-            <span>{{ Education.SchoolSort }} || {{Education.Language}} — {{ Education.Niveau }}</span>
-            <span>{{ Education.Duration }}</span>
-          </div>
+        <div
+          class="finished"
+          :class="Education.Success == true ? 'isFinished' : 'notFinished'"
+          v-else
+        >
+          <i class="fad fa-file-alt"></i>
+          <p>In progress</p>
         </div>
-        
       </div>
+      <div class="SchoolInfo">
+        <div class="Names">
+          <a :href="Education.Schoolwebsite" target="blank">{{
+            Education.SchoolName
+          }}</a>
+          <b>{{ Education.Specialty }}</b>
+        </div>
+        <p class="Fases">
+          {{ Education.FaseInfo }}
+        </p>
+        <div class="Info">
+          <span
+            >{{ Education.SchoolSort }} || {{ Education.Language }} —
+            {{ Education.Niveau }}</span
+          >
+          <span>{{ Education.Duration }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -26,11 +46,9 @@
 import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState([
-      "Educations",
-    ]),
+    ...mapState(["Educations"]),
   },
-}
+};
 </script>
 
 <style lang="scss">
@@ -43,13 +61,34 @@ export default {
     display: flex;
     height: max-content;
     .Logo {
-      margin: .5rem;
-      padding: .5rem;
+      margin: 0.5rem;
+      padding: 0.5rem;
       height: 100%;
       img {
         width: 150px;
         height: 100px;
         object-fit: contain;
+      }
+      .finished {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        margin-top: .3em;
+        font-size: $fs-header * 0.6;
+        p {
+          line-height: 20px;
+          font-size: $fs-paragraph-1;
+          margin-left: 1em;
+        }
+      }
+      .fad {
+        padding: .3em;
+      }
+      .isFinished {
+        color: green;
+      }
+      .notFinished {
+        color: orange;
       }
     }
     .SchoolInfo {
@@ -59,7 +98,7 @@ export default {
       width: 100%;
       padding: 0 1rem;
       .Fases {
-        margin: .8rem 0;
+        margin: 0.8rem 0;
         width: 95%;
         line-height: 24px;
       }
