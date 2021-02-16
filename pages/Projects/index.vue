@@ -1,7 +1,7 @@
 <template>
   <div class="Sections" style="margin-top: 0">
     <div class="Section AllProjects" ref="projHeader">
-      <h4>All my Projects</h4>
+      <h4>Highlighted Projects</h4>
       <div class="Background ProjectenGrid">
         <div
           class="Card"
@@ -13,7 +13,7 @@
             <div class="ProjectNaam">{{ project.Projectnaam }}</div>
           </div>
 
-          <img :src="project.Img_src" alt="ProjectImg" />
+          <img :src="project.Img_src" :alt="project.id + '-Thumbnail'" />
           <div class="Description">
             <p>{{ project.FullDesc }}</p>
           </div>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="Section AllExercises" ref="exerHeader">
-      <h4>Other Exercises</h4>
+      <h4>Fun Exercises</h4>
       <div class="Background ProjectenGrid">
         <div
           class="Card"
@@ -61,14 +61,14 @@
             <div class="ProjectNaam">{{ SomeExercise.Projectnaam }}</div>
           </div>
 
-          <img :src="SomeExercise.Img_src" alt="ProjectImg" />
+          <img :src="SomeExercise.Img_src" :alt="SomeExercise.id + '-Thumbnail'" />
           <div class="Description">
-            <p>{{ SomeExercise.FullDesc }}</p>
+            <p title="Description">{{ SomeExercise.FullDesc }}</p>
           </div>
 
           <div v-html="SomeExercise.UsedTech.tags" class="tags"></div>
           <div class="UsedLang">
-            <div class="title">Used Techniques</div>
+            <!-- <div class="title">Used Techniques</div> -->
             <div
               class="ProgrammeerTalen"
               v-html="SomeExercise.UsedTech.Langs"
@@ -128,18 +128,18 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "Here you can view my projects that I jave collected to show you what I'm capable of."
-        }
-      ]
+            "Here you can view my projects that I jave collected to show you what I'm capable of.",
+        },
+      ],
     };
   },
   data() {
     return {
       projects,
       SomeExercises,
-      showMoreTxtProj: "Show All",
-      showMoreTxt: "Show All",
-      isVisible_Proj: projects.length -3, // number of cards that are shown
+      showMoreTxtProj: "Show More",
+      showMoreTxt: "Show More",
+      isVisible_Proj: projects.length - 3, // number of cards that are shown
       isVisible_Excer: SomeExercises.length - 3, // number of cards that are shown
     };
   },
@@ -148,60 +148,67 @@ export default {
       scrollTo({ scrollTop: 1200 }, "0");
     },
     showProjects() {
-      if ((this.isVisible_Proj = this.isVisible_Proj)) {
+      if (this.isVisible_Proj > 2) {
         // shows all projects
-        this.isVisible_Proj = 0;
+        this.isVisible_Proj = this.projects.length - 6;
         this.showMoreTxtProj = "show less";
         // scroll to the beginning
         this.$refs["projHeader"].scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
         });
       } else {
         // shows only 3 projects
         this.isVisible_Proj = this.projects.length - 3;
-        this.showMoreTxtProj = "show all";
+        this.showMoreTxtProj = "show more";
         // scroll to the beginning
         this.$refs["projHeader"].scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }
     },
     showExcercies() {
-      if ((this.isVisible_Excer = this.isVisible_Excer)) {
+      if (this.isVisible_Excer > 2) {
         // shows all projects
-        this.isVisible_Excer = 0;
+        this.isVisible_Excer = this.SomeExercises.length - 6;
         this.showMoreTxt = "show less";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
         });
       } else {
         // shows only 2 projects
         this.isVisible_Excer = this.SomeExercises.length - 3;
-        this.showMoreTxt = "show all";
+        this.showMoreTxt = "show more";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }
-    }
+    },
   },
   components: {
-    ContactSection
-  }
+    ContactSection,
+  },
 };
 </script>
 
 <style lang="scss">
 .Sections {
-  .AllProjects,
-  .AllExercises {
+  .AllProjects {
     @include BackgroundImage(
       "https://src.sandervanast.com/images/PNG/BackgroundImage4.png"
     );
+  }
+  .AllExercises {
+    @include BackgroundImage(
+      "https://src.sandervanast.com/images/PNG/BackgroundImage45.png"
+    );
+  }
+  .AllExercises,
+  .AllProjects {
     &::after {
       background-repeat: repeat-y;
-      background-position: 80%;
+      // background-position: 80%;
       opacity: 0.1 !important;
     }
   }
@@ -325,6 +332,14 @@ export default {
               width: max-content;
               padding: 1rem 1.5rem;
             }
+            .ORANGE,
+            .RED,
+            .GREEN,
+            .PURPLE {
+              &:hover {
+                color: var(--TxtColor);
+              }
+            }
             .ORANGE {
               color: $OrangeColor1;
             }
@@ -350,9 +365,6 @@ export default {
               color: $OrangeColor1;
             }
           }
-        }
-        .Description {
-          min-height: 190px;
         }
         .links {
           position: absolute;
@@ -398,9 +410,6 @@ export default {
           img {
             height: 300px;
           }
-          .Description {
-            min-height: 180px;
-          }
           .UsedLang {
             margin: 2em 0;
           }
@@ -424,6 +433,7 @@ export default {
           .Description,
           .UsedLang {
             margin: 4em 0;
+            margin-top: 1em;
             .title {
               font-size: $fs-paragraph-1 * 1.3;
             }
@@ -432,7 +442,6 @@ export default {
             }
           }
           .Description {
-            min-height: 200px;
             margin: 0 !important;
           }
         }
@@ -444,6 +453,7 @@ export default {
           }
           .UsedLang {
             margin: 4em 0;
+            margin-top: 2em;
             .title {
               font-size: $fs-paragraph-1 * 1.3;
             }
