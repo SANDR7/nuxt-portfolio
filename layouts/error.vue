@@ -1,9 +1,9 @@
 <template>
   <div class="Sections Errors">
     <div class="Section Error">
-      <h5>{{error.statusCode}} Error</h5>
+      <h5>{{ error.statusCode }} Error</h5>
       <div class="Background">
-        <div>{{error.message}}</div>
+        <div>{{ error.message }}</div>
       </div>
     </div>
   </div>
@@ -24,11 +24,14 @@ export default {
 <style lang="scss">
 .Sections {
   .Error {
-      height: 80vh;
-      @include BackgroundImage("https://src.sandervanast.com/images/PNG/BackgroundImageError.png");
-      &::after {
-        height: 84vh;
-      }
+    height: 80vh;
+    @include BackgroundImage(
+      "https://src.sandervanast.com/images/PNG/BackgroundImageError.png"
+    );
+    &::after {
+      height: 84vh;
+      background-repeat: repeat-y;
+    }
     h5 {
       @include ColorTransition;
       font-size: $fs-header * 1.3;
@@ -44,7 +47,7 @@ export default {
       opacity: $WmarkOpacity * 5.8;
       &::after {
         content: ";";
-          -webkit-text-fill-color: $OrangeColor1;
+        -webkit-text-fill-color: $OrangeColor1;
       }
     }
   }
