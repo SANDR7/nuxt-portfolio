@@ -17,7 +17,7 @@
         :key="id"
       >
         <a :href="project.Url_src" target="blank">
-          <img :src="project.Img_src" alt="ProjectImg" />
+          <img :src="project.Img_src" :alt="project.id + '-Thumbnail'" />
         </a>
         <div class="Beschrijving">
           <div class="subTitle">Quick Description</div>
@@ -32,7 +32,6 @@
 
 <script>
 import projects from "~~/projects";
-import { mapState } from "vuex";
 export default {
   data() {
     return {
