@@ -116,15 +116,13 @@
           <div class="subCard">User Experience design</div>
           <div class="subCard">graphic design</div>
           <div class="subCard">Logo design</div>
-          <div class="subCard">MEVN Stack</div>
-          <div class="subCard">MERN Stack</div>
-          <div class="subCard">progressive web app</div>
-          <div class="subCard">JSX</div>
-          <div class="subCard">AJAX</div>
           <div class="subCard">SEO</div>
-          <div class="subCard">Adobe Xd</div>
           <div class="subCard">Illustrator</div>
           <div class="subCard">Photoshop</div>
+          <div class="subCard">Adobe Xd</div>
+          <div class="subCard">JSX</div>
+          <div class="subCard">progressive web app</div>
+          <div class="subCard">AJAX</div>
           <div class="subCard">reliable</div>
           <div class="subCard">Sporty</div>
           <div class="subCard">My Stamina</div>
@@ -599,6 +597,17 @@ export default {
               .NaamPrograms {
                 //Heroku
                 @include ProgressBar(67%, $RedColor1);
+
+                &::before,
+                &::after {
+                  top: $top;
+                }
+              }
+            }
+            &:nth-child(14) {
+              .NaamPrograms {
+                //plesk
+                @include ProgressBar(77%, $RedColor1);
 
                 &::before,
                 &::after {
