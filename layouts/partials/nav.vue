@@ -35,18 +35,19 @@ export default {
   data() {
     return {
       darkMode: "", // default value (system preference)
-      isToggled: true,
+      isToggled: false,
     };
   },
   methods: {
     toggle() {
-      if (this.darkMode == "light") {
-        this.darkMode = "dark";
-        this.isToggled = true;
-      } else {
-        this.darkMode = "light";
-        this.isToggled = false;
-      }
+      const result =  window.matchMedia("(prefers-color-scheme: dark)")
+        if (this.darkMode == result.matches || this.darkMode == "light") {
+          this.darkMode = "dark";
+          this.isToggled = true;
+        } else {
+          this.darkMode = "light";
+          this.isToggled = false;
+        }
     },
     ScrolltoTop() {
       scrollTo({ scrollTop: 1200 }, "0");
