@@ -9,7 +9,7 @@
           :class="Education.Success == true ? 'isFinished' : 'notFinished'"
         >
           <i class="fad fa-file-check"></i>
-          <p>Passed with an average of 7</p>
+          <p>{{Education.SuccessMsg}}</p>
         </div>
         <div
           class="finished"
@@ -17,7 +17,7 @@
           v-else
         >
           <i class="fad fa-file-alt"></i>
-          <p>In progress</p>
+          <p>{{Education.SuccessMsg}}</p>
         </div>
       </div>
       <div class="SchoolInfo">
@@ -73,7 +73,7 @@ export default {
         display: flex;
         justify-items: center;
         align-items: center;
-        margin-top: .3em;
+        margin-top: .6em;
         font-size: $fs-header * 0.6;
         p {
           line-height: 20px;
@@ -82,7 +82,7 @@ export default {
         }
       }
       .fad {
-        padding: .3em;
+        padding: .2em;
       }
       .isFinished {
         color: green;
