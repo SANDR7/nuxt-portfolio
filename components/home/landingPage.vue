@@ -112,6 +112,9 @@ export default {
         p {
           font-size: $fs-paragraph-1;
           width: 100%;
+          .Accent {
+            filter: contrast(900%);
+          }
         }
       }
       .CtA {
