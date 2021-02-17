@@ -29,6 +29,8 @@ $sectionPadding: 0 4rem;
 
 $innerShadow: inset -5px -5px 5px 0 rgba(68, 68, 68, 0.08),
   inset 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+$innerShadowHover: inset -5px -5px 5px 0 rgba(68, 68, 68, 0.18),
+  inset 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
 $innerShadowLink: inset -5px -5px 5px 0 rgba(176, 49, 50, 0.14),
   inset 5px 5px 5px 0 rgba(127, 36, 36, 0.26);
 // Fontsizes

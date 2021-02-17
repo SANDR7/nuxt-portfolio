@@ -70,9 +70,10 @@
   background-color: var(--BackGroundCardLevel2);
   display: flex;
   margin: 0.7rem 1rem;
-  box-shadow: none;
+  // box-shadow: none;
+  box-shadow: $innerShadow;
   &:hover {
-    box-shadow: $innerShadow;
+    border: solid 3px #74747470;
     // transform: scale(.97);
   }
 }

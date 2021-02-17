@@ -688,6 +688,7 @@ export default {
       .LiveSiteLink {
         font-size: 2.5em;
         font-weight: bold;
+        padding-bottom: .3em;
       }
     }
   }

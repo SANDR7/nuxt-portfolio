@@ -21,7 +21,7 @@ export default {
       lang: "en"
     },
     bodyAttrs: {
-      class: "light"
+      class: ""
     },
     meta: [
       { "http-equiv": "Content-Type", content: "text/html; charset=UTF-8" },
@@ -90,6 +90,9 @@ export default {
    ** Global CSS
    */
   css: [],
+  styleResources: {
+    scss: ["@/assets/styles/*.scss"]
+  },
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -137,9 +140,6 @@ export default {
     "@nuxtjs/recaptcha"
   ],
   router: {},
-  styleResources: {
-    scss: ["@/assets/styles/*.scss"]
-  },
 
   loading: {
     continuous: true,
