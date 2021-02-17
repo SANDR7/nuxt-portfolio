@@ -340,7 +340,8 @@ export const state = () => ({
         Duration: "2019 - 2022",
         Language: "Dutch",
         FaseInfo: `The degree is designed to apply all practical skills in the real world, things like: database structures, vocational training and an Internet Project Plan (IPP).`,
-        Success: false
+        Success: false,
+        SuccessMsg: `Currenlty in year two`
       },
       {
         id: 2,
@@ -354,7 +355,8 @@ export const state = () => ({
         Duration: "2015 - 2019",
         Language: "Dutch",
         FaseInfo: `In high school we participated and helped in various school projects such as: VR tour for open day, Skills Talent tournament and completed an Anglia exam.`,
-        Success: true
+        Success: true,
+        SuccessMsg: `Pased with an average of 7`
       },
     ],
     emailProvider: {
