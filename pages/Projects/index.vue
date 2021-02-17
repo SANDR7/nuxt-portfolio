@@ -68,7 +68,7 @@
 
           <div v-html="SomeExercise.UsedTech.tags" class="tags"></div>
           <div class="UsedLang">
-            <!-- <div class="title">Used Techniques</div> -->
+            <div class="title">Used Techniques</div>
             <div
               class="ProgrammeerTalen"
               v-html="SomeExercise.UsedTech.Langs"
