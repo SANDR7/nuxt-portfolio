@@ -209,10 +209,10 @@ export default {
         &:hover,
         &:focus,
         &:valid {
-          box-shadow: inset -5px -5px 5px 0 rgba(68, 68, 68, 0.08),
-            inset 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: $innerShadowHover;
           transform: scale(1);
           outline: none;
+          border: none;
         }
       }
       textarea {
