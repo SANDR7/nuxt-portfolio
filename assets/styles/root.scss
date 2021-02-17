@@ -42,35 +42,7 @@ $colors: (
 // Theme
 //--------------------------
 @media (prefers-color-scheme: light) {
-  .light{
-    --BackgroundNavColor: #{Color(backgroundNavLight)};
-    --BackgroundColor: #{Color(backgroundLight)};
-    --BackGroundCardLevel1: #{Color(backgroundCard1_Light)};
-    --BackGroundCardLevel2: #{Color(backgroundCard2_Light)};
-    
-    --BackgroundSections: #{Color(backgroundSections_Light)};
-    
-    --ProgressColor: #{Color(GeneralLight)};
-  
-    --TxtColor: #{Color(txtLight)};
-    
-    --BoxShadow: #{Color(BoxShadowLight)};
-    --ImageFilter: 100%;
-  }
-  .dark {
-    --BackgroundNavColor: #{Color(backgroundNavDark)};
-    --BackgroundColor: #{Color(backgroundDark)};
-    --BackGroundCardLevel1: #{Color(backgroundCard1_Dark)};
-    --BackGroundCardLevel2: #{Color(backgroundCard2_Dark)};
-    --BackgroundSections: #{Color(backgroundSections_Dark)};
-    
-    --ProgressColor: #{Color(GeneralDark)};
-    
-    --TxtColor: #{Color(txtDark)};
-    
-    --BoxShadow: #{Color(BoxShadowDark)};
-    --ImageFilter: 75%;
-  }
+@include ColorPalette;
   :root {
     --BackgroundNavColor: #{Color(backgroundNavLight)};
     --BackgroundColor: #{Color(backgroundLight)};
@@ -88,35 +60,7 @@ $colors: (
   }
 }
 @media (prefers-color-scheme: dark) {
-  .dark {
-    --BackgroundNavColor: #{Color(backgroundNavDark)};
-    --BackgroundColor: #{Color(backgroundDark)};
-    --BackGroundCardLevel1: #{Color(backgroundCard1_Dark)};
-    --BackGroundCardLevel2: #{Color(backgroundCard2_Dark)};
-    --BackgroundSections: #{Color(backgroundSections_Dark)};
-    
-    --ProgressColor: #{Color(GeneralDark)};
-    
-    --TxtColor: #{Color(txtDark)};
-    
-    --BoxShadow: #{Color(BoxShadowDark)};
-    --ImageFilter: 75%;
-  }
-  .light{
-    --BackgroundNavColor: #{Color(backgroundNavLight)};
-    --BackgroundColor: #{Color(backgroundLight)};
-    --BackGroundCardLevel1: #{Color(backgroundCard1_Light)};
-    --BackGroundCardLevel2: #{Color(backgroundCard2_Light)};
-    
-    --BackgroundSections: #{Color(backgroundSections_Light)};
-    
-    --ProgressColor: #{Color(GeneralLight)};
-    
-    --TxtColor: #{Color(txtLight)};
-    
-    --BoxShadow: #{Color(BoxShadowLight)};
-    --ImageFilter: 100%;
-  }
+@include ColorPalette;
   :root {
     --BackgroundNavColor: #{Color(backgroundNavDark)};
     --BackgroundColor: #{Color(backgroundDark)};
