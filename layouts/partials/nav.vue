@@ -6,19 +6,17 @@
         class="ToggleTheme"
         @click="toggle"
         style="cursor: pointer"
-        :title="`Current theme is ${this.darkMode}`"
+        :title="`Current theme is ${this.darkMode || 'based on your system'}`"
       >
         <i
           class="fas fa-adjust"
           :style="
-            this.isToggled
+            this.darkMode == '' || this.darkMode == 'light'
               ? 'transform: rotate(180deg)'
               : 'transform: rotate(0deg)'
           "
         ></i>
-        <div class="ToggleText">
-          Change theme to {{ this.isToggled ? "light" : "dark" }}
-        </div>
+        <div class="ToggleText">{{ this.systemText }} 👀</div>
       </div>
       <div class="NavLinks" @click="ScrolltoTop">
         <nuxt-link to="/" title="Home Page">Home</nuxt-link>
@@ -35,18 +33,28 @@ export default {
   data() {
     return {
       darkMode: "", // default value (system preference)
-      isToggled: false,
+      systemText: "Change your mood",
     };
   },
   methods: {
+    test() {
+      const system = window.matchMedia("(prefers-color-scheme: dark)");
+      if (system.matches == true) {
+        this.isToggled = !this.isToggled;
+        return "Bright";
+      } else {
+        this.isToggled = !this.isToggled;
+        return "Dark";
+      }
+    },
     toggle() {
       const result = window.matchMedia("(prefers-color-scheme: dark)");
       if (this.darkMode == result.matches || this.darkMode == "light") {
         this.darkMode = "dark";
-        this.isToggled = true;
+        this.systemText = "Go to the Bright Side";
       } else {
         this.darkMode = "light";
-        this.isToggled = false;
+        this.systemText = "Go to the Dark Side";
       }
     },
     ScrolltoTop() {
