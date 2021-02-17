@@ -3,37 +3,55 @@
     <div class="Cover">
       <div class="leftSide">
         <div class="text">
-          <div class="WMark">Portfolio \ 07{{date - 2002}}</div>
+          <div class="WMark">Portfolio \ 07{{ date - 2002 }}</div>
           <h2 class="Header">Developing the web by Creating for You.</h2>
           <p>
-            Hey there! Welcome to my personal portfolio, I'm {{fname}} {{lname}} {{llname}} and here you'll find my collection of projects and skills that I've collected over the
-            years. I'm currently a student at the
-            <a href="https://www.glr.nl/" target="blank" title="School name">Grafisch Lyceum Rotterdam</a> based in The Netherlands as a <span class="Accent">full-stack developer</span>.
+            Hey there! Welcome to my personal portfolio, I'm {{ fname }}
+            {{ lname }} {{ llname }} and here you'll find my collection of
+            projects and skills that I've collected over the years. I'm
+            currently a student at the
+            <a href="https://www.glr.nl/" target="blank" title="School name"
+              >Grafisch Lyceum Rotterdam</a
+            >
+            based in The Netherlands as a
+            <span class="Accent">full-stack developer</span>.
             <br />
-            <br />I'm also a graphic designer, <span class="Accent">UI & UX designer</span>, Lego technic builder,
-            <a href="https://en.wikipedia.org/wiki/Speedcubing" target="blank">speedcuber</a>, computer enthusiast and a tech savvy.
+            <br />I'm also a graphic designer,
+            <span class="Accent">UI & UX designer</span>, Lego technic builder,
+            <a href="https://en.wikipedia.org/wiki/Speedcubing" target="blank"
+              >speedcuber</a
+            >, computer enthusiast and a tech savvy.
           </p>
         </div>
         <div class="CtA">
-          <nuxt-link class="CtAButton" to="/Projects">View my Projects</nuxt-link>
+          <nuxt-link class="CtAButton" to="/Projects"
+            >View my Projects</nuxt-link
+          >
           <span>Searching for a Dutch internship</span>
-          <span>NL&nbsp;•&nbsp;<a
-            href="https://src.sandervanast.com/CV.pdf"
-            target="blank"
-            class="Download"
-          >Donwload my Resume</a></span>
-          
+          <span
+            >NL&nbsp;•&nbsp;<a
+              href="https://src.sandervanast.com/CV.pdf"
+              target="blank"
+              class="Download"
+              >Donwload my Resume</a
+            ></span
+          >
         </div>
       </div>
       <div class="rightSide">
         <h1 class="name">
-          <span>{{fname}}</span>
+          <span>{{ fname }}</span>
           <span>{{ lname }}</span>
           <span>{{ llname }}</span>
         </h1>
         <div class="Hero">
-          <img src="https://src.sandervanast.com/images/PNG/Sander.png" width="460" height="520" alt="Sander" />
-          <div class="ide">SMA ⁄ 0{{countProjects}}</div>
+          <img
+            src="https://src.sandervanast.com/images/PNG/Sander.png"
+            width="460"
+            height="520"
+            alt="Sander"
+          />
+          <div class="ide">SMA ⁄ 0{{ countProjects }}</div>
         </div>
       </div>
     </div>
@@ -41,7 +59,7 @@
 </template>
 
 <script>
-import projects from '~~/projects';
+import projects from "~~/projects";
 export default {
   data() {
     return {
@@ -58,7 +76,9 @@ export default {
 
 <style lang="scss">
 .WelcomeCoverHome {
-  @include BackgroundImage("https://src.sandervanast.com/images/PNG/BackgroundImage0.png");
+  @include BackgroundImage(
+    "https://src.sandervanast.com/images/PNG/BackgroundImage0.png"
+  );
   &::after {
     height: 125%;
   }
@@ -73,12 +93,12 @@ export default {
       flex-direction: column;
       justify-content: space-evenly;
       height: max-content;
-      z-index: .5;
+      z-index: 0.5;
       flex: 1;
       transform: translate(0%, 8%);
       background-color: var(--BackGroundCardLevel1);
       .text {
-        margin: 0 2rem;  
+        margin: 0 2rem;
         .Header {
           margin: 1.5rem 0 0rem;
           font-size: $fs-paragraph-2 * 1.5;
@@ -103,7 +123,7 @@ export default {
         a {
           margin: 1rem 0;
           text-align: center;
-          @include HoverFx(0,transparent,0);
+          @include HoverFx(0, transparent, 0);
         }
         .CtAButton {
           @include ButtonStyle;
@@ -186,25 +206,25 @@ export default {
   }
 }
 /* Smartphones (portrait) ----------- */
-@media only screen and (min-width : $MobileSize1) and (orientation : portrait) {
+@media only screen and (min-width: $MobileSize1) and (orientation: portrait) {
   .WelcomeCoverHome {
     .Cover {
       flex-direction: column;
       margin: 0 1rem;
       .leftSide {
-        flex: .9;
+        flex: 0.9;
         height: max-content;
         transform: translateY(7%);
         padding: 2rem 0;
         .text {
           margin: 0 2rem;
           .Header {
-            margin: 1.5rem 0 .2rem;
+            margin: 1.5rem 0 0.2rem;
             line-height: 30px;
             font-size: $fs-paragraph-2 * 1.5;
           }
           p {
-            font-size: $fs-paragraph-1 * .9;
+            font-size: $fs-paragraph-1 * 0.9;
             width: 100%;
           }
         }
@@ -222,57 +242,55 @@ export default {
     }
   }
 }
-@media only screen and (max-width : $MobileSize1) {
+@media only screen and (max-width: $MobileSize1) {
   .WelcomeCoverHome {
     .Cover {
       flex-direction: column;
       margin: 0 1rem;
       .leftSide {
-        flex: .9;
+        flex: 0.9;
         height: max-content;
         transform: translateY(7%);
         padding: 2rem 0;
         .text {
           margin: 0 2rem;
           .Header {
-            margin: 1.5rem 0 .2rem;
+            margin: 1.5rem 0 0.2rem;
             line-height: 30px;
             font-size: $fs-paragraph-2 * 1.5;
           }
           p {
-            font-size: $fs-paragraph-1 * .9;
+            font-size: $fs-paragraph-1 * 0.9;
             width: 100%;
           }
         }
         .CtA {
           width: 80%;
-          
         }
       }
       .rightSide {
         height: 730px;
         display: none;
-        
       }
     }
   }
 }
 /* Laptops ----------- */
-@media only screen and (min-width: $TabletSize1) and (orientation : portrait) {
+@media only screen and (min-width: $TabletSize1) and (orientation: portrait) {
   .WelcomeCoverHome {
     .Cover {
       .leftSide {
         flex: 1.8;
       }
       .rightSide {
-        flex: .3;
-   
+        flex: 0.3;
+
         .Hero {
           img {
             display: none;
           }
           .ide {
-            transform: translate(70vw, 120%);
+            transform: translate(70vw, 170%)  !important;
           }
         }
       }
@@ -291,19 +309,19 @@ export default {
         padding: 2rem 0;
         .text {
           .Header {
-            margin: 1.5rem 0 .2rem;
+            margin: 1.5rem 0 0.2rem;
             line-height: 30px;
-            font-size: $fs-header * .55;
+            font-size: $fs-header * 0.55;
           }
           p {
-            font-size: $fs-paragraph-1 * .9;
+            font-size: $fs-paragraph-1 * 0.9;
             width: 100%;
           }
         }
         .CtA {
           width: 65%;
           .CtAButton {
-            font-size: $fs-header * .46;
+            font-size: $fs-header * 0.46;
           }
         }
       }
@@ -322,7 +340,7 @@ export default {
             transform: translate(-5%, 0);
           }
           .ide {
-            font-size: $fs-header * .7;
+            font-size: $fs-header * 0.7;
             transform: translate(0, -10%);
           }
         }
@@ -333,20 +351,20 @@ export default {
 /* Laptops ----------- */
 @media only screen and (min-width: $Laptop1) {
   .WelcomeCoverHome {
-      &::after {
-        height: 117%;
-      }
+    &::after {
+      height: 117%;
+    }
     .Cover {
       margin: 0 2rem;
       .leftSide {
-        flex: .8;
+        flex: 0.8;
         transform: translateX(0);
         padding: 0 1rem;
         height: 550px;
         transform: translateY(4%);
         .text {
           .Header {
-            font-size: $fs-header * .7;
+            font-size: $fs-header * 0.7;
             font-weight: 700;
             line-height: 40px;
             letter-spacing: 1px;
@@ -376,7 +394,6 @@ export default {
           $left: 109%;
           span:nth-child(2) {
             transform: translateX($left);
-            
           }
           span:nth-child(3) {
             transform: translateX($left * 1.14);
@@ -399,7 +416,7 @@ export default {
 /* Desktop ----------- */
 @media only screen and (min-width: $LargeScreen1) {
   .WelcomeCoverHome {
-     &::after {
+    &::after {
       height: 125%;
     }
     .Cover {
@@ -408,7 +425,7 @@ export default {
         transform: translateY(17%);
         .text {
           .Header {
-            font-size: $fs-header * .6;
+            font-size: $fs-header * 0.6;
             width: 100%;
           }
           p {
@@ -429,7 +446,6 @@ export default {
           transform: translate(3%, 8%);
           span:nth-child(2) {
             transform: translateX($left);
-            
           }
           span:nth-child(3) {
             transform: translateX($left * 1.2);
@@ -449,5 +465,4 @@ export default {
     }
   }
 }
-
 </style>

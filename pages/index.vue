@@ -100,6 +100,9 @@ a {
   text-decoration: none;
   color: $LinkColor1;
   @include ColorTransition;
+  &:hover {
+    color: var(--TxtColor);
+  }
 }
 p {
   line-height: 26px;
@@ -143,7 +146,6 @@ p {
     height: 100%;
     h2,
     h4 {
-      text-transform: uppercase;
       font-size: $fs-header * 0.9;
       transform: translateY(34%);
       margin: 0 2rem;
@@ -208,7 +210,6 @@ p {
         font-size: $fs-header * 1.2;
         letter-spacing: 2px;
         // text-align: center;
-        text-transform: uppercase;
         font-weight: 700;
         margin: 0 2rem;
         transform: translateY(34%);
@@ -236,7 +237,6 @@ p {
         font-size: $fs-header * 1.3;
         letter-spacing: 2px;
         // text-align: center;
-        text-transform: uppercase;
         font-weight: 700;
         margin: 0 4rem;
         transform: translateY(34%);

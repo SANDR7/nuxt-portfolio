@@ -28,7 +28,7 @@
             href="https://src.sandervanast.com/CV.pdf"
             title="Resume ( CV )"
             target="blank"
-            >My Resume</a
+            ><i class="fad fa-file-download" ></i>&nbsp; My Resume</a
           >
           <a
             class="Donate"
