@@ -40,14 +40,14 @@ export default {
   },
   methods: {
     toggle() {
-      const result =  window.matchMedia("(prefers-color-scheme: dark)")
-        if (this.darkMode == result.matches || this.darkMode == "light") {
-          this.darkMode = "dark";
-          this.isToggled = true;
-        } else {
-          this.darkMode = "light";
-          this.isToggled = false;
-        }
+      const result = window.matchMedia("(prefers-color-scheme: dark)");
+      if (this.darkMode == result.matches || this.darkMode == "light") {
+        this.darkMode = "dark";
+        this.isToggled = true;
+      } else {
+        this.darkMode = "light";
+        this.isToggled = false;
+      }
     },
     ScrolltoTop() {
       scrollTo({ scrollTop: 1200 }, "0");
@@ -85,6 +85,10 @@ export default {
       font-size: $fs-header / 1.5;
       margin-right: 0.5em;
       @include ColorTransition;
+    }
+    &:hover {
+      box-shadow: $innerShadowHover;
+      border: solid 3px transparent;
     }
   }
   .NavLinks {
