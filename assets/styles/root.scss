@@ -57,6 +57,7 @@ $colors: (
 
     --BoxShadow: #{Color(BoxShadowLight)};
     --ImageFilter: 100%;
+    --rotate: 180deg;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -74,6 +75,7 @@ $colors: (
     
     --BoxShadow: #{Color(BoxShadowDark)};
     --ImageFilter: 75%;
+    --rotate: 0deg;
   }
 }
 
