@@ -119,7 +119,26 @@ p {
   color: $OrangeColor1;
   background-color: #e6f4f1;
 }
-
+.ORANGE,
+.RED,
+.GREEN,
+.PURPLE {
+  &:hover {
+    color: var(--TxtColor);
+  }
+}
+.ORANGE {
+  color: $OrangeColor1;
+}
+.RED {
+  color: $RedColor1;
+}
+.GREEN {
+  color: $GreenColor1;
+}
+.PURPLE {
+  color: $PurpleColor1;
+}
 .Sections {
   margin: 4rem 0;
   width: 100%;
