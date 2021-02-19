@@ -37,7 +37,7 @@
         </div>
         <!-- <div style="margin-left: 1rem; position: absolute;">import &#123; Databases &#125; from sources</div> -->
         <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">
-          import &#123; Databases &#125; from sources&#59;
+          import <span class="RED">&#123;</span> Databases <span class="RED">&#125;</span> from sources&#59;
         </div>
         <!-- <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div> -->
         <div class="Scroll">
@@ -674,7 +674,7 @@ export default {
     font-weight: 700;
     width: 100%;
     ::-webkit-scrollbar {
-      height: 5px;
+      height: 8px;
     }
     .Card {
       @include CardBackground;
