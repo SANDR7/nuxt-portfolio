@@ -4,7 +4,7 @@
       <!-- Frameworks -->
       <div class="Card">
         &lt;{{ framework }}&gt;
-        <div style="margin-top: .6rem; margin-left: 1rem; position: absolute">
+        <div style="margin-top: 0.6rem; margin-left: 1rem; position: absolute">
           &lt;Libraries &#47;&gt;
         </div>
         <div class="Scroll">
@@ -12,7 +12,12 @@
             <!-- <div v-for="(n, id) in even([1,2,3,4])" :key="id">
               {{ n }}
             </div> -->
-            <img :src="Framework.Image_src" :alt="Framework.Image_alt" />
+            <img
+              :src="Framework.Image_src"
+              :alt="Framework.Image_alt"
+              height="70"
+              width="70"
+            />
             <div class="Frameworks">
               <div class="header">{{ Framework.name }}</div>
               <p>Startd since {{ Framework.BeginDate }}</p>
@@ -32,12 +37,13 @@
       <!-- Programmeertalen -->
       <div class="Card">
         return &#40;
-        <div style="margin-left: 1rem; position: absolute;">
+        <div style="margin-left: 1rem; position: absolute">
           programming&#95;Languages&#59;
         </div>
         <!-- <div style="margin-left: 1rem; position: absolute;">import &#123; Databases &#125; from sources</div> -->
-        <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">
-          import <span class="RED">&#123;</span> Databases <span class="RED">&#125;</span> from sources&#59;
+        <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute">
+          import <span class="RED">&#123;</span> Databases
+          <span class="RED">&#125;</span> from sources&#59;
         </div>
         <!-- <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div> -->
         <div class="Scroll">
@@ -142,7 +148,7 @@ export default {
   data() {
     return {
       framework: "Frameworks",
-      GebruikersNaam: "SANDR7"
+      GebruikersNaam: "SANDR7",
     };
   },
   computed: {
@@ -150,8 +156,8 @@ export default {
       "Frameworks",
       "ProgrammeerTalen",
       "Programmas",
-      "ComputerKennis"
-    ])
+      "ComputerKennis",
+    ]),
   },
 };
 </script>
