@@ -25,9 +25,6 @@ export default {
 .Sections {
   .Error {
     height: 80vh;
-    @include BackgroundImage(
-      "https://src.sandervanast.com/images/PNG/BackgroundImageError.png"
-    );
     &::after {
       height: 84vh;
       background-repeat: repeat-y;
