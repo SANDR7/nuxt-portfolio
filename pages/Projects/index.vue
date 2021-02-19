@@ -13,7 +13,7 @@
             <div class="ProjectNaam">{{ project.Projectnaam }}</div>
           </div>
 
-          <img :src="project.Img_src" :alt="project.id + '-Thumbnail'" />
+          <img :src="project.Img_src" :alt="project.id + '-Thumbnail'" height="500" width="628" />
           <div class="Description">
             <p title="Description">{{ project.FullDesc }}</p>
           </div>
@@ -61,7 +61,7 @@
             <div class="ProjectNaam">{{ SomeExercise.Projectnaam }}</div>
           </div>
 
-          <img :src="SomeExercise.Img_src" :alt="SomeExercise.id + '-Thumbnail'" />
+          <img :src="SomeExercise.Img_src" :alt="SomeExercise.id + '-Thumbnail'" height="500" width="628" />
           <div class="Description">
             <p title="Description">{{ SomeExercise.FullDesc }}</p>
           </div>
