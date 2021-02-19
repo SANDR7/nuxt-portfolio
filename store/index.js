@@ -341,7 +341,7 @@ export const state = () => ({
         Language: "Dutch",
         FaseInfo: `The degree is designed to apply all practical skills in the real world, things like: database structures, vocational training and an Internet Project Plan (IPP).`,
         Success: false,
-        SuccessMsg: `Currenlty in year two`
+        SuccessMsg: `Currently in year two`
       },
       {
         id: 2,
