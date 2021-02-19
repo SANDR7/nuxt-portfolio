@@ -3,7 +3,10 @@
     <div class="Cover">
       <div class="leftSide">
         <div class="text">
-          <div class="WMark">Portfolio  — Web developer \ 07{{ date - 2002 }}</div>
+          <div class="WMark">
+            Portfolio — Web developer <br />
+            0{{ countProjects }} \ 0{{ countExercises }}
+          </div>
           <h2 class="Header">Developing the web by Creating for You.</h2>
           <p>
             Hey there! Welcome to my personal portfolio, I'm {{ fname }}
@@ -51,7 +54,7 @@
             height="520"
             alt="Sander"
           />
-          <div class="ide">SMA ⁄ 0{{ countProjects }}</div>
+          <div class="ide">SMA ⁄ 07{{ date - 2002 }}</div>
         </div>
       </div>
     </div>
@@ -60,6 +63,7 @@
 
 <script>
 import projects from "~~/projects";
+import exercises from "~~/someExercises";
 export default {
   data() {
     return {
@@ -68,7 +72,9 @@ export default {
       llname: "Ast",
       date: new Date().getFullYear(),
       projects,
+      exercises,
       countProjects: projects.length,
+      countExercises: exercises.length,
     };
   },
 };
@@ -145,6 +151,7 @@ export default {
       .WMark {
         position: absolute;
         z-index: -5;
+        top: 1.5em;
         // filter: brightness(4.3);
         opacity: $WmarkOpacity * 3;
         text-transform: uppercase;
@@ -293,14 +300,14 @@ export default {
             display: none;
           }
           .ide {
-            transform: translate(70vw, 170%)  !important;
+            transform: translate(70vw, 170%) !important;
           }
         }
       }
     }
   }
 }
-/* Laptops ----------- */
+/* Tablet ----------- */
 @media only screen and (min-width: $TabletSize1) {
   .WelcomeCoverHome {
     .Cover {
@@ -331,21 +338,35 @@ export default {
       .rightSide {
         display: block;
         height: 530px;
-        flex: 1;
+        flex: 0.7;
         .name {
           display: none;
         }
         .Hero {
-          height: 90%;
+          height: 100%;
           display: flex;
           img {
-            height: 35vw;
+            height: 36vw;
             transform: translate(-5%, 0);
           }
           .ide {
-            font-size: $fs-header * 0.7;
-            transform: translate(0, -10%);
+            font-size: $fs-header * 0.6;
+            width: max-content;
+            transform: translate(0, 3%);
           }
+        }
+      }
+    }
+  }
+}
+/* Tablet ----------- */
+@media only screen and (min-width: $TabletSize1) and (orientation: portrait) {
+  .WelcomeCoverHome {
+    .Cover {
+      .rightSide {
+        .Hero {
+          height: 90%;
+          display: none;
         }
       }
     }
@@ -360,7 +381,7 @@ export default {
     .Cover {
       margin: 0 2rem;
       .leftSide {
-        flex: 0.8;
+        flex: 0.55;
         transform: translateX(0);
         padding: 0 1rem;
         height: 550px;
@@ -428,7 +449,7 @@ export default {
         transform: translateY(17%);
         .text {
           .Header {
-            font-size: $fs-header * 0.6;
+            font-size: $fs-header * 0.55;
             width: 100%;
           }
           p {
@@ -462,6 +483,7 @@ export default {
           }
           .ide {
             font-size: $fs-header;
+            transform: translate(0%, -22%);
           }
         }
       }
