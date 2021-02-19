@@ -1,5 +1,3 @@
-import { json } from "express";
-
 export default {
   /*
    ** Nuxt rendering mode
@@ -72,7 +70,7 @@ export default {
       },
       {
         name: "twitter:image",
-        content: "https://www.sandervanast.com/hi-icon.png"
+        content: "https://www.sandervanast.com/icon.png"
       }
     ],
     script: [
