@@ -210,7 +210,7 @@ export default {
             margin-right: 0.9rem;
             text-transform: uppercase;
             &:hover {
-              box-shadow: $innerShadowLink;
+              box-shadow: $innerShadowHover;
             }
           }
         }
@@ -231,7 +231,7 @@ export default {
             text-transform: capitalize;
             text-align: center;
             &:hover {
-              box-shadow: $innerShadowLink;
+              box-shadow: $innerShadowHover;
             }
           }
         }
