@@ -8,15 +8,8 @@
         style="cursor: pointer"
         :title="`Current theme is ${this.darkMode || 'based on your system'}`"
       >
-        <i
-          class="fas fa-adjust"
-          :style="
-            this.darkMode == '' || this.darkMode == 'light'
-              ? 'transform: rotate(180deg)'
-              : 'transform: rotate(0deg)'
-          "
-        ></i>
-        <div class="ToggleText">{{ this.systemText }} 👀</div>
+        <i class="fas fa-adjust"></i>
+        <div class="ToggleText">{{ this.systemText }}</div>
       </div>
       <div class="NavLinks" @click="ScrolltoTop">
         <nuxt-link to="/" title="Home Page">Home</nuxt-link>
@@ -33,28 +26,20 @@ export default {
   data() {
     return {
       darkMode: "", // default value (system preference)
-      systemText: "Change your mood",
+      systemText: "Change your mood 👀",
+      brightSideTxt: "Switch to the Dark Side of the 🌑",
+      DarkSideTxt: "Switch to the 👨‍⚖️ Bright Side",
     };
   },
   methods: {
-    test() {
-      const system = window.matchMedia("(prefers-color-scheme: dark)");
-      if (system.matches == true) {
-        this.isToggled = !this.isToggled;
-        return "Bright";
-      } else {
-        this.isToggled = !this.isToggled;
-        return "Dark";
-      }
-    },
     toggle() {
       const result = window.matchMedia("(prefers-color-scheme: dark)");
       if (this.darkMode == result.matches || this.darkMode == "light") {
         this.darkMode = "dark";
-        this.systemText = "Go to the Bright Side";
+        this.systemText = this.DarkSideTxt;
       } else {
         this.darkMode = "light";
-        this.systemText = "Go to the Dark Side";
+        this.systemText = this.brightSideTxt;
       }
     },
     ScrolltoTop() {
@@ -80,7 +65,7 @@ export default {
   margin: 1rem 1rem 1.5rem;
   padding: 1rem 3rem;
   z-index: 7 !important;
-  // background-color: var(--BackgroundNavColor);
+  background-color: var(--BackgroundNavColor);
   .ToggleTheme {
     @include subCardBackground;
     display: flex;
@@ -93,6 +78,7 @@ export default {
       font-size: $fs-header / 1.5;
       margin-right: 0.5em;
       @include ColorTransition;
+      transform: rotate(var(--rotate));
     }
     &:hover {
       box-shadow: $innerShadowHover;
@@ -136,9 +122,16 @@ export default {
     width: 80%;
     overflow-x: auto;
     align-items: center;
+    background-color: transparent;
     .ToggleTheme {
       position: absolute;
       padding: 0rem 0;
+      left: 0;
+      // margin: .5em 0;
+      margin-top: 0.3em;
+      .ToggleText {
+        width: 100%;
+      }
     }
     .NavLinks {
       height: 10vh;
@@ -151,6 +144,7 @@ export default {
       left: 0%;
       background-color: var(--BackgroundNavColor);
       align-items: center;
+      z-index: 5 !important;
     }
   }
 }
@@ -162,6 +156,9 @@ export default {
     .ToggleTheme {
       position: relative;
       padding: 0;
+      .ToggleText {
+        width: max-content;
+      }
     }
     .NavLinks {
       position: relative;
