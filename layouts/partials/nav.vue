@@ -87,6 +87,7 @@ export default {
   }
   .NavLinks {
     display: block;
+    overflow-x: auto;
     a {
       color: var(--TxtColor);
       font-size: 18px;
@@ -123,6 +124,10 @@ export default {
     overflow-x: auto;
     align-items: center;
     background-color: transparent;
+    white-space: nowrap;
+      ::-webkit-scrollbar {
+        height: 8px;
+      }
     .ToggleTheme {
       position: absolute;
       padding: 0rem 0;
@@ -138,13 +143,15 @@ export default {
       width: 100%;
       overflow-x: auto;
       scrollbar-width: thin; /* Firefox */
-      display: flex;
+      display: inline-block;
       position: fixed;
       bottom: 0%;
+      margin: auto 0;
       left: 0%;
       background-color: var(--BackgroundNavColor);
       align-items: center;
       z-index: 5 !important;
+      padding-top: 3.5vh;
     }
   }
 }
@@ -162,8 +169,9 @@ export default {
     }
     .NavLinks {
       position: relative;
-      justify-content: flex-end;
+      width: 100%;
       overflow: hidden;
+      overflow-x: auto;
       background-color: transparent;
     }
   }
@@ -173,6 +181,11 @@ export default {
   #nav {
     margin: 0rem 1rem 1.5rem;
     padding: 0.8rem 1rem;
+    .NavLinks {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 0;
+    }
   }
 }
 /* Desktop ----------- */
