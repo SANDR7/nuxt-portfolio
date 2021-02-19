@@ -17,7 +17,7 @@
         :key="id"
       >
         <a :href="project.Url_src" target="blank">
-          <img :src="project.Img_src" :alt="project.id + '-Thumbnail'" />
+          <img :src="project.Img_src" :alt="project.id + '-Thumbnail'" height="500" width="628"/>
         </a>
         <div class="Beschrijving">
           <div class="subTitle">Quick Description</div>
