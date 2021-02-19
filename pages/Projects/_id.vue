@@ -159,7 +159,6 @@ export default {
       box-shadow: $innerShadow;
       margin: 0 2rem;
       padding: 2rem 2.5rem !important;
-      z-index: 10;
       .header {
         font-size: $fs-paragraph-2 * 1.5;
         text-transform: capitalize;
@@ -296,7 +295,7 @@ export default {
         font-size: $fs-header * 0.55;
         letter-spacing: 0px;
         font-weight: 700;
-        margin: 2rem 2rem 1.5rem;
+        margin: 4.5rem 2rem 1.5rem;
         transform: translateY(34%);
         padding: 1rem 0;
         -webkit-text-stroke: transparent;

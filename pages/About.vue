@@ -33,7 +33,7 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "Hi, my name is Sander van Ast. I am a enthusiastic programmer and a starting entrepreneur based in The Netherlands."
+            "Hi, my name is Sander van Ast. I'm an enthusiastic programmer and a starting entrepreneur based in The Netherlands."
         }
       ]
     };

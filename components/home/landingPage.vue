@@ -3,7 +3,7 @@
     <div class="Cover">
       <div class="leftSide">
         <div class="text">
-          <div class="WMark">Portfolio \ 07{{ date - 2002 }}</div>
+          <div class="WMark">Portfolio  — Web developer \ 07{{ date - 2002 }}</div>
           <h2 class="Header">Developing the web by Creating for You.</h2>
           <p>
             Hey there! Welcome to my personal portfolio, I'm {{ fname }}
@@ -146,7 +146,7 @@ export default {
         position: absolute;
         z-index: -5;
         // filter: brightness(4.3);
-        opacity: $WmarkOpacity;
+        opacity: $WmarkOpacity * 3;
         text-transform: uppercase;
         font-size: $fs-paragraph-1;
         font-family: "Share Tech Mono", monospace;

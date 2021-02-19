@@ -4,7 +4,7 @@
     <div class="comment">Click this link ↓ to know more about the project</div>
     <div style="margin-left: 1rem" @click="ScrolltoTop">
       &#64;include
-      <nuxt-link to="/Projects" title="All Projects" @click="ScrolltoTop"
+      <nuxt-link to="/Projects" title="All Projects" @click="ScrolltoTop" style="padding-bottom: .2em"
         >all&#95;Projects</nuxt-link
       >&#59;
     </div>

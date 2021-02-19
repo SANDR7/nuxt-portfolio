@@ -15,7 +15,7 @@
 
           <img :src="project.Img_src" :alt="project.id + '-Thumbnail'" />
           <div class="Description">
-            <p>{{ project.FullDesc }}</p>
+            <p title="Description">{{ project.FullDesc }}</p>
           </div>
           <div class="UsedLang">
             <div class="title">Used Techniques</div>
@@ -128,7 +128,7 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "Here you can view my projects that I jave collected to show you what I'm capable of.",
+            "Here you can view my projects that I have collected to show you what I'm capable of.",
         },
       ],
     };
@@ -269,7 +269,7 @@ export default {
         position: relative;
         .CardHeader {
           .sort {
-            opacity: $WmarkOpacity;
+            opacity: $WmarkOpacity * 3;
             text-transform: uppercase;
             font-size: $fs-paragraph-1 * 0.8;
             font-family: "Share Tech Mono", monospace;
@@ -332,26 +332,7 @@ export default {
               width: max-content;
               padding: 1rem 1.5rem;
             }
-            .ORANGE,
-            .RED,
-            .GREEN,
-            .PURPLE {
-              &:hover {
-                color: var(--TxtColor);
-              }
-            }
-            .ORANGE {
-              color: $OrangeColor1;
-            }
-            .RED {
-              color: $RedColor1;
-            }
-            .GREEN {
-              color: $GreenColor1;
-            }
-            .PURPLE {
-              color: $PurpleColor1;
-            }
+     
           }
         }
         .Description,
