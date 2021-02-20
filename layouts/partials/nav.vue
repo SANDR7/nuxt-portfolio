@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       darkMode: "", // default value (system preference)
-      systemText: "Change your mood 👀",
+      systemText: "Switch up the mood 👀",
       brightSideTxt: "Switch to the Dark Side of the 🌑",
       DarkSideTxt: "Switch to the 👨‍⚖️ Bright Side",
     };

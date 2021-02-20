@@ -63,7 +63,7 @@
 
 <script>
 import projects from "~~/projects";
-import exercises from "~~/someExercises";
+import exercises from "~~/SomeExercises";
 export default {
   data() {
     return {

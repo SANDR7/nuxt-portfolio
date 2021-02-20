@@ -4,7 +4,11 @@
     <div class="comment">Click this link ↓ to know more about the project</div>
     <div style="margin-left: 1rem" @click="ScrolltoTop">
       &#64;include
-      <nuxt-link to="/Projects" title="All Projects" @click="ScrolltoTop" style="padding-bottom: .2em"
+      <nuxt-link
+        to="/Projects"
+        title="All Projects"
+        @click="ScrolltoTop"
+        style="padding-bottom: 0.2em"
         >all&#95;Projects</nuxt-link
       >&#59;
     </div>
@@ -17,7 +21,12 @@
         :key="id"
       >
         <a :href="project.Url_src" target="blank">
-          <img :src="project.Img_src" :alt="project.id + '-Thumbnail'" height="500" width="628"/>
+          <img
+            :src="project.Img_src"
+            :alt="project.id + '-Thumbnail'"
+            height="500"
+            width="628"
+          />
         </a>
         <div class="Beschrijving">
           <div class="subTitle">Quick Description</div>
@@ -85,7 +94,6 @@ export default {
     .Card {
       @include CardBackground;
       box-shadow: $innerShadow;
-      padding: 2rem 2.5rem;
       height: max-content;
       display: flex;
       flex-direction: column;
@@ -157,6 +165,9 @@ export default {
     // deze div is een wrapper van de cards
     .Cards {
       grid-gap: 3rem;
+      .Card {
+        padding: 2rem 2.5rem;
+      }
     }
   }
 }

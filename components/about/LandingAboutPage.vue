@@ -126,7 +126,7 @@ export default {
 <style lang="scss">
 .WelcomeCoverAbout {
   ::-webkit-scrollbar {
-    height: 5px;
+    height: 8px;
   }
   .Cover {
     display: flex;

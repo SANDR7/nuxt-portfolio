@@ -125,7 +125,7 @@ export default {
   data() {
     return {
       projects,
-      shareBtn: "Share the Website",
+      shareBtn: "Share the Website"
     };
   },
   methods: {
