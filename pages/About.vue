@@ -2,6 +2,13 @@
   <div class="about">
     <LandingAboutPage />
     <div class="Sections">
+      <!-- Status -->
+      <div class="Section">
+        <h2>Github Status</h2>
+        <div class="Background">
+          <GithubSection />
+        </div>
+      </div>
       <!-- Education -->
       <div class="Section">
         <h2>Education</h2>
@@ -16,6 +23,7 @@
           <VaardighedenSection />
         </div>
       </div>
+    
     </div>
   </div>
 </template>
@@ -23,6 +31,7 @@
 <script>
 import LandingAboutPage from "~/components/about/LandingAboutPage";
 import EducationSection from "~/components/about/EducationSection";
+import GithubSection from "~/components/about/GithubSection";
 import VaardighedenSection from "~/components/home/VaardighedenSection";
 export default {
   head() {
@@ -41,7 +50,8 @@ export default {
   components: {
     LandingAboutPage,
     EducationSection,
-    VaardighedenSection
+    VaardighedenSection,
+    GithubSection
   }
 };
 </script>
