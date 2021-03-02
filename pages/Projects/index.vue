@@ -138,7 +138,7 @@ export default {
       projects,
       SomeExercises,
       showMoreTxtProj: "Show More",
-      showMoreTxt: "Show More",
+      showMoreTxt: "Show All",
       isVisible_Proj: projects.length - 3, // number of cards that are shown
       isVisible_Excer: SomeExercises.length - 3, // number of cards that are shown
     };
@@ -169,7 +169,7 @@ export default {
     showExcercies() {
       if (this.isVisible_Excer > 2) {
         // shows all projects
-        this.isVisible_Excer = this.SomeExercises.length - 6;
+        this.isVisible_Excer = this.SomeExercises.length - 8;
         this.showMoreTxt = "show less";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
@@ -178,7 +178,7 @@ export default {
       } else {
         // shows only 2 projects
         this.isVisible_Excer = this.SomeExercises.length - 3;
-        this.showMoreTxt = "show more";
+        this.showMoreTxt = "show all";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
           behavior: "smooth",
