@@ -87,22 +87,22 @@
         <div class="Socials">
           <h2 class="SubHeader">Follow me everywhere you like</h2>
           <div class="medias">
-            <a href="https://www.linkedin.com/in/sander-van-ast/" target="blank">LinkedIn</a>
-            <a href="https://github.com/SANDR7" target="blank">GitHub</a>
-            <a
+            <a title="LinkedIn profile" href="https://www.linkedin.com/in/sander-van-ast/" target="blank">LinkedIn</a>
+            <a title="Github profile" href="https://github.com/SANDR7" target="blank">GitHub</a>
+            <a title="Facebook profile"
               href="https://www.facebook.com/profile.php?id=100009821328030"
               target="blank"
             >FaceBook</a>
-            <a href="https://www.instagram.com/sander.ast/" target="blank">Instagram</a>
-            <a href="https://twitter.com/SANDR__7" target="blank">Twitter</a>
-            <a href="https://discord.com/users/288274960496066560" target="blank">Discord</a>
-            <a href="https://www.snapchat.com/add/sandervanast" target="blank">SnapChat</a>
-            <a
+            <a title="Instagraom profile" href="https://www.instagram.com/sander.ast/" target="blank">Instagram</a>
+            <a title="Twitter profile" href="https://twitter.com/SANDR__7" target="blank">Twitter</a>
+            <a title="Discord profile" href="https://discord.com/users/288274960496066560" target="blank">Discord</a>
+            <a title="Snapchat profile" href="https://www.snapchat.com/add/sandervanast" target="blank">SnapChat</a>
+            <a title="spotify profile"
               href="https://open.spotify.com/user/smvanast1?si=AczDHlNzSVuxJUnplmhlXA"
               target="blank"
             >Spotify</a>
-            <a href="mailto:contact@sandervanast.com" target="blank">Mail</a>
-            <a href="tel:0681314693" target="blank">Phone</a>
+            <a title="e-mail" href="mailto:contact@sandervanast.com" target="blank">Mail</a>
+            <a title="phone number" href="tel:0681314693" target="blank">Phone</a>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@ export default {
       fname: "Sander",
       lname: "van",
       llname: "Ast",
-      date: new Date().getFullYear(),
+      date: new Date().getFullYear()
     };
   },
 };
@@ -180,6 +180,7 @@ export default {
           font-size: $fs-header;
           font-weight: 700;
           letter-spacing: 1px;
+          line-height: 50px;
         }
         .SubHeader {
           &::after {

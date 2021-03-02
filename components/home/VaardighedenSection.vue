@@ -36,14 +36,16 @@
       </div>
       <!-- Programmeertalen -->
       <div class="Card">
-        return &#40;
-        <div style="margin-left: 1rem; position: absolute">
-          programming&#95;Languages&#59;
-        </div>
         <!-- <div style="margin-left: 1rem; position: absolute;">import &#123; Databases &#125; from sources</div> -->
-        <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute">
-          import <span class="RED">&#123;</span> Databases
-          <span class="RED">&#125;</span> from sources&#59;
+        <div>
+          import <span :style="'color:' + colorimport">&#123;</span> Databases
+          <span :style="'color:' + colorimport">&#125;</span>
+          <span>from</span>
+          sources&#59;
+        </div>
+        <span style="position: absolute"> return &#40; </span>
+        <div style="margin-left: 1rem; margin-top: 1.5rem; position: absolute">
+          programming&#95;Languages&#59;
         </div>
         <!-- <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div> -->
         <div class="Scroll">
@@ -127,6 +129,8 @@
           <div class="subCard">Photoshop</div>
           <div class="subCard">Adobe Xd</div>
           <div class="subCard">JSX</div>
+          <div class="subCard">GeoJSON</div>
+          <div class="subCard">OpenWeatherMap</div>
           <div class="subCard">progressive web app</div>
           <div class="subCard">AJAX</div>
           <div class="subCard">reliable</div>
@@ -149,6 +153,7 @@ export default {
     return {
       framework: "Frameworks",
       GebruikersNaam: "SANDR7",
+      colorimport: "#FFD720",
     };
   },
   computed: {

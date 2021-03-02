@@ -9,7 +9,7 @@
           mijn opleiding(2021) wordt er mij verzoekt om een stage te zoeken.
           Hierdoor kan ik het bedrijf helpen en mezelf ontwikkelen. Het gaat om een
           stage van een geheel school jaar. Kortom bent u een bedrijf of kent u
-          iemand die een stagiaire in (2021 - 2022) gaat aannemen dan zou ik het erg
+          iemand die een stagiaire in de periode van september 2021 tot eind april 2022 gaat aannemen dan zou ik het erg
           appreciëren als u een mail sturen naar mijn <a href="mailto:84231@glr.nl" title="84231@glr.nl">schoolmail</a>. 
           <br>
           <br>

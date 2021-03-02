@@ -28,7 +28,7 @@
             href="https://src.sandervanast.com/CV.pdf"
             title="Resume ( CV )"
             target="blank"
-            ><i class="fad fa-file-download" ></i>&nbsp; My Resume</a
+            ><i class="fad fa-file-download"></i>&nbsp; My Resume</a
           >
           <a
             class="Donate"
@@ -51,7 +51,7 @@
           :key="id"
         >
           <nuxt-link
-            title="Open Case Study"
+            :title="'Case Study of ' + project.Projectnaam"
             class="ProjectLink"
             :to="`/Projects/${project.id}`"
           >
@@ -125,7 +125,7 @@ export default {
   data() {
     return {
       projects,
-      shareBtn: "Share the Website"
+      shareBtn: "Share the Website",
     };
   },
   methods: {
@@ -303,12 +303,12 @@ export default {
           .ProjectTitle {
             @include HoverFx(1px, var(--TxtColor), 0);
             font-weight: bold;
-            width: 50%;
+            width: 100%;
           }
         }
 
         .ProjectDesc {
-          width: 85%;
+          width: 100%;
         }
       }
     }
@@ -523,9 +523,7 @@ export default {
         .Donate {
           display: flex;
           align-items: center;
-          height: 100%;
           margin-top: 1rem;
-
           .T {
             margin: 0 0.5rem;
           }
@@ -544,6 +542,7 @@ export default {
           .ProjectTitle {
             font-size: $fs-paragraph-2;
             font-weight: bold;
+            width: 50% !important;
           }
           .ProjectDesc {
             width: 85%;
