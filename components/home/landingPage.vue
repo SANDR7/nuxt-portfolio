@@ -30,7 +30,9 @@
           <nuxt-link class="CtAButton" to="/Projects"
             >View my Projects</nuxt-link
           >
-          <span>Searching for a Dutch internship</span>
+          <!-- <span> 0{{ countProjects }} \  </span>
+          <span> \ 0{{ countExercises }} </span> -->
+          <span style="padding-bottom: .2em;">Searching for a Dutch internship</span>
           <span
             >NL&nbsp;•&nbsp;<a
               href="https://src.sandervanast.com/CV.pdf"
@@ -113,7 +115,7 @@ export default {
         }
         a {
           color: var(--TxtColor);
-          @include HoverFx(1px, var(--TxtColor), 0);
+          @include HoverFx(1px, var(--TxtColor), 0px);
         }
         p {
           font-size: $fs-paragraph-1;
@@ -139,13 +141,10 @@ export default {
         }
         .Download {
           color: var(--TxtColor);
-          filter: brightness(3);
           text-transform: uppercase;
           width: max-content;
-          @include HoverFx(2px, var(--TxtColor), 0);
-          &:hover {
-            filter: brightness(1);
-          }
+          @include HoverFx(2px, $PurpleColor1, 0);
+          padding-bottom: .3em;
         }
       }
       .WMark {
@@ -396,7 +395,6 @@ export default {
           }
           a {
             color: var(--TxtColor);
-            @include HoverFx(1px, var(--TxtColor), 0);
           }
           p {
             font-size: $fs-paragraph-1;
