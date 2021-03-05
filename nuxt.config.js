@@ -135,7 +135,8 @@ export default {
     "@nuxtjs/style-resources",
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
-    "@nuxtjs/recaptcha"
+    "@nuxtjs/recaptcha",
+    '@nuxt/http',
   ],
   router: {},
 
