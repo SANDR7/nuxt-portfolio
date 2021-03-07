@@ -125,11 +125,14 @@
           <div class="subCard">graphic design</div>
           <div class="subCard">Logo design</div>
           <div class="subCard">SEO</div>
+          <div class="subCard">JSON</div>
           <div class="subCard">Illustrator</div>
           <div class="subCard">Photoshop</div>
           <div class="subCard">Adobe Xd</div>
           <div class="subCard">JSX</div>
           <div class="subCard">GeoJSON</div>
+          <div class="subCard">XML</div>
+          <div class="subCard">API's</div>
           <div class="subCard">OpenWeatherMap</div>
           <div class="subCard">progressive web app</div>
           <div class="subCard">AJAX</div>
