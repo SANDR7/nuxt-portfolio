@@ -8,6 +8,18 @@
 <script>
 export default {
   layout: "nofooter",
+  head() {
+    return {
+      titleTemplate: "CV - %s",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "CV of Sander van Ast | Last update: February 2021",
+        },
+      ],
+    };
+  },
   methods: {
     viewCV: function () {
       window.location.href = "https://www.sandervanast.com/CV.pdf";
