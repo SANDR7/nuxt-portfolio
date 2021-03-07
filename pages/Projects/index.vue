@@ -169,7 +169,7 @@ export default {
     showExcercies() {
       if (this.isVisible_Excer > 2) {
         // shows all projects
-        this.isVisible_Excer = this.SomeExercises.length - 8;
+        this.isVisible_Excer = this.SomeExercises.length - this.SomeExercises.length;
         this.showMoreTxt = "show less";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
