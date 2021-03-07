@@ -155,7 +155,7 @@ export default {
       .WMark {
         position: absolute;
         z-index: -5;
-        top: 1.5em;
+        top: 2em;
         // filter: brightness(4.3);
         opacity: $WmarkOpacity * 3;
         text-transform: uppercase;
