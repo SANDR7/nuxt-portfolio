@@ -3,10 +3,7 @@
     <div class="Cover">
       <div class="leftSide">
         <div class="text">
-          <div class="WMark">
-            Portfolio — Web developer <br />
-            0{{ countProjects }} \ 0{{ countExercises }}
-          </div>
+          <div class="WMark">Portfolio — Web developer <br /></div>
           <h2 class="Header">Developing the web by Creating for You.</h2>
           <p>
             Hey there! Welcome to my personal portfolio, I'm {{ fname }}
@@ -26,23 +23,26 @@
             >, computer enthusiast and a tech savvy.
           </p>
         </div>
+
         <div class="CtA">
           <nuxt-link class="CtAButton" to="/Projects"
             >View my Projects</nuxt-link
           >
-          <!-- <span> 0{{ countProjects }} \  </span>
-          <span> \ 0{{ countExercises }} </span> -->
-          <span style="padding-bottom: .2em;">Searching for a Dutch internship</span>
+          <span style="padding-bottom: 0.2em"
+            >Searching for a Dutch internship</span
+          >
           <span
             >NL&nbsp;•&nbsp;<a
               href="https://src.sandervanast.com/CV.pdf"
               target="blank"
               class="Download"
+              style="margin-bottom: 0.2em"
               >Donwload my Resume</a
             ></span
           >
         </div>
       </div>
+
       <div class="rightSide">
         <h1 class="name">
           <span>{{ fname }}</span>
@@ -56,7 +56,12 @@
             height="520"
             alt="Sander"
           />
-          <div class="ide">SMA ⁄ 07{{ date - 2002 }}</div>
+          <div class="ide">
+            SMA - 0{{ countProjects }}\ <br> \0{{ countExercises }}
+             <!-- SMA ⁄ 07{{
+              date - 2002
+            }} -->
+          </div>
         </div>
       </div>
     </div>
@@ -144,7 +149,7 @@ export default {
           text-transform: uppercase;
           width: max-content;
           @include HoverFx(2px, $PurpleColor1, 0);
-          padding-bottom: .3em;
+          padding-bottom: 0.3em;
         }
       }
       .WMark {
