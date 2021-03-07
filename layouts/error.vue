@@ -1,11 +1,13 @@
 <template>
   <div class="Sections Errors">
-    <div class="Section Error">
-      <h5>{{ error.statusCode }} Error</h5>
-      <div class="Background">
-        <div>{{ error.message }}</div>
+    <pageTransition name="contentAni" mode="out-in">
+      <div class="Section Error">
+        <h5>{{ error.statusCode }} Error</h5>
+        <div class="Background">
+          <div>{{ error.message }}</div>
+        </div>
       </div>
-    </div>
+    </pageTransition>
   </div>
 </template>
 

@@ -136,7 +136,7 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
     "@nuxtjs/recaptcha",
-    '@nuxt/http',
+    'nuxt-animejs',
   ],
   router: {},
 
@@ -150,8 +150,36 @@ export default {
     color: '#FF7B47',
     background: 'white'
   },
-  transition: {
-    name: 'contentAni',
+  pageTransition: {
+  name: 'page',
+    mode: 'out-in',
+    css: false,
+
+    beforeEnter(el) {
+      this.$anime.set(el, {
+        opacity: 0
+      })
+    },
+
+    enter(el, done) {
+      this.$anime({
+        targets: el,
+        opacity: [0, 1],
+        duration: 430,
+        easing: 'easeInOutCubic',
+        complete: done
+      })
+    },
+
+    leave(el, done) {
+      this.$anime({
+        targets: el,
+        opacity: [1, 0],
+        duration: 430,
+        easing: 'easeInOutCubic',
+        complete: done
+      })
+    }
   },
 
   pwa: {

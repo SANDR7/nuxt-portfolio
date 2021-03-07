@@ -1,9 +1,9 @@
 <template>
   <div>
     <Nav/>
-    <transition name="contentAni">
+    <pageTransition name="contentAni">
       <Nuxt />
-    </transition>
+    </pageTransition>
   </div>
 </template>
 <script>
