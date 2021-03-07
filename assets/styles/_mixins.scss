@@ -59,7 +59,7 @@
   padding: 1.5rem 1rem;
   box-shadow: var(--BoxShadow);
   z-index: 1;
-  backdrop-filter: blur(12px) !important;
+  // backdrop-filter: blur(12px);
   border: solid 3px transparent;
   background-clip: border-box;
 }
