@@ -85,7 +85,7 @@
           </div>
         </div>
         <div class="Socials">
-          <h2 class="SubHeader">Follow me everywhere you like</h2>
+          <h2 class="SubHeader">Follow me everywhere you'd like</h2>
           <div class="medias">
             <a title="LinkedIn profile" href="https://www.linkedin.com/in/sander-van-ast/" target="blank">LinkedIn</a>
             <a title="Github profile" href="https://github.com/SANDR7" target="blank">GitHub</a>
