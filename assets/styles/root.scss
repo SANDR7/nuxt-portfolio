@@ -57,6 +57,8 @@ $colors: (
 
     --BoxShadow: #{Color(BoxShadowLight)};
     --ImageFilter: 100%;
+    --TxtFilter: 150%;
+    --TxtFilter2: 50%;
     --rotate: 180deg;
   }
 }
@@ -75,6 +77,8 @@ $colors: (
     
     --BoxShadow: #{Color(BoxShadowDark)};
     --ImageFilter: 75%;
+    --TxtFilter: 50%;
+    --TxtFilter2: 100%;
     --rotate: 0deg;
   }
 }

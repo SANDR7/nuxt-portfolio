@@ -129,7 +129,7 @@ export default {
           width: max-content;
           @include ColorTransition;
           &:hover svg {
-            color: Color(DarkerGreyColor);
+            filter: brightness(var(--TxtFilter2));
           }
           svg {
             @include ColorTransition;

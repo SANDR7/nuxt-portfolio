@@ -180,6 +180,8 @@
 
     --BoxShadow: #{Color(BoxShadowLight)};
     --ImageFilter: 100%;
+    --TxtFilter: 150%;
+    --TxtFilter2: 0%;
     --rotate: 180deg;
   }
   .dark {
@@ -195,6 +197,8 @@
 
     --BoxShadow: #{Color(BoxShadowDark)};
     --ImageFilter: 75%;
+    --TxtFilter: 50%;
+    --TxtFilter2: 100%;
     --rotate: 0deg;
   }
 }

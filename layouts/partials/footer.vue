@@ -126,7 +126,7 @@ export default {
   data() {
     return {
       projects,
-      shareBtn: "Share the Website",
+      shareBtn: "Share the Website"
     };
   },
   methods: {
@@ -136,16 +136,16 @@ export default {
     ScrolltoTopSmooth() {
       scrollTo({
         top: 0,
-        behavior: "smooth",
+        behavior: "smooth"
       });
     },
-    Sharewidget: function () {
+    Sharewidget: function() {
       const btn = this.$refs.Sharing;
       const Url = window.document.location.href;
       const shareData = {
         title: "SMA Website",
         text: "Portfolio Website from Sander van Ast | SMA ",
-        url: `${Url}`,
+        url: `${Url}`
       };
       if (navigator.share) {
         navigator
@@ -164,8 +164,8 @@ export default {
       // } catch(err) {
       //   console.log(`Error: ${err}`);
       // }
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -217,10 +217,11 @@ export default {
         justify-content: space-evenly;
         margin: 1rem 0;
         a {
-          color: Color(txtLight);
+          color: var(--TxtColor);
+          filter: brightness(var(--TxtFilter));
           margin: 0 1rem;
           &:hover {
-            color: Color(DarkerGreyColor);
+            filter: brightness(var(--TxtFilter2));
           }
         }
       }
