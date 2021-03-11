@@ -9,6 +9,13 @@
           <GithubSection />
         </div>
       </div> -->
+      <!-- Graphic design work -->
+      <div class="Section">
+        <h2>Design Work</h2>
+        <div class="Background">
+          <DesignSection />
+        </div>
+      </div>
       <!-- Education -->
       <div class="Section">
         <h2>Education</h2>
@@ -38,6 +45,7 @@
 import LandingAboutPage from "~/components/about/LandingAboutPage";
 import EducationSection from "~/components/about/EducationSection";
 // import GithubSection from "~/components/about/GithubSection";
+import DesignSection from "~/components/about/DesignSection";
 import HobbySection from "~/components/about/HobbySection";
 import VaardighedenSection from "~/components/home/VaardighedenSection";
 export default {
@@ -49,9 +57,9 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "Hi, my name is Sander van Ast. I'm an enthusiastic programmer and a starting entrepreneur based in The Netherlands."
-        }
-      ]
+            "Hi, my name is Sander van Ast. I'm an enthusiastic programmer and a starting entrepreneur based in The Netherlands.",
+        },
+      ],
     };
   },
   components: {
@@ -60,7 +68,8 @@ export default {
     VaardighedenSection,
     // GithubSection,
     HobbySection,
-  }
+    DesignSection,
+  },
 };
 </script>
 
