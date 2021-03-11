@@ -9,9 +9,9 @@
           <GithubSection />
         </div>
       </div> -->
-      <!-- Graphic design work -->
+      <!-- Design work / graphic -->
       <div class="Section">
-        <h2>Design Work</h2>
+        <h2>Graphic work</h2>
         <div class="Background">
           <DesignSection />
         </div>
@@ -69,7 +69,8 @@ export default {
     // GithubSection,
     HobbySection,
     DesignSection,
-  },
+    About_DesignSection
+  }
 };
 </script>
 

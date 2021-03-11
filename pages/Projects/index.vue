@@ -12,8 +12,20 @@
             <div class="sort">{{ project.soort }} / {{ project.Datum }}</div>
             <div class="ProjectNaam">{{ project.Projectnaam }}</div>
           </div>
-
-          <img :src="project.Img_src" :alt="project.id + '-Thumbnail'" height="500" width="628" />
+          <picture>
+            <source
+              :srcset="project.Img_src_WEBP"
+              :alt="project.id + '-Thumbnail'"
+              height="500"
+              width="628"
+            />
+            <img
+              :src="project.Img_src_PNG"
+              :alt="project.id + '-Thumbnail'"
+              height="500"
+              width="628"
+            />
+          </picture>
           <div class="Description">
             <p title="Description">{{ project.FullDesc }}</p>
           </div>
@@ -60,8 +72,20 @@
             </div>
             <div class="ProjectNaam">{{ SomeExercise.Projectnaam }}</div>
           </div>
-
-          <img :src="SomeExercise.Img_src" :alt="SomeExercise.id + '-Thumbnail'" height="500" width="628" />
+          <picture>
+            <source
+              :srcset="SomeExercise.Img_src_WEBP"
+              :alt="SomeExercise.id + '-Thumbnail'"
+              height="500"
+              width="628"
+            />
+            <img
+              :src="SomeExercise.Img_src_PNG"
+              :alt="SomeExercise.id + '-Thumbnail'"
+              height="500"
+              width="628"
+            />
+          </picture>
           <div class="Description">
             <p title="Description">{{ SomeExercise.FullDesc }}</p>
           </div>
@@ -107,6 +131,12 @@
     </div>
 
     <div class="Section">
+      <h4>Other Projects</h4>
+      <div class="Background">
+        <DesignSection />
+      </div>
+    </div>
+    <div class="Section">
       <h4>we can work together</h4>
       <div class="Background">
         <ContactSection />
@@ -117,6 +147,7 @@
 
 <script>
 import projects from "~~/projects";
+import DesignSection from "~/components/about/DesignSection";
 import SomeExercises from "~~/SomeExercises";
 import ContactSection from "~/components/home/ContactSection";
 export default {
@@ -135,6 +166,7 @@ export default {
   },
   data() {
     return {
+      DesignSection,
       projects,
       SomeExercises,
       showMoreTxtProj: "Show More",
@@ -169,7 +201,8 @@ export default {
     showExcercies() {
       if (this.isVisible_Excer > 2) {
         // shows all projects
-        this.isVisible_Excer = this.SomeExercises.length - this.SomeExercises.length;
+        this.isVisible_Excer =
+          this.SomeExercises.length - this.SomeExercises.length;
         this.showMoreTxt = "show less";
         // scroll to the beginning
         this.$refs["exerHeader"].scrollIntoView({
@@ -332,7 +365,6 @@ export default {
               width: max-content;
               padding: 1rem 1.5rem;
             }
-     
           }
         }
         .Description,
