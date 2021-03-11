@@ -15,7 +15,10 @@
       <div v-else>
         <article class="Background">
           <div class="firstSect">
-            <img class="Image" :src="project.Img_src" alt="Projectname" />
+            <picture class="Image">
+              <source :srcset="project.Img_src_WEBP" />
+              <img :src="project.Img_src_PNG" alt="Projectname" />
+            </picture>
             <div class="rightSect">
               <div class="objective">
                 <h3 class="header">The Objective</h3>
@@ -54,7 +57,10 @@
                 </div>
               </div>
               <div class="PreviewImg">
-                <img :src="project.Img_src2" alt="sneekpeak" />
+                <picture>
+                  <source :srcset="project.Img_src_WEBP" />
+                  <img :src="project.Img_src_PNG" alt="sneekpeak" />
+                </picture>
               </div>
             </div>
             <div class="rightSect">
@@ -250,7 +256,7 @@ export default {
           .PreviewImg {
             padding: 2em 0 0;
             border-radius: $borderRadius12;
-            img {
+            img, source {
               border-radius: $borderRadius12;
               width: 100%;
               height: 500px;
@@ -581,7 +587,7 @@ export default {
             .PreviewImg {
               padding: 2em 0 0;
               border-radius: $borderRadius12;
-              img {
+              img, source {
                 border-radius: $borderRadius12;
                 width: 100%;
                 height: 500px;
@@ -687,7 +693,7 @@ export default {
       .LiveSiteLink {
         font-size: 2.5em;
         font-weight: bold;
-        padding-bottom: .3em;
+        padding-bottom: 0.3em;
       }
     }
   }

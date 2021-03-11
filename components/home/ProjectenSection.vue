@@ -21,12 +21,20 @@
         :key="id"
       >
         <a :href="project.Url_src" target="blank">
-          <img
-            :src="project.Img_src"
-            :alt="project.id + '-Thumbnail'"
-            height="500"
-            width="628"
-          />
+          <picture>
+            <source
+              :srcset="project.Img_src_WEBP"
+              :alt="project.id + '-Thumbnail'"
+              height="500"
+              width="628"
+            />
+            <img
+              :src="project.Img_src_PNG"
+              :alt="project.id + '-Thumbnail'"
+              height="500"
+              width="628"
+            />
+          </picture>
         </a>
         <div class="Beschrijving">
           <div class="subTitle">Quick Description</div>
