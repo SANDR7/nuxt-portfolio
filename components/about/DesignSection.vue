@@ -12,20 +12,21 @@
   <div class="artGallery">
     <div class="Scroll">
       <div class="Artwork" v-for="(A, index) in Artworks" :key="index">
-        <a :href="`https://${A.shareUrl}`" target="blank" class="link">
+          <div class="Name">{{A.altDesc}}</div>
+        <a :href="`${A.shareUrl}`" target="blank" class="link">
           <picture>
-            <img :src="A.artworkUrl" alt="" />
+            <img :src="A.artworkUrl" :alt="A.altDesc" />
           </picture>
-          <i :class="'hoverIcon fab ' + A.shareIcon"></i>
+          <i :class="'hoverIcon fab fa-' + A.shareIcon"></i>
         </a>
         <div class="info">
-          <span>{{ A.Date }}</span>
+          <span> {{ A.Date }}</span>
           <span class="kind?" v-html="A.iconKind"> </span>
         </div>
         <!-- <div class="artworkName">nice</div> -->
       </div>
-      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -33,9 +34,9 @@ import Artworks from "~~/artworks.js";
 export default {
   data() {
     return {
-      Artworks,
+      Artworks
     };
-  },
+  }
 };
 </script>
 
@@ -50,10 +51,19 @@ export default {
     overflow-x: auto;
     scrollbar-width: thin; /* Firefox */
     .Artwork {
-      display: inline-block;
-      margin: 0.7rem 1.5rem;
+      @include subCardBackground;
+      // margin: 0.7rem 1.5rem;
       flex-direction: column;
       border-radius: $borderRadius12;
+      box-shadow: $innerShadow;
+      border: solid 3px transparent;
+      padding: 1em 1.5em;
+      @include ColorTransition;
+      .Name {
+        font-size: $fs-header / 2.2;
+        margin: .5em 0;
+        text-transform: capitalize;
+      }
       .link {
         @include HoverFx(0, 0, 0);
         position: relative;
@@ -67,20 +77,24 @@ export default {
         .hoverIcon {
           position: absolute;
           color: white !important;
-          font-size: 7em;
+          font-size: 9em;
           top: 50%;
           left: 50%;
-          transform: translate(-50%, -170%);
+          transform: translate(-50%, -70%);
           opacity: 0;
           @include ColorTransition;
         }
       }
+      &:hover {
+        border: solid 3px #c2c2c2;
+      }
       &:hover a img {
         filter: brightness(25%);
-        border: solid 3px rgb(194, 194, 194);
       }
       &:hover a .hoverIcon {
         opacity: 1;
+        font-size: 7em;
+        transform: translate(-50%, -50%);
         @include ColorTransition;
       }
       .info {

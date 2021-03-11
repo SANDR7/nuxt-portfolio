@@ -9,18 +9,18 @@
           <GithubSection />
         </div>
       </div> -->
-      <!-- Design work / graphic -->
-      <div class="Section">
-        <h2>Graphic work</h2>
-        <div class="Background">
-          <DesignSection />
-        </div>
-      </div>
       <!-- Education -->
       <div class="Section">
         <h2>Education</h2>
         <div class="Background">
           <EducationSection />
+        </div>
+      </div>
+      <!-- Design work / graphic -->
+      <div class="Section">
+        <h2>Other Work</h2>
+        <div class="Background">
+          <DesignSection />
         </div>
       </div>
       <!-- Skills -->
@@ -68,8 +68,7 @@ export default {
     VaardighedenSection,
     // GithubSection,
     HobbySection,
-    DesignSection,
-    About_DesignSection
+    DesignSection
   }
 };
 </script>
