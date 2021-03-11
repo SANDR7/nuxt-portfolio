@@ -55,10 +55,17 @@
             width="460"
             height="520"
             alt="Sander"
+            v-anime="{
+              translateX: [-250, -35],
+              translateY: [100, -100],
+              opacity: [0, 1],
+              duration: 3200
+            }"
           />
           <div class="ide">
-            SMA - 0{{ countProjects }}\ <br> \0{{ countExercises }}
-             <!-- SMA ⁄ 07{{
+            SMA - 0{{ countProjects }}\ <br />
+            \0{{ countExercises }}
+            <!-- SMA ⁄ 07{{
               date - 2002
             }} -->
           </div>
@@ -81,9 +88,9 @@ export default {
       projects,
       exercises,
       countProjects: projects.length,
-      countExercises: exercises.length,
+      countExercises: exercises.length
     };
-  },
+  }
 };
 </script>
 
