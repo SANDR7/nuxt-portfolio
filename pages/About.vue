@@ -57,9 +57,9 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "Hi, my name is Sander van Ast. I'm an enthusiastic programmer and a starting entrepreneur based in The Netherlands."
-        }
-      ]
+            "Hi, my name is Sander van Ast. I'm an enthusiastic programmer and a starting entrepreneur based in The Netherlands.",
+        },
+      ],
     };
   },
   components: {
@@ -69,6 +69,7 @@ export default {
     // GithubSection,
     HobbySection,
     DesignSection,
+    About_DesignSection
   }
 };
 </script>

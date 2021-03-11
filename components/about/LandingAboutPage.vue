@@ -76,33 +76,84 @@
             <a
               target="blank"
               href="https://worldskillsnetherlands.nl/skillstalents/zuid-holland-hawks/"
-            >Skills Talent</a>
+              >Skills Talent</a
+            >
             <a
               target="blank"
               href="https://www.nederlandfietsland.nl/lf-routes/eregalerij-ronde-van-nederland?page=6"
-            >Tour of Holland</a>
-            <a target="blank" href="https://www.triathlongo.nl/">Triathlon Herkingen</a>
+              >Tour of Holland</a
+            >
+            <a target="blank" href="https://www.triathlongo.nl/"
+              >Triathlon Herkingen</a
+            >
           </div>
         </div>
         <div class="Socials">
           <h2 class="SubHeader">Follow me everywhere you'd like</h2>
           <div class="medias">
-            <a title="LinkedIn profile" href="https://www.linkedin.com/in/sander-van-ast/" target="blank">LinkedIn</a>
-            <a title="Github profile" href="https://github.com/SANDR7" target="blank">GitHub</a>
-            <a title="Facebook profile"
+            <a
+              :title="`LinkedIn ${kind}`"
+              href="https://www.linkedin.com/in/sander-van-ast/"
+              target="blank"
+              >LinkedIn</a
+            >
+            <a
+              :title="`Github ${kind}`"
+              href="https://github.com/SANDR7"
+              target="blank"
+              >GitHub</a
+            >
+            <a
+              :title="`Dribbble ${kind}`"
+              href="https://dribbble.com/SANDR7"
+              target="blank"
+              >Dribbble</a
+            >
+            <a
+              :title="`Facebook ${kind}`"
               href="https://www.facebook.com/profile.php?id=100009821328030"
               target="blank"
-            >FaceBook</a>
-            <a title="Instagraom profile" href="https://www.instagram.com/sander.ast/" target="blank">Instagram</a>
-            <a title="Twitter profile" href="https://twitter.com/SANDR__7" target="blank">Twitter</a>
-            <a title="Discord profile" href="https://discord.com/users/288274960496066560" target="blank">Discord</a>
-            <a title="Snapchat profile" href="https://www.snapchat.com/add/sandervanast" target="blank">SnapChat</a>
-            <a title="spotify profile"
+              >FaceBook</a
+            >
+            <a
+              :title="`Instagraom ${kind}`"
+              href="https://www.instagram.com/sander.ast/"
+              target="blank"
+              >Instagram</a
+            >
+            <a
+              :title="`Twitter ${kind}`"
+              href="https://twitter.com/SANDR__7"
+              target="blank"
+              >Twitter</a
+            >
+            <a
+              :title="`Discord ${kind}`"
+              href="https://discord.com/users/288274960496066560"
+              target="blank"
+              >Discord</a
+            >
+            <a
+              :title="`Snapchat ${kind}`"
+              href="https://www.snapchat.com/add/sandervanast"
+              target="blank"
+              >SnapChat</a
+            >
+            <a
+              :title="`spotify ${kind}`"
               href="https://open.spotify.com/user/smvanast1?si=AczDHlNzSVuxJUnplmhlXA"
               target="blank"
-            >Spotify</a>
-            <a title="e-mail" href="mailto:contact@sandervanast.com" target="blank">Mail</a>
-            <a title="phone number" href="tel:0681314693" target="blank">Phone</a>
+              >Spotify</a
+            >
+            <a
+              title="e-mail"
+              href="mailto:contact@sandervanast.com"
+              target="blank"
+              >Mail</a
+            >
+            <a title="phone number" href="tel:0681314693" target="blank"
+              >Phone</a
+            >
           </div>
         </div>
       </div>
@@ -117,7 +168,8 @@ export default {
       fname: "Sander",
       lname: "van",
       llname: "Ast",
-      date: new Date().getFullYear()
+      date: new Date().getFullYear(),
+      kind: 'profile',
     };
   },
 };
@@ -138,7 +190,7 @@ export default {
       align-content: center;
       justify-content: center;
       position: relative;
-      left:3%;
+      left: 3%;
       .Gallery {
         display: grid;
         margin: 2rem 0;
