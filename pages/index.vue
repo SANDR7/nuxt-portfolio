@@ -165,10 +165,13 @@ p {
     height: 100%;
     h2,
     h4 {
+      @include ColorTransition;
       font-size: $fs-header * 0.9;
       transform: translateY(34%);
       margin: 0 2rem;
+      -webkit-text-fill-color: var(--TxtColor);
       &::after {
+        @include ColorTransition;
         content: ";";
         color: $OrangeColor1;
       }
@@ -181,6 +184,7 @@ p {
     @media only screen and (max-width: $MobileSize1) {
       h2,
       h4 {
+        @include ColorTransition;
         font-size: $fs-header * 0.7;
         margin: 0 1rem;
       }
@@ -192,6 +196,7 @@ p {
     @media only screen and (min-device-width: $TabletSize1) {
       h2,
       h4 {
+        @include ColorTransition;
         font-size: $fs-header * 1;
         transform: translateY(34%);
         margin: 0 4rem;
@@ -204,6 +209,7 @@ p {
     @media only screen and (min-device-width: $TabletSize1) and (max-device-width: $TabletSize2) and (orientation: landscape) {
       h2,
       h4 {
+        @include ColorTransition;
         font-size: $fs-header * 1;
         margin: 0 2rem;
       }
@@ -215,6 +221,7 @@ p {
     @media only screen and (min-device-width: $TabletSize1) and (max-device-width: $TabletSize2) and (orientation: portrait) {
       h2,
       h4 {
+        @include ColorTransition;
         font-size: $fs-header * 1;
         margin: 0 2rem;
       }
@@ -226,6 +233,7 @@ p {
     @media only screen and (min-width: $Laptop1) {
       h2,
       h4 {
+        @include ColorTransition;
         font-size: $fs-header * 1.2;
         letter-spacing: 2px;
         // text-align: center;
@@ -234,7 +242,6 @@ p {
         transform: translateY(34%);
         padding: 1rem 0;
 
-        @include ColorTransition;
         @include funkyText(2px);
         opacity: $WmarkOpacity;
         &::after {
@@ -283,9 +290,10 @@ p {
   -webkit-text-fill-color: var(--TxtColor);
   opacity: $WmarkOpacity * 5.8;
   &::after {
-    content: ";";
-    -webkit-text-fill-color: $OrangeColor1;
     @include ColorTransition;
+    content: ";";
+    -webkit-text-stroke: transparent;
+    -webkit-text-fill-color: $OrangeColor1;
   }
 }
 </style>
