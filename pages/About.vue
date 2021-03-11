@@ -9,6 +9,13 @@
           <GithubSection />
         </div>
       </div> -->
+      <!-- Design work / graphic -->
+      <div class="Section">
+        <h2>Graphic work</h2>
+        <div class="Background">
+          <DesignSection />
+        </div>
+      </div>
       <!-- Education -->
       <div class="Section">
         <h2>Education</h2>
@@ -38,6 +45,7 @@
 import LandingAboutPage from "~/components/about/LandingAboutPage";
 import EducationSection from "~/components/about/EducationSection";
 // import GithubSection from "~/components/about/GithubSection";
+import DesignSection from "~/components/about/DesignSection";
 import HobbySection from "~/components/about/HobbySection";
 import VaardighedenSection from "~/components/home/VaardighedenSection";
 export default {
@@ -60,6 +68,7 @@ export default {
     VaardighedenSection,
     // GithubSection,
     HobbySection,
+    DesignSection,
   }
 };
 </script>
