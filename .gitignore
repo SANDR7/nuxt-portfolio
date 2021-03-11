@@ -115,7 +115,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-
+# custom api kind a thing
 SomeExercises.js
 projects.js
+artworks.js
+hobbies.js
 /source/*
