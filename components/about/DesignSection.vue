@@ -11,7 +11,7 @@
  -->
   <div class="artGallery">
     <div class="Scroll">
-      <div class="Artwork" v-for="(A, index) in Artworks" :key="index">
+      <div class="Artwork" v-for="(A, index) of Artworks" :key="index">
           <div class="Name">{{A.altDesc}}</div>
         <a :href="`${A.shareUrl}`" target="blank" class="link">
           <picture>
@@ -21,7 +21,7 @@
         </a>
         <div class="info">
           <span> {{ A.Date }}</span>
-          <span class="kind?" v-html="A.iconKind"> </span>
+          <span class="kind" v-html="A.iconKind"> </span>
         </div>
         <!-- <div class="artworkName">nice</div> -->
       </div>
@@ -34,9 +34,10 @@ import Artworks from "~~/artworks.js";
 export default {
   data() {
     return {
-      Artworks
+      Artworks,
     };
-  }
+  },
+ 
 };
 </script>
 
