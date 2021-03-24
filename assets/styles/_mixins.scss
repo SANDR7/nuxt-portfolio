@@ -59,7 +59,14 @@
   padding: 1.5rem 1rem;
   box-shadow: var(--BoxShadow);
   z-index: 1;
-  // backdrop-filter: blur(12px);
+  @supports (backdrop-filter: blur()) {
+    backdrop-filter: blur(10.7px);
+    background-color: var(--BackGroundCardLevel3);
+  }
+  @supports not (backdrop-filter: blur()) {
+    backdrop-filter: none;
+    background: var(--BackGroundCardLevel1);
+  }
   border: solid 3px transparent;
   background-clip: border-box;
 }
@@ -67,8 +74,14 @@
 // ===================
 @mixin subCardBackground {
   @include CardBackground;
-  background-color: var(--BackGroundCardLevel2);
+  @supports (backdrop-filter: blur(12px)) {
+    background-color: var(--BackGroundCardLevel2);
+  }
+  @supports not (backdrop-filter: blur(12px)) {
+    background-color: var(--BackGroundCardLevel2);
+  }
   display: flex;
+  background-color: var(--BackGroundCardLevel2);
   margin: 0.7rem 1rem;
   // box-shadow: none;
   box-shadow: $innerShadow;
@@ -171,6 +184,7 @@
     --BackgroundColor: #{Color(backgroundLight)};
     --BackGroundCardLevel1: #{Color(backgroundCard1_Light)};
     --BackGroundCardLevel2: #{Color(backgroundCard2_Light)};
+    --BackGroundCardLevel3: #{Color(backgroundCard3_Light)};
 
     --BackgroundSections: #{Color(backgroundSections_Light)};
 
@@ -189,6 +203,7 @@
     --BackgroundColor: #{Color(backgroundDark)};
     --BackGroundCardLevel1: #{Color(backgroundCard1_Dark)};
     --BackGroundCardLevel2: #{Color(backgroundCard2_Dark)};
+    --BackGroundCardLevel3: #{Color(backgroundCard3_Dark)};
     --BackgroundSections: #{Color(backgroundSections_Dark)};
 
     --ProgressColor: #{Color(GeneralDark)};
