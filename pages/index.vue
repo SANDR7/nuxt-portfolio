@@ -175,6 +175,7 @@ p {
         content: ";";
         -webkit-text-fill-color: $OrangeColor1;
         color: $OrangeColor1;
+        -webkit-text-fill-color: $OrangeColor1;
       }
     }
     .Background {

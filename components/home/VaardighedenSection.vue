@@ -699,6 +699,7 @@ export default {
       width: 100%;
       padding: 0 1.5rem;
       .scroll {
+        scroll-snap-type: x mandatory;
         display: flex;
         overflow-x: auto;
         scrollbar-width: thin; /* Firefox */

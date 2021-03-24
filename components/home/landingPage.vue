@@ -55,12 +55,6 @@
             width="460"
             height="520"
             alt="Sander"
-            v-anime="{
-              translateX: [-250, -35],
-              translateY: [100, -100],
-              opacity: [0, 1],
-              duration: 3200
-            }"
           />
           <div class="ide">
             SMA - 0{{ countProjects }}\ <br />

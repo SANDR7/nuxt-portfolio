@@ -13,8 +13,10 @@ $colors: (
   "backgroundSections_Dark": rgba(26, 26, 26, 0.2),
   "backgroundCard1_Light": #fcf3e9f6,
   "backgroundCard2_Light": #f9f9f8,
+  "backgroundCard3_Light": #fcf3e988,
   "backgroundCard1_Dark": #221915f6,
   "backgroundCard2_Dark": #0f0f0f,
+  "backgroundCard3_Dark": #22191588,
   "txtLight": #2e2e2e,
   "txtDark": #e6e4e4,
   // Grey Colors worden gebruikt voor social meida icons + hover "GreyColor": #666666,
@@ -69,6 +71,7 @@ $colors: (
     --BackgroundColor: #{Color(backgroundDark)};
     --BackGroundCardLevel1: #{Color(backgroundCard1_Dark)};
     --BackGroundCardLevel2: #{Color(backgroundCard2_Dark)};
+    --BackGroundCardLevel3: #{Color(backgroundCard3_Dark)};
     --BackgroundSections: #{Color(backgroundSections_Dark)};
 
     --ProgressColor: #{Color(GeneralDark)};

@@ -22,14 +22,14 @@
       >
         <a :href="project.Url_src" target="blank">
           <picture>
-            <source
-              :srcset="project.Img_src_WEBP"
+            <img
+              :src="project.Img_src_PNG"
               :alt="project.id + '-Thumbnail'"
               height="500"
               width="628"
             />
-            <img
-              :src="project.Img_src_PNG"
+            <source
+              :srcset="project.Img_src_WEBP"
               :alt="project.id + '-Thumbnail'"
               height="500"
               width="628"
