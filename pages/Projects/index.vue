@@ -13,14 +13,14 @@
             <div class="ProjectNaam">{{ project.Projectnaam }}</div>
           </div>
           <picture>
-            <source
-              :srcset="project.Img_src_WEBP"
+            <img
+              :src="project.Img_src_PNG"
               :alt="project.id + '-Thumbnail'"
               height="500"
               width="628"
             />
-            <img
-              :src="project.Img_src_PNG"
+            <source
+              :srcset="project.Img_src_WEBP"
               :alt="project.id + '-Thumbnail'"
               height="500"
               width="628"
@@ -300,6 +300,12 @@ export default {
         flex-direction: column;
         margin: 0.5rem;
         position: relative;
+        @supports (backdrop-filter: blur()) {
+          backdrop-filter: blur(4px);
+        }
+        @supports not (backdrop-filter: blur()) {
+          backdrop-filter: none;
+        }
         .CardHeader {
           .sort {
             opacity: $WmarkOpacity * 3;
@@ -360,7 +366,7 @@ export default {
               margin: 0.3rem 0.5rem;
               margin-left: 0;
               @include CardBackground;
-              background-color: var(--BackGroundCardLevel2);
+              background-color: var(--BackGroundCardLevel2) !important;
               height: max-content;
               width: max-content;
               padding: 1rem 1.5rem;
