@@ -47,13 +47,13 @@ export default {
     ProjectenSection,
     VaardighedenSection,
     StrengthsSection,
-    ContactSection,
+    ContactSection
   },
   head() {
     return {
-      titleTemplate: "Personal Portfolio - %s",
+      titleTemplate: "Personal Portfolio - %s"
     };
-  },
+  }
 };
 </script>
 
@@ -173,6 +173,7 @@ p {
       &::after {
         @include ColorTransition;
         content: ";";
+        -webkit-text-fill-color: $OrangeColor1;
         color: $OrangeColor1;
         -webkit-text-fill-color: $OrangeColor1;
       }
@@ -248,6 +249,7 @@ p {
         &::after {
           @include ColorTransition;
           content: ";";
+    -webkit-text-fill-color: transparent;
         }
       }
       .Background {

@@ -3,12 +3,12 @@
     <LandingAboutPage />
     <div class="Sections">
       <!-- Status -->
-      <!-- <div class="Section">
-        <h2>Github Status</h2>
+      <div class="Section">
+        <h2>Github Vuew</h2>
         <div class="Background">
           <GithubSection />
         </div>
-      </div> -->
+      </div>
       <!-- Education -->
       <div class="Section">
         <h2>Education</h2>
@@ -44,7 +44,7 @@
 <script>
 import LandingAboutPage from "~/components/about/LandingAboutPage";
 import EducationSection from "~/components/about/EducationSection";
-// import GithubSection from "~/components/about/GithubSection";
+import GithubSection from "~/components/about/GithubSection";
 import DesignSection from "~/components/about/DesignSection";
 import HobbySection from "~/components/about/HobbySection";
 import VaardighedenSection from "~/components/home/VaardighedenSection";
@@ -66,7 +66,7 @@ export default {
     LandingAboutPage,
     EducationSection,
     VaardighedenSection,
-    // GithubSection,
+    GithubSection,
     HobbySection,
     DesignSection
   }
