@@ -12,7 +12,7 @@
   <div class="artGallery">
     <div class="Scroll">
       <div class="Artwork" v-for="(A, index) of Artworks" :key="index">
-          <div class="Name">{{A.altDesc}}</div>
+        <div class="Name">{{ A.altDesc }}</div>
         <a :href="`${A.shareUrl}`" target="blank" class="link">
           <picture>
             <img :src="A.artworkUrl" :alt="A.altDesc" />
@@ -37,7 +37,6 @@ export default {
       Artworks,
     };
   },
- 
 };
 </script>
 
@@ -62,7 +61,7 @@ export default {
       @include ColorTransition;
       .Name {
         font-size: $fs-header / 2.2;
-        margin: .5em 0;
+        margin: 0.5em 0;
         text-transform: capitalize;
       }
       .link {
@@ -91,6 +90,7 @@ export default {
       }
       &:hover a img {
         filter: brightness(25%);
+          @include ColorTransition;
       }
       &:hover a .hoverIcon {
         opacity: 1;

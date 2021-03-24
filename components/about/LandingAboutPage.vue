@@ -169,7 +169,7 @@ export default {
       lname: "van",
       llname: "Ast",
       date: new Date().getFullYear(),
-      kind: 'profile',
+      kind: "profile",
     };
   },
 };
@@ -222,7 +222,12 @@ export default {
       height: max-content;
       z-index: 0.5;
       width: 100%;
-      background-color: var(--BackGroundCardLevel1);
+      @supports (backdrop-filter: blur()) {
+        backdrop-filter: blur(32px);
+      }
+      @supports not (backdrop-filter: blur()) {
+        backdrop-filter: none;
+      }
       .text,
       .Achievements,
       .Socials {
