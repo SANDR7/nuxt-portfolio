@@ -174,6 +174,7 @@ p {
         @include ColorTransition;
         content: ";";
         color: $OrangeColor1;
+        -webkit-text-fill-color: $OrangeColor1;
       }
     }
     .Background {
