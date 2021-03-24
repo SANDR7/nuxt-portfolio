@@ -5,22 +5,33 @@
       <div class="info">
         <div style="padding-bottom: 2em">
           <span>{{ gitData.name }}</span>
-          <h3>{{ gitData.login }}</h3>
+          <h3 class="loginName">{{ gitData.login }}</h3>
           <div>Currently {{ gitData.followers }} followers</div>
           <a :href="gitData.html_url" target="blank">Full page</a>
         </div>
-        <span class="title">latest repos</span>
-        <div v-for="(data, index) in gitReData.slice(0, 5)" :key="index">
+        <span class="title">latest repos</span
+        ><span>&nbsp;{{ this.shownRepos }}/{{ gitData.public_repos }}</span>
+        <div
+          v-for="(data, index) in gitReData.slice(0, this.shownRepos)"
+          :key="index"
+        >
           <li class="reposes">{{ gitReData[index].name }}</li>
         </div>
       </div>
       <div></div>
     </div>
     <div class="teamMates">
-      <div class="header">People I work with</div>
+      <div class="header">people I collaborate with</div>
       <div class="Arr">
         <div v-for="(data, index) in gitFoData" :key="index" class="ArrCard">
           <div>
+            <img
+              height="150rem"
+              :src="gitFoData[index].avatar_url"
+              :alt="gitFoData.login"
+            />
+          </div>
+          <div style="margin: .5em 0">
             {{ gitFoData[index].login }}
           </div>
         </div>
@@ -33,6 +44,7 @@
 export default {
   data() {
     return {
+      shownRepos: 5,
       gitData: [],
       gitReData: [],
       gitFoData: [],
@@ -47,7 +59,7 @@ export default {
       `https://api.github.com/users/${this.user}/repos`
     ).then(res => res.json());
     this.gitFoData = await fetch(
-      `https://api.github.com/users/${this.user}/followers`
+      `https://api.github.com/users/${this.user}/following`
     ).then(res => res.json());
   }
 };
@@ -59,15 +71,17 @@ export default {
   .Card {
     display: flex;
     @include subCardBackground;
-    width: max-content;
+    flex: 0.55;
+    height: 50%;
     img {
-      height: 18em;
-      padding: 2em;
+      height: 10em;
+      padding: 1em;
+      padding-top: 0;
       border-radius: $borderRadius12 !important;
     }
     .info {
       padding: 0 2em;
-      h3 {
+      .loginName {
         font-size: $fs-header * 0.8;
       }
       .title {
@@ -84,12 +98,26 @@ export default {
   .teamMates {
     .header {
       font-size: $fs-header * 0.6;
+      &::after {
+        content: ":";
+        color: $OrangeColor1;
+      }
     }
     .Arr {
       display: flex;
+      margin: 1em 0;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 33%);
+      grid-gap: 2em;
       .ArrCard {
         @include CardBackground;
+        padding: 0.3em;
         margin-right: 2em;
+        text-align: center;
+        img {
+          border-radius: $borderRadius12;
+        }
       }
     }
   }

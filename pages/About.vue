@@ -4,7 +4,7 @@
     <div class="Sections">
       <!-- Status -->
       <div class="Section">
-        <h2>Github Vuew</h2>
+        <h2>Github overVue</h2>
         <div class="Background">
           <GithubSection />
         </div>
