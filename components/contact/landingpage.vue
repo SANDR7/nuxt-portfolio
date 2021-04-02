@@ -6,9 +6,9 @@
         <p>
           The last few week I've been search for an internship for my career.
           I'm pleased to tell you that company
-          <a href="https://notanumber.digital/homepage">NotANumber</a> has taken
+          <a href="https://notanumber.digital/homepage" target="blank">NotANumber</a> has taken
           me under the hood. I want to thank them for the hospitality and for
-          giving me the chance to develop myself.
+          giving me the opportunity to develop myself.
         </p>
       </div>
       <div class="thankU">
