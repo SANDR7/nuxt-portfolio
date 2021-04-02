@@ -2,30 +2,25 @@
   <div class="Message">
     <div class="Toelichting">
       <div class="stageToelichting">
-        <b class="heading">For the Dutch among us</b>
+        <b class="heading">Internship update</b>
         <p>
-          Als lerend student op het Grafisch Lyceum
-          Rotterdam zou ik graag iets willen toelichten. In het derde jaar van
-          mijn opleiding(2021) wordt er mij verzoekt om een stage te zoeken.
-          Hierdoor kan ik het bedrijf helpen en mezelf ontwikkelen. Het gaat om een
-          stage van een geheel school jaar. Dus bent u een bedrijf of kent u
-          iemand die een stagiaire in de periode van september 2021 tot eind april 2022 gaat aannemen dan zou ik het erg
-          appreciëren als u een mail sturen naar mijn <a href="mailto:84231@glr.nl" title="84231@glr.nl">schoolmail</a>. 
-          <br>
-          <br>
-          Bedank voor uw aandacht en voor het lezen.
+          The last few week I've been search for an internship for my career.
+          I'm pleased to tell you that company
+          <a href="https://notanumber.digital/homepage">NotANumber</a> has taken
+          me under the hood. I want to thank them for the hospitality and for
+          giving me the chance to develop myself.
         </p>
       </div>
       <div class="thankU">
         <p>
           Hope you having a great time on my personal portfolio. For all of you
-          visiting my website, I just want to say that appreciated being here. And
-          when you have a idea or a concept in you're head, then you're welcome to get
-          in touch with me!
+          visiting my website, I just want to say that appreciated being here.
+          And when you have a idea or a concept in you're head, then you're
+          welcome to get in touch with me!
         </p>
       </div>
     </div>
-<i class="fal fa-chart-network"></i>
+    <i class="fal fa-chart-network"></i>
   </div>
 </template>
 
@@ -46,7 +41,7 @@ export default {};
       margin: 1.5rem 0;
       .heading {
         &::after {
-          content: ':';
+          content: ":";
           color: $OrangeColor1;
         }
       }

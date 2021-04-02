@@ -26,7 +26,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "I'm currently searching for a dutch internship. If you have any interest you can easily fill out the contact form."
+          content: "Currently available for projects. If you have any interest you can easily fill out the contact form."
         }
       ]
     };

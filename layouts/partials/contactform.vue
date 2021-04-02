@@ -166,12 +166,16 @@ export default {
     padding: 2rem 4rem;
     .Endmessage {
       @include CardBackground;
-      text-align: center;
+      text-align: left;
       font-weight: 600;
       font-size: $fs-paragraph-2 * 1.2;
       color: Color(GeneralLight);
       background-color: #4fcfbe;
       box-shadow: $innerShadow;
+
+      &::selection {
+        background-color: #4fcfbe !important;
+      }
     }
     .EndmessageErr {
       @extend .Endmessage;

@@ -126,7 +126,6 @@ export default {
       }
     ]
   ],
-  buildModules: [["@nuxtjs/dotenv", { path: "./env" }]],
 
   googleAnalytics: {
     id: "UA-174166351-1" // Used as fallback if no runtime config is provided
@@ -137,6 +136,7 @@ export default {
     "@nuxtjs/pwa",
     "@nuxtjs/recaptcha",
     'nuxt-animejs',
+    ['@nuxtjs/dotenv', { path: './env/' }]
   ],
   router: {},
 
@@ -151,7 +151,7 @@ export default {
     background: 'white'
   },
   pageTransition: {
-  name: 'page',
+    name: 'page',
     mode: 'out-in',
     css: false,
 
