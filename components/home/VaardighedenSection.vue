@@ -137,8 +137,6 @@
           <div class="subCard">progressive web app</div>
           <div class="subCard">AJAX</div>
           <div class="subCard">reliable</div>
-          <div class="subCard">Sporty</div>
-          <div class="subCard">My Stamina</div>
           <div class="subCard">Racing cyclist</div>
           <div class="subCard">Speedcubing</div>
           <div class="subCard">Lego technic Builder</div>
@@ -428,7 +426,7 @@ export default {
             &:nth-child(4) {
               .NaamPrograms {
                 // GitHub
-                @include ProgressBar(55%, $RedColor1);
+                @include ProgressBar(75%, $RedColor1);
                 path {
                   fill: red;
                 }
@@ -479,7 +477,7 @@ export default {
               }
               .NaamOs {
                 // Git
-                @include ProgressBar(64%, $RedColor1);
+                @include ProgressBar(73%, $RedColor1);
 
                 &::before,
                 &::after {

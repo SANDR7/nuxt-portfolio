@@ -28,7 +28,7 @@ export default {
       darkMode: "", // default value (system preference)
       systemText: "Switch up the mood 👀",
       brightSideTxt: "Switch to the Dark Side of the 🌑",
-      DarkSideTxt: "Switch to 👨‍⚖️ Bright Side",
+      DarkSideTxt: "Switch to 🤵️ Bright Side",
     };
   },
   methods: {
