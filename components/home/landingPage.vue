@@ -51,7 +51,7 @@
         </h1>
         <div class="Hero">
           <img
-            src="https://src.sandervanast.com/images/PNG/Sander.png"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FSander.png?alt=media&token=34c598a9-2774-410f-a1c8-257114cc44b7"
             width="460"
             height="520"
             alt="Sander"
@@ -91,7 +91,7 @@ export default {
 <style lang="scss">
 .WelcomeCoverHome {
   @include BackgroundImage(
-    "https://src.sandervanast.com/images/PNG/BackgroundImage0.png"
+    "https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FBackgroundImage0.png?alt=media&token=7e95d92d-eb78-45b1-b9d3-8bba467fe42e"
   );
   &::after {
     height: 125%;

@@ -4,7 +4,7 @@
       <div class="leftSide">
         <div class="Gallery">
           <img
-            src="https://src.sandervanast.com/images/PNG/Over/AboutImage_F1.png"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FOver%2FAboutImage_F1.png?alt=media&token=117c640a-87b9-42f2-8622-64258bbdc8f4"
             height="416"
             width="400"
             class="F1"
@@ -12,7 +12,7 @@
             alt="F1"
           />
           <img
-            src="https://src.sandervanast.com/images/PNG/Over/AboutImage_F2.png"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FOver%2FAboutImage_F2.png?alt=media&token=d3aaa40f-fb5e-44aa-ad66-2cbeae48e66d"
             height="200"
             width="200"
             class="F2"
@@ -20,7 +20,7 @@
             alt="F2"
           />
           <img
-            src="https://src.sandervanast.com/images/PNG/Over/AboutImage_F3.png"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FOver%2FAboutImage_F3.png?alt=media&token=1a315251-681f-4185-9a24-e70b18c99fe2"
             height="200"
             width="200"
             class="F3"
@@ -28,7 +28,7 @@
             alt="F3"
           />
           <img
-            src="https://src.sandervanast.com/images/PNG/Over/AboutImage_F4.png"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FOver%2FAboutImage_F4.png?alt=media&token=da0c1954-ed6f-4fba-ab75-6bcccc1a55aa"
             height="200"
             width="616"
             class="F4"
@@ -36,7 +36,7 @@
             alt="F4"
           />
           <img
-            src="https://src.sandervanast.com/images/PNG/Over/AboutImage_F5.png"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FOver%2FAboutImage_F5.png?alt=media&token=0c131654-b0ba-4ad7-8d93-8f4d6a94e5e1"
             height="416"
             width="200"
             class="F5"
@@ -44,7 +44,7 @@
             alt="F5"
           />
           <img
-            src="https://src.sandervanast.com/images/PNG/Over/AboutImage_F6.png"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FOver%2FAboutImage_F6.png?alt=media&token=f5665b39-2aa3-424b-9002-90331fb2c386"
             height="200"
             width="200"
             class="F6"

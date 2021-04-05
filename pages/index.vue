@@ -147,17 +147,17 @@ p {
   // background-color: lightblue;
   .projects {
     @include BackgroundImage(
-      "https://src.sandervanast.com/images/PNG/BackgroundImage1.png"
+      "https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FBackgroundImage1.png?alt=media&token=f21e602c-26cc-43e1-b402-eeca25ec4b20"
     );
   }
   .skills {
     @include BackgroundImage(
-      "https://src.sandervanast.com/images/PNG/BackgroundImage2.png"
+      "https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FBackgroundImage2.png?alt=media&token=93471457-8ca6-4cd2-a77c-c8050ae3b93e"
     );
   }
   .strengths {
     @include BackgroundImage(
-      "https://src.sandervanast.com/images/PNG/BackgroundImage3.png"
+      "https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/PNG%2FBackgroundImage3.png?alt=media&token=ef643138-4309-4f44-a7e0-3306b31c4dc3"
     );
   }
   .Section {

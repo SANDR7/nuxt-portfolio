@@ -74,7 +74,7 @@ export default {
       }
     ],
     script: [
-      { src: "https://src.sandervanast.com/code/JS/FontAwesome.min.js" }
+      { src: "https://firebasestorage.googleapis.com/v0/b/portfolioform-60d02.appspot.com/o/CODE%2Ffontawesome.js?alt=media&token=411c1e9d-5426-4499-8b34-68b1bb157a09" }
     ],
     link: [
       {
