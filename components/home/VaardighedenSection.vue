@@ -20,15 +20,18 @@
             />
             <div class="Frameworks">
               <div class="header">{{ Framework.name }}</div>
-              <p>Startd since {{ Framework.BeginDate }}</p>
-              <p>
-                <!-- <a
+              <div>
+                Startd since
+                <span class="GREEN"> {{ Framework.BeginDate }}</span>
+              </div>
+              <div>
+                <a
                   :href="Framework.Url_src"
                   title="Framework website"
                   target="blank"
                   ><i class="far fa-info-circle"></i> {{ Framework.name }}</a
-                > -->
-              </p>
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -45,7 +48,7 @@
         </div>
         <span style="position: absolute"> return &#40; </span>
         <div style="margin-left: 1rem; margin-top: 1.5rem; position: absolute">
-          programming&#95;Languages&#59;
+          programming-Languages&#59;
         </div>
         <!-- <div style="margin-top: 1.5rem; margin-left: 1rem; position: absolute;">programming&#95;Languages&#59;</div> -->
         <div class="Scroll">
@@ -62,7 +65,10 @@
             />
             <div class="ProgrammeerTalen">
               <div class="header">{{ ProgrammeerTaal.name }}</div>
-              <p>Started since {{ ProgrammeerTaal.BeginDate }}</p>
+              <div>
+                Started since
+                <span class="ORANGE"> {{ ProgrammeerTaal.BeginDate }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -75,7 +81,7 @@
         <div class="Scroll">
           <div class="subCard" v-for="(Programma, id) in Programmas" :key="id">
             <div class="NaamPrograms">
-              <div class="header">{{ Programma.name }}</div>
+              <div class="header RED">{{ Programma.name }}</div>
               <div>{{ Programma.cat }}</div>
             </div>
             <div class="Logo">
@@ -97,7 +103,7 @@
         <div class="Scroll">
           <div class="subCard" v-for="(Kennis, id) in ComputerKennis" :key="id">
             <div class="NaamOs">
-              <div class="header">{{ Kennis.name }}</div>
+              <div class="header RED">{{ Kennis.name }}</div>
               <div>{{ Kennis.cat }}</div>
             </div>
             <div class="Logo">
@@ -190,82 +196,82 @@ export default {
         .Scroll {
           margin-top: 3rem;
           margin-bottom: 0.3rem;
-          .subCard {
-            &:nth-child(1) {
-              .Frameworks {
-                // vue js
-                @include ProgressBar(88%, $GreenColor1);
-              }
-            }
+          // .subCard {
+          //   &:nth-child(1) {
+          //     .Frameworks {
+          //       // vue js
+          //       @include ProgressBar(88%, $GreenColor1);
+          //     }
+          //   }
 
-            &:nth-child(2) {
-              .Frameworks {
-                // react js
-                @include ProgressBar(74%, $GreenColor1);
-              }
-            }
+          //   &:nth-child(2) {
+          //     .Frameworks {
+          //       // react js
+          //       @include ProgressBar(74%, $GreenColor1);
+          //     }
+          //   }
 
-            &:nth-child(3) {
-              .Frameworks {
-                // sass js
-                @include ProgressBar(93%, $GreenColor1);
-              }
-            }
-            &:nth-child(4) {
-              .Frameworks {
-                // nuxt js
-                @include ProgressBar(66%, $GreenColor1);
-              }
-            }
-            &:nth-child(5) {
-              .Frameworks {
-                // gulp
-                @include ProgressBar(63%, $GreenColor1);
-              }
-            }
-            &:nth-child(6) {
-              .Frameworks {
-                // jQuery
-                @include ProgressBar(86%, $GreenColor1);
-              }
-            }
-            &:nth-child(7) {
-              .Frameworks {
-                // Nodejs
-                @include ProgressBar(50%, $GreenColor1);
-              }
-            }
-            &:nth-child(8) {
-              .Frameworks {
-                // Bootstrap
-                @include ProgressBar(40%, $GreenColor1);
-              }
-            }
-            &:nth-child(9) {
-              .Frameworks {
-                // Tailwindcss
-                @include ProgressBar(62%, $GreenColor1);
-              }
-            }
-            &:nth-child(10) {
-              .Frameworks {
-                // Foundation
-                @include ProgressBar(48%, $GreenColor1);
-              }
-            }
-            &:nth-child(11) {
-              .Frameworks {
-                // Chartjs
-                @include ProgressBar(70%, $GreenColor1);
-              }
-            }
-            &:nth-child(12) {
-              .Frameworks {
-                // Leaflet
-                @include ProgressBar(56%, $GreenColor1);
-              }
-            }
-          }
+          //   &:nth-child(3) {
+          //     .Frameworks {
+          //       // sass js
+          //       @include ProgressBar(93%, $GreenColor1);
+          //     }
+          //   }
+          //   &:nth-child(4) {
+          //     .Frameworks {
+          //       // nuxt js
+          //       @include ProgressBar(66%, $GreenColor1);
+          //     }
+          //   }
+          //   &:nth-child(5) {
+          //     .Frameworks {
+          //       // gulp
+          //       @include ProgressBar(63%, $GreenColor1);
+          //     }
+          //   }
+          //   &:nth-child(6) {
+          //     .Frameworks {
+          //       // jQuery
+          //       @include ProgressBar(86%, $GreenColor1);
+          //     }
+          //   }
+          //   &:nth-child(7) {
+          //     .Frameworks {
+          //       // Nodejs
+          //       @include ProgressBar(50%, $GreenColor1);
+          //     }
+          //   }
+          //   &:nth-child(8) {
+          //     .Frameworks {
+          //       // Bootstrap
+          //       @include ProgressBar(40%, $GreenColor1);
+          //     }
+          //   }
+          //   &:nth-child(9) {
+          //     .Frameworks {
+          //       // Tailwindcss
+          //       @include ProgressBar(62%, $GreenColor1);
+          //     }
+          //   }
+          //   &:nth-child(10) {
+          //     .Frameworks {
+          //       // Foundation
+          //       @include ProgressBar(48%, $GreenColor1);
+          //     }
+          //   }
+          //   &:nth-child(11) {
+          //     .Frameworks {
+          //       // Chartjs
+          //       @include ProgressBar(70%, $GreenColor1);
+          //     }
+          //   }
+          //   &:nth-child(12) {
+          //     .Frameworks {
+          //       // Leaflet
+          //       @include ProgressBar(56%, $GreenColor1);
+          //     }
+          //   }
+          // }
         }
       }
 
@@ -275,72 +281,72 @@ export default {
         .Scroll {
           margin-top: 3rem;
           margin-bottom: 0.3rem;
-          .subCard {
-            &:nth-child(1) {
-              .ProgrammeerTalen {
-                // Javascript
-                @include ProgressBar(76%, $OrangeColor1);
-              }
-            }
+          // .subCard {
+          //   &:nth-child(1) {
+          //     .ProgrammeerTalen {
+          //       // Javascript
+          //       @include ProgressBar(76%, $OrangeColor1);
+          //     }
+          //   }
 
-            &:nth-child(2) {
-              .ProgrammeerTalen {
-                // Typescipt
-                @include ProgressBar(70%, $OrangeColor1);
-              }
-            }
+          //   &:nth-child(2) {
+          //     .ProgrammeerTalen {
+          //       // Typescipt
+          //       @include ProgressBar(70%, $OrangeColor1);
+          //     }
+          //   }
 
-            &:nth-child(3) {
-              .ProgrammeerTalen {
-                // HTML
-                @include ProgressBar(100%, $OrangeColor1);
-              }
-            }
+          //   &:nth-child(3) {
+          //     .ProgrammeerTalen {
+          //       // HTML
+          //       @include ProgressBar(100%, $OrangeColor1);
+          //     }
+          //   }
 
-            &:nth-child(4) {
-              .ProgrammeerTalen {
-                // C#
-                @include ProgressBar(40%, $OrangeColor1);
-              }
-            }
+          //   &:nth-child(4) {
+          //     .ProgrammeerTalen {
+          //       // C#
+          //       @include ProgressBar(40%, $OrangeColor1);
+          //     }
+          //   }
 
-            &:nth-child(5) {
-              .ProgrammeerTalen {
-                // CSS
-                @include ProgressBar(100%, $OrangeColor1);
-              }
-            }
-            &:nth-child(6) {
-              .ProgrammeerTalen {
-                // PHP
-                @include ProgressBar(65%, $OrangeColor1);
-              }
-            }
-            &:nth-child(7) {
-              .ProgrammeerTalen {
-                // FireBase
-                @include ProgressBar(34%, $PurpleColor1);
-              }
-            }
-            &:nth-child(8) {
-              .ProgrammeerTalen {
-                // MongoDB
-                @include ProgressBar(58%, $PurpleColor1);
-              }
-            }
-            &:nth-child(9) {
-              .ProgrammeerTalen {
-                //My SQL
-                @include ProgressBar(47%, $PurpleColor1);
-              }
-            }
-            &:nth-child(10) {
-              .ProgrammeerTalen {
-                // Php My Admin
-                @include ProgressBar(65%, $PurpleColor1);
-              }
-            }
-          }
+          //   &:nth-child(5) {
+          //     .ProgrammeerTalen {
+          //       // CSS
+          //       @include ProgressBar(100%, $OrangeColor1);
+          //     }
+          //   }
+          //   &:nth-child(6) {
+          //     .ProgrammeerTalen {
+          //       // PHP
+          //       @include ProgressBar(65%, $OrangeColor1);
+          //     }
+          //   }
+          //   &:nth-child(7) {
+          //     .ProgrammeerTalen {
+          //       // FireBase
+          //       @include ProgressBar(34%, $PurpleColor1);
+          //     }
+          //   }
+          //   &:nth-child(8) {
+          //     .ProgrammeerTalen {
+          //       // MongoDB
+          //       @include ProgressBar(58%, $PurpleColor1);
+          //     }
+          //   }
+          //   &:nth-child(9) {
+          //     .ProgrammeerTalen {
+          //       //My SQL
+          //       @include ProgressBar(47%, $PurpleColor1);
+          //     }
+          //   }
+          //   &:nth-child(10) {
+          //     .ProgrammeerTalen {
+          //       // Php My Admin
+          //       @include ProgressBar(65%, $PurpleColor1);
+          //     }
+          //   }
+          // }
         }
       }
       // Programma's
@@ -349,293 +355,299 @@ export default {
         .Scroll {
           height: 160px;
           .subCard {
-            font-size: $fs-paragraph-1;
-            justify-content: space-between;
-            $top: 85%;
-            &:nth-child(n) {
-              .header {
-                font-size: $fs-paragraph-2;
-                font-weight: 600;
-                text-transform: capitalize;
-              }
-            }
-            &:nth-child(1) {
-              .NaamPrograms {
-                // adobe
-                @include ProgressBar(87%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-
-              .NaamOs {
-                // macox
-                @include ProgressBar(62%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-
-            &:nth-child(2) {
-              .NaamPrograms {
-                // Office
-                @include ProgressBar(100%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                // windows
-                @include ProgressBar(89%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-
-            &:nth-child(3) {
-              .NaamPrograms {
-                // Visual studio code
-                @include ProgressBar(92%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                // Windows Server
-                @include ProgressBar(76%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-
-            &:nth-child(4) {
-              .NaamPrograms {
-                // GitHub
-                @include ProgressBar(75%, $RedColor1);
-                path {
-                  fill: red;
-                }
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                // linux
-                @include ProgressBar(34%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-            &:nth-child(5) {
-              .NaamPrograms {
-                // google search console
-                @include ProgressBar(80%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                // vmware
-                @include ProgressBar(47%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-            &:nth-child(6) {
-              .NaamPrograms {
-                // shopify
-                @include ProgressBar(51%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                // Git
-                @include ProgressBar(73%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-            &:nth-child(7) {
-              .NaamPrograms {
-                // wordpress
-                @include ProgressBar(30%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                // Yarn
-                @include ProgressBar(87%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-            &:nth-child(8) {
-              .NaamPrograms {
-                // trello
-                @include ProgressBar(87%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                // figma
-                @include ProgressBar(97%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-            &:nth-child(9) {
-              .NaamPrograms {
-                // mircosoft teams
-                @include ProgressBar(100%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                // Unity
-                @include ProgressBar(43%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-            &:nth-child(10) {
-              .NaamPrograms {
-                // google my business
-                @include ProgressBar(92%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                // xampp
-                @include ProgressBar(94%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-            &:nth-child(11) {
-              .NaamPrograms {
-                // filezilla
-                @include ProgressBar(98%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                //Notion
-                @include ProgressBar(100%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-            &:nth-child(12) {
-              .NaamPrograms {
-                // netlify
-                @include ProgressBar(83%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-              .NaamOs {
-                //Google cloud
-                @include ProgressBar(70%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-            &:nth-child(13) {
-              .NaamPrograms {
-                //Heroku
-                @include ProgressBar(67%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
-            &:nth-child(14) {
-              .NaamPrograms {
-                //plesk
-                @include ProgressBar(77%, $RedColor1);
-
-                &::before,
-                &::after {
-                  top: $top;
-                }
-              }
-            }
             .NaamPrograms,
             .NaamOs {
-              width: 80%;
-            }
-
-            img {
-              flex: 1;
+              width: 100%;
             }
           }
+          // .subCard {
+          //   font-size: $fs-paragraph-1;
+          //   justify-content: space-between;
+          //   $top: 85%;
+          //   &:nth-child(n) {
+          //     .header {
+          //       font-size: $fs-paragraph-2;
+          //       font-weight: 600;
+          //       text-transform: capitalize;
+          //     }
+          //   }
+          //   &:nth-child(1) {
+          //     .NaamPrograms {
+          //       // adobe
+          //       @include ProgressBar(87%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+
+          //     .NaamOs {
+          //       // macox
+          //       @include ProgressBar(62%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+
+          //   &:nth-child(2) {
+          //     .NaamPrograms {
+          //       // Office
+          //       @include ProgressBar(100%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       // windows
+          //       @include ProgressBar(89%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+
+          //   &:nth-child(3) {
+          //     .NaamPrograms {
+          //       // Visual studio code
+          //       @include ProgressBar(92%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       // Windows Server
+          //       @include ProgressBar(76%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+
+          //   &:nth-child(4) {
+          //     .NaamPrograms {
+          //       // GitHub
+          //       @include ProgressBar(75%, $RedColor1);
+          //       path {
+          //         fill: red;
+          //       }
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       // linux
+          //       @include ProgressBar(34%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   &:nth-child(5) {
+          //     .NaamPrograms {
+          //       // google search console
+          //       @include ProgressBar(80%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       // vmware
+          //       @include ProgressBar(47%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   &:nth-child(6) {
+          //     .NaamPrograms {
+          //       // shopify
+          //       @include ProgressBar(51%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       // Git
+          //       @include ProgressBar(73%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   &:nth-child(7) {
+          //     .NaamPrograms {
+          //       // wordpress
+          //       @include ProgressBar(30%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       // Yarn
+          //       @include ProgressBar(87%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   &:nth-child(8) {
+          //     .NaamPrograms {
+          //       // trello
+          //       @include ProgressBar(87%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       // figma
+          //       @include ProgressBar(97%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   &:nth-child(9) {
+          //     .NaamPrograms {
+          //       // mircosoft teams
+          //       @include ProgressBar(100%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       // Unity
+          //       @include ProgressBar(43%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   &:nth-child(10) {
+          //     .NaamPrograms {
+          //       // google my business
+          //       @include ProgressBar(92%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       // xampp
+          //       @include ProgressBar(94%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   &:nth-child(11) {
+          //     .NaamPrograms {
+          //       // filezilla
+          //       @include ProgressBar(98%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       //Notion
+          //       @include ProgressBar(100%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   &:nth-child(12) {
+          //     .NaamPrograms {
+          //       // netlify
+          //       @include ProgressBar(83%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //     .NaamOs {
+          //       //Google cloud
+          //       @include ProgressBar(70%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   &:nth-child(13) {
+          //     .NaamPrograms {
+          //       //Heroku
+          //       @include ProgressBar(67%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   &:nth-child(14) {
+          //     .NaamPrograms {
+          //       //plesk
+          //       @include ProgressBar(77%, $RedColor1);
+
+          //       &::before,
+          //       &::after {
+          //         top: $top;
+          //       }
+          //     }
+          //   }
+          //   .NaamPrograms,
+          //   .NaamOs {
+          //     width: 80%;
+          //   }
+
+          //   img {
+          //     flex: 1;
+          //   }
+          // }
         }
       }
 
@@ -650,6 +662,25 @@ export default {
           display: flex;
           height: 120px;
           @include subCardBackground;
+          $marginTop: 4px;
+          .Frameworks {
+            div {
+              span {
+                &:hover {
+                  color: $GreenColor1;
+                }
+              }
+            }
+          }
+          .ProgrammeerTalen {
+            div {
+              span {
+                &:hover {
+                  color: $OrangeColor1;
+                }
+              }
+            }
+          }
           .Frameworks,
           .ProgrammeerTalen {
             .header {
@@ -657,13 +688,28 @@ export default {
               font-weight: 700;
               font-size: $fs-header / 2.5;
             }
-            p:nth-child(3) {
-              margin-top: 18px;
+            div {
+              margin-top: $marginTop;
+            }
+            div:nth-child(3) {
+              margin-top: -1px;
               a {
                 color: var(--TxtColor);
+                font-size: $fs-paragraph-1;
                 opacity: 0.6;
                 @include HoverFx(1px, var(--TxtColor), 0);
               }
+            }
+          }
+          .NaamPrograms,
+          .NaamOs {
+            .RED {
+              &:hover {
+                color: $RedColor1;
+              }
+            }
+            div {
+              margin-top: $marginTop;
             }
           }
           img {

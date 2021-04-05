@@ -10,15 +10,6 @@
       <div class="Social">
         <ul>
           <li>
-            <b class="title">Phone number</b>
-            <div>
-              <i class="fas fa-phone-alt" title="Phone"></i>
-              <a href="tel:0681314693" target="blank" title="Phone Number"
-                >+31 (06) 81314693</a
-              >
-            </div>
-          </li>
-          <li>
             <b class="title">E-mail Address</b>
             <div>
               <i class="fas fa-envelope" title="Mail"></i>
@@ -27,6 +18,18 @@
                 title="E-mail Address"
                 target="blank"
                 >contact@sandervanast.com</a
+              >
+            </div>
+          </li>
+          <li>
+            <b class="title">LinkedIn Page</b>
+            <div>
+              <i class="fab fa-linkedin" title="LinkedIn"></i>
+              <a
+                href="https://linkedin.com/in/sander-van-ast"
+                title="LinkedIn Page"
+                target="blank"
+                >Sander van Ast</a
               >
             </div>
           </li>
@@ -58,7 +61,7 @@ import { fireDb } from "~/plugins/firebase.js";
 import ContactForm from "~/layouts/partials/contactform";
 export default {
   computed: {
-    ...mapState(["Services"])
+    ...mapState(["Services"]),
   },
 
   // firestore() {
@@ -67,8 +70,8 @@ export default {
   //   }
   // }
   components: {
-    ContactForm
-  }
+    ContactForm,
+  },
 };
 </script>
 

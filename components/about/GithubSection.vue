@@ -1,8 +1,8 @@
 <template>
   <div>
-    <input type="text" v-model="InputUser"/>
+    <!-- <input type="text" v-model="InputUser"/>
     <button @click="test">submit</button>
-    {{InputUser}}
+    {{InputUser}} -->
     <div class="Github">
       <div class="Card">
         <img :src="gitData.avatar_url" :alt="gitData.login" />
@@ -13,20 +13,22 @@
             <div>Currently {{ gitData.followers }} followers</div>
             <a :href="gitData.html_url" target="blank">Full Github page</a>
           </div>
-          <span class="title">latest repos</span
-          ><span>&nbsp;{{ this.shownRepos }}/{{ gitData.public_repos }}</span>
-            <!-- v-for="(data, index) in gitReData.slice(0, this.shownRepos)" -->
-          <div
-            v-for="(data, index) in gitReData"
-            :key="index"
-          >
-            <li class="reposes">{{ gitReData[index].name }}</li>
+          <div style="margin: 0 3em">
+            <span class="title">latest repos</span
+            ><span style="margin: 0 0.8em"
+              >{{ this.shownRepos }}/{{ gitData.public_repos }}</span
+            >
+            <div
+              v-for="(data, index) in gitReData.slice(0, this.shownRepos)"
+              :key="index"
+            >
+              <li class="reposes">{{ gitReData[index].name }}</li>
+            </div>
           </div>
         </div>
-        <div></div>
       </div>
       <div class="teamMates">
-        <div class="header">people I collaborate with</div>
+        <div class="header">People I collaborate with</div>
         <div class="Arr">
           <div v-for="(data, index) in gitFoData" :key="index" class="ArrCard">
             <div>
@@ -38,7 +40,7 @@
             </div>
             <div style="margin: 0.5em 0">
               <a
-                :href="gitFoData.html_url"
+                :href="gitFoData[index].html_url"
                 target="blank"
                 style="padding-bottom: 0.4em"
               >
@@ -57,15 +59,14 @@ export default {
   data() {
     return {
       shownRepos: 5,
+      InputUser: "",
       gitData: [],
       gitReData: [],
       gitFoData: [],
       user: "Sandr7",
     };
   },
-  test() {
-    this.user = this.InputUser;
-  },
+
   async fetch() {
     this.gitData = await fetch(
       `https://api.github.com/users/${this.user}`
@@ -86,8 +87,8 @@ export default {
   .Card {
     display: flex;
     @include subCardBackground;
-    flex: 0.55;
     height: 50%;
+    width: 50%;
     img {
       height: 10em;
       padding: 1em;
@@ -96,6 +97,7 @@ export default {
     }
     .info {
       padding: 0 2em;
+      display: flex;
       .loginName {
         font-size: $fs-header * 0.8;
       }
@@ -111,6 +113,10 @@ export default {
     }
   }
   .teamMates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
     .header {
       font-size: $fs-header * 0.6;
       &::after {
@@ -123,7 +129,7 @@ export default {
       margin: 1em 0;
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(3, 33%);
+      grid-template-columns: repeat(4, 25%);
       grid-row-gap: 2em;
       grid-column-gap: 0.5em;
       .ArrCard {
@@ -132,7 +138,7 @@ export default {
         margin-right: 2em;
         text-align: center;
         img {
-          border-radius: $borderRadius12;
+          border-radius: $borderRadius8;
         }
       }
     }
