@@ -14,10 +14,10 @@
               >Grafisch Lyceum Rotterdam</a
             >
             based in The Netherlands as a
-            <span class="Accent">full-stack developer</span>.
+            <span class="Accent">software developer</span>.
             <br />
             <br />I'm also a graphic designer,
-            <span class="Accent">UI & UX designer</span>, Lego technic builder,
+            <span class="Accent">UI &amp; UX designer</span>, Lego technic builder,
             <a href="https://en.wikipedia.org/wiki/Speedcubing" target="blank"
               >speedcuber</a
             >, computer enthusiast and a tech savvy.
@@ -28,15 +28,15 @@
           <nuxt-link class="CtAButton" to="/Projects"
             >View my Projects</nuxt-link
           >
-          <span style="padding-bottom: 0.2em"
-            >Searching for a Dutch internship</span
-          >
+          <span style="padding-bottom: 1em">
+            <!-- Searching for a Dutch internship -->
+          </span>
           <span
             >NL&nbsp;•&nbsp;<a
               href="https://src.sandervanast.com/CV.pdf"
               target="blank"
               class="Download"
-              style="margin-bottom: 0.2em"
+              style="margin: 0.2em 0"
               >Donwload my Resume</a
             ></span
           >
@@ -82,9 +82,9 @@ export default {
       projects,
       exercises,
       countProjects: projects.length,
-      countExercises: exercises.length
+      countExercises: exercises.length,
     };
-  }
+  },
 };
 </script>
 
@@ -127,7 +127,7 @@ export default {
           font-size: $fs-paragraph-1;
           width: 100%;
           .Accent {
-            filter: contrast(900%);
+            filter: contrast(200%);
           }
         }
       }
