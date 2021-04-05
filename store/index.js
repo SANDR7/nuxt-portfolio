@@ -256,6 +256,12 @@ export const state = () => ({
         name: 'Windows Server 2016'
       },
       {
+        Image_src: "https://src.sandervanast.com/images/SVG/vim.svg",
+        Image_alt: 'vim_logo',
+        cat: 'Source Code Editor',
+        name: 'Vim'
+      },
+      {
         Image_src: "https://src.sandervanast.com/images/SVG/linux.svg",
         Image_alt: 'linux_logo',
         cat: 'Operating System',
