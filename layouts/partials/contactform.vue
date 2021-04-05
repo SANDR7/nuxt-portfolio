@@ -170,16 +170,18 @@ export default {
       font-weight: 600;
       font-size: $fs-paragraph-2 * 1.2;
       color: Color(GeneralLight);
-      background-color: #4fcfbe;
+      background-color: #4fcfbe !important;
       box-shadow: $innerShadow;
 
-      &::selection {
-        background-color: #4fcfbe !important;
-      }
     }
     .EndmessageErr {
-      @extend .Endmessage;
-      background-color: $RedColor1;
+      @include CardBackground;
+      text-align: left;
+      font-weight: 600;
+      font-size: $fs-paragraph-2 * 1.2;
+      color: Color(GeneralLight);
+      box-shadow: $innerShadow;
+      background-color: $RedColor1 !important;
     }
     .FormItem {
       display: flex;
