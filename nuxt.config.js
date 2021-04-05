@@ -197,29 +197,29 @@ export default {
       start_url: "/",
       lang: "en",
       theme_color: "#ef794d",
-      shortcuts: [
-        {
-          name: "Contact Page",
-          short_name: "Contact",
-          descirption: "View my contact information",
-          url: "/Contact",
-          icon: [{ src: "/icon.png" }]
-        },
-        {
-          name: "About Page",
-          short_name: "About",
-          descirption: "View my information about myself",
-          url: "/About",
-          icon: [{ src: "/icon.png" }]
-        },
-        {
-          name: "Projects Page",
-          short_name: "Projects",
-          descirption: "View my projects",
-          url: "/Projects",
-          icon: [{ src: "/icon.png" }]
-        }
-      ],
+      // shortcuts: [
+      //   {
+      //     name: "Contact Page",
+      //     short_name: "Contact",
+      //     descirption: "View my contact information",
+      //     url: "/Contact",
+      //     icon: [{ src: "/icon.png" }]
+      //   },
+      //   {
+      //     name: "About Page",
+      //     short_name: "About",
+      //     descirption: "View my information about myself",
+      //     url: "/About",
+      //     icon: [{ src: "/icon.png" }]
+      //   },
+      //   {
+      //     name: "Projects Page",
+      //     short_name: "Projects",
+      //     descirption: "View my projects",
+      //     url: "/Projects",
+      //     icon: [{ src: "/icon.png" }]
+      //   }
+      // ],
       background_color: "#F9F9F9",
       ogImage: `https://www.sandervanast.com/hi-icon.png`,
       useWebmanifestExtension: false
