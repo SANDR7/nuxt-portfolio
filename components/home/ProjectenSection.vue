@@ -1,7 +1,7 @@
 <template>
   <div class="Projecten">
     &#46;Recent Projects &#123;
-    <div class="comment">Click this link ↓ to know more about the project</div>
+    <div class="comment">Click the link ↓ to know more about the project</div>
     <div style="margin-left: 1rem" @click="ScrolltoTop">
       &#64;include
       <nuxt-link
@@ -9,9 +9,13 @@
         title="All Projects"
         @click="ScrolltoTop"
         style="padding-bottom: 0.2em"
-        >all&#95;Projects</nuxt-link
+        >all-Projects</nuxt-link
       >&#59;
     </div>
+    <!-- <div style="margin-left: 1rem; margin-top: .2em;">
+      &#64;include
+      <a href="https://www.github.com/SANDR7" target="blank" style="padding-bottom: 0.2em"> github-Page</a>&#59;
+    </div> -->
     <div class="Cards">
       <div
         class="Card"
