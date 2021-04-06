@@ -38,7 +38,7 @@ export const state = () => ({
       BeginDate: 2019
     },
     {
-      Image_src: `${CDN_LINK}o/SVG%2Fjquery.svg?alt=media&token=6149033d-e1fe-46de-abc9-3ce6d7279d40`,
+      Image_src: `${CDN_LINK}o/SVG%2Fjquery.svg?alt=media&token=d8548709-7972-4a5c-92f5-09cd389b4b79`,
       Url_src: 'https://jquery.com/',
       Image_alt: 'jQuery_logo',
       name: 'jquery',
