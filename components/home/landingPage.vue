@@ -33,8 +33,9 @@
           </span>
           <span
             >NL&nbsp;•&nbsp;<a
-              href="https://src.sandervanast.com/CV.pdf"
+              href="https://www.sandervanast.com/source/CV.pdf"
               target="blank"
+              title="Resume"
               class="Download"
               style="margin: 0.2em 0"
               >Donwload my Resume</a
